@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    border-top: 1px solid $footer-background-color;
+    background-color: $footer-background-color;
+    color: $footer-color;
+    padding: 1rem;
+    background-image: url('../../../assets/img/background/6.png');
+}
+
+.footer a {
+    color: $footer-color;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+
+.footer a:hover {
+    color: $footer-hover-color;
+}
+
+.footer .social {
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+}

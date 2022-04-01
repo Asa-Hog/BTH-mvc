@@ -1,0 +1,318 @@
+.education-container {
+    max-width: 960px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.examen-image {
+    box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.frame-filmag {
+    display: none;
+}
+
+.frame-filmag-light {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.frame-filmag-text {
+    margin-top: 5em;
+    padding: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: $color3;
+    border-radius: 3px;
+    margin-left: 3em;
+}
+
+.frame-filmag-text h2 {
+    text-align: left;
+    padding-right: 80px;
+    color: $color2; /////
+    color: $color1;
+}
+
+.frame-filmag-text p {
+    text-align: left;
+    padding-right: 80px;
+}
+
+.frame-filmag-pic {
+    width: 90%;
+    display: flex;
+    margin-left: -70px;
+}
+
+.frame-img {
+    border-radius: 3px;
+    width: 100%;
+}
+
+.exwork {
+    margin-top: 40px;
+    padding: 1em;
+    padding-left: 1.5em;
+    box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    border: 2px solid $color5;
+    color: $white;
+    color: $black;
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+.exwork:hover {
+    box-shadow: 10px 10px 5px 5px rgba(0, 0, 0, 0.4);
+    color: $color5;
+}
+
+////////////////////////////////////////
+.frame-webprogramming {
+    display: none;
+}
+
+.frame-webprogramming-light {
+    background-color: $white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 40px;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.frame2-light h2,
+.frame2-light ul li {
+    text-align: left;
+}
+
+.more {
+    margin-left: 1em;
+    transform: rotate(-15deg);
+    font-size: 42px;
+    font-family: 'Kalam', cursive;
+    display: flex;
+    // padding-top: 3em;
+    color: $color3;
+    // border: 1px solid green;
+}
+
+.arrow {
+    width: 75px;
+    box-shadow: none !important;
+    margin-top: -30px;
+    margin-left: 0.5em;
+}
+
+.more p {
+    color: $color2; //5
+    font-family: 'Open Sans', sans-serif;
+    font-size: 35px;
+}
+
+//////////////////////////////////////////////
+.frame-misc-courses {
+    display: none;
+}
+
+.frame-misc-courses-light {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2em;
+    position: relative;
+}
+
+.misc-c-pic {
+    width: 40%;
+    margin-right: 0.5em;
+    margin-left: 1em;
+    border-radius: 3px;
+    margin-bottom: -1em;
+}
+
+.edu-misc-text {
+    background-color: $color2;
+    background-color: $color5;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    border-radius: 3px;
+    margin-right: 1em;
+    color: $color1; /////
+    color: $white;
+    font-weight: lighter;
+}
+
+.edu-misc-text h2 {
+    color: $color5; /////
+    color: $white;
+}
+
+@media (max-width: 1085px) {
+    .frame-webprogramming-light {
+        position: relative;
+    }
+
+    .more {
+        flex-direction: column;
+    }
+
+    .more-text {
+        margin-bottom: 1rem;
+    }
+
+    .arrow {
+        top: 100px;
+        left: -100px;
+    }
+
+    .misc-c-pic {
+        margin-bottom: 0.25rem;
+    }
+    
+}
+
+@media (max-width: 1181px) {
+    .frame-misc-courses-light {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .misc-c-pic {
+        width: 65%;
+        margin: 0 auto;
+        margin-bottom: 0.25rem;
+    }
+
+    .edu-misc-text {
+        width: 65%;
+        margin: 0 auto;
+    }
+
+    .edu-misc-text h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 850px) {
+    .frame-filmag-light {
+        flex-direction: column-reverse;
+        margin: 0;
+        padding: 0;
+    }
+
+    .frame-filmag-text {
+        margin: 0;
+        width: 100%;
+    }
+    
+    .frame-filmag-text h2 {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .frame-filmag-text p {
+        padding-right: 0;
+        width: 100%;
+        text-align: justify;
+    }
+    
+    .frame-filmag-pic-div {
+        display: flex;
+        position: relative;
+        width: 75%;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+
+    .frame-filmag-pic {
+        display: flex;
+        position: relative;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+    
+    .frame-img {
+        padding: 0;
+        width: 100%;
+        margin: 0;
+        margin: 0 auto;
+    }
+
+    .more {
+        margin-right: 2rem;
+    }
+
+    .misc-c-pic {
+        width: 100%;
+        margin-bottom: 0.25rem;
+    }
+
+    .edu-misc-text {
+        width: 100%;
+    }
+}
+
+@media (max-width: 667px) {
+    .frame-filmag-pic-div {
+        width: 100%;
+    }
+
+    .frame-filmag-text p {
+        text-align: left;
+    }
+
+    .exwork {
+        text-align: left;
+    }
+
+    .frame-webprogramming-light {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    
+    .frame-webprogramming-courses {
+        padding: 1.5rem;
+        width: 100%;
+        margin: 0;
+        text-align: left;
+    }
+
+    .frame2-light h2 {
+        text-align: center;
+    }
+
+    .frame-webprogramming-courses > p {
+        text-align: left !important;
+    }
+
+    .more {
+        margin-left: 2em;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .arrow {
+        margin-left: 2rem;
+        margin-top: -8rem;
+    }
+
+    .misc-c-pic {
+        margin-bottom: 0.25rem;
+    }
+
+    .misc-c li {
+        text-align: left;
+    }
+}

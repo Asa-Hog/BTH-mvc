@@ -1,0 +1,79 @@
+html {
+    font-size: 100%; // för att inte skriva över användarens typsnittsinställningar i webbläsaren.
+}
+
+body {
+    font-family: sans-serif;
+    line-height: $main-line-height;
+    color: $font-color;
+}
+
+p {
+    font-size: $main-font-size; // (1em) tillsammans med ovanstående ger 16px
+    margin-bottom: $magic-number;
+}
+
+* { //PARAGRAFF
+    font-family: 'Thasadith', sans-serif;
+    letter-spacing: 0.8px;
+    text-align: justify;
+    font-size: 16px;
+    // font-weight: 300;
+}
+
+.nav a {
+    font-family: 'Amatic SC', cursive !important;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.more p {
+    font-family: 'Kalam', cursive;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {  // RUBRIKER
+    font-family: 'Amatic SC', cursive; // JA
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: $magic-number;
+    color: $title-color;
+}
+
+h2 {
+    color: $h2-color;
+}
+
+a {
+    text-decoration: none;
+    color: $a-color;
+}
+
+a:hover {
+    color: $a-hover-color;
+}
+
+p,
+td,
+th,
+li,
+dd {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+::selection {
+    background: $color3;
+}
+
+@media (min-width: 64em) {
+    html {
+        font-size: 112.5%;
+    }
+}

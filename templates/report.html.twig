@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Report{% endblock %}
+
+
+{% block content %} 
+{# Skriver över ett block #}
+
+{# <h1>Report</h1>
+<p>Reports from each kmom</p> #}
+
+{% apply markdown_to_html %}
+Report
+==========
+Below are the reports from each part of the course.
+
+
+{% endapply %}
+
+{{ include('report/kmom01.md.twig')|markdown_to_html }}
+{# {{ include('report/kmom02.md.twig')|markdown_to_html }}
+{{ include('report/kmom03.md.twig')|markdown_to_html }}
+{{ include('report/kmom04.md.twig')|markdown_to_html }}
+{{ include('report/kmom05.md.twig')|markdown_to_html }}
+{{ include('report/kmom06.md.twig')|markdown_to_html }}
+{{ include('report/kmom10.md.twig')|markdown_to_html }} #}
+
+
+
+{% endblock %}

@@ -1,0 +1,55 @@
+$color1: #5396c2;
+$color2: #667d8c;
+$color3: #325a75;
+$color4: #8dadc2;
+$color5: #1d3342;
+// mono
+
+$white: rgba(255, 255, 255, 0.815);
+$black: #333;
+
+$background-color: #222;
+
+$title-h1-color: $color4;
+$title-p-color: $color2;
+$title-color: $color1;
+
+$font-color: $white;
+$h2-color: $color1;
+
+$portfolio-color: $color4;
+
+$nav-a-color: $color1;
+$nav-a-hover-color: $color3;
+
+$a-color: $color4;
+$a-hover-color: $color2;
+
+$code-background: #333;
+$code-border: #333;
+
+$analysis-box-color: #333;
+$analysis-box-text-color: $color4;
+$analysis-box-hover-color: #444;
+$analysis-h1-text: $color1;
+$analysis-h2-text: $color1;
+$analysis-h3-text: $color1;
+
+$analysis-gradient-1: #333;
+$analysis-gradient-2: #444;
+
+$color-sidebar-h2: $color2;
+$color-sidebar-a: $color2;
+$color-sidebar-a-hover: $color4;
+
+$course-box-color: #333;
+$course-box-text-color: $color4;
+$course-box-hover-color: #444;
+
+$footer-background-color: #333;
+$footer-color: #a4a9ab;
+$footer-hover-color: $white;
+
+$main-font-size: 1em;
+$main-line-height: 1.5;
+$magic-number: $main-font-size * $main-line-height;
