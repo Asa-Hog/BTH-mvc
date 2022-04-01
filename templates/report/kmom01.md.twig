@@ -1,15 +1,17 @@
 Kmom01 - Ramverk
 -------------------------
 
-Berätta kort om dina förkunskaper och tidigare erfarenheter kring objektorientering.
+Jag har arbetat med objektorienterad programmering i ett par kurser tidigare, så det är inte ett helt nytt område för mig.
 
-Berätta kort om PHPs modell för klasser och objekt. Vilka är de grunder man behöver veta/förstå för att kunna komma igång och skapa sina första klasser?
+En klass är en sorts mall för att skapa objekt. Klassen innehåller metoder och properties, medlemsvariabler. Värdet på medlemsvariablerna ger objektets state, tillstånd. Olika objekt kan ha olika värden på medlemsvariabler, alla har åtkomst till klassens metoder.
 
-Reflektera kort över den kodbas, koden, strukturen som användes till uppgiften me/report, hur uppfattar du den?
+För att skapa ett objekt i PHP skriver man <pre>$object = new Classname();</pre> och för att komma åt en medlemsvariabel i objektet skriver man t ex <pre>$object->length = 100;</pre> I PHP kan man ange om en metod eller medlemsvariabel ska vara public, private eller protected. Normalt bör medlemsvariablerna vara private, så att ingen utifrån kommer åt dem. Om man vill ha åtkomst till dem kan man i så fall använda getters och setters, så att man i koden t ex kan ha kontroll över vilka värden som får sättas.
 
-Med tanke på artikeln “PHP The Right Way”, vilka delar i den finner du extra intressanta och värdefulla? Är det några särskilda områden som du känner att du vill veta mer om? Lyft fram några delar av artikeln som du känner mer värdefulla.
+Strukturen på koden som används i uppgiften me/report ser väldigt lik ut kod från andra ramverk som jag kommit i kontakt med tidigare, de verkar alla byggas upp på liknande sätt.
 
-Vilken är din TIL för detta kmom?
+I artikeln “PHP The Right Way” tror jag att jag kommer ha mest nytta av styckena om "Language Highlights" och "Coding Practices", eftersom jag är ny på PHP. I "Coding Practices" finns ett stycke om "The Basics" och det kan nog vara användbart för att kolla upp hur det var man skulle skriva något specifikt. Jag har lätt att glömma detaljer när jag växlar mellan olika språk. Sen kommer jag säkert ha användning av stycket "Databases" senare.
+
+I detta kursmoment har jag kommit igång och lärt mig grunderna till PHP-ramverket Symfony.
 
 
 {# <p><b>Bold text</b></p> #}
