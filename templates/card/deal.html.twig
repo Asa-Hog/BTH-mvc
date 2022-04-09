@@ -1,0 +1,68 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Deal {% endblock %}
+
+
+{% block content %} 
+
+
+<h1>Deal cards to players</h1>
+
+<form>
+    <p>
+        <label>Number of players:
+            <input type="text" name="players" value="{{players}}">
+        </label>
+    </p>
+    <p>
+        <label>Number of cards per player:
+            <input type="text" name="cards" value="{{cards}}">
+        </label>
+    </p>
+    <input type="submit" value="Go">
+</form>
+
+{# När använder man {{ }} och när {% %}? Och när objekt.metod() och när $objekt->metod()? Och vad betyder egentligen =>? Och varför \App\Card\... i st för App/Card/...? Så mycket nytt nu... #}
+
+{% if players %}
+    {% if cards %}
+
+    <p> You chose:</p>
+    <p> Number of players: {{ app.request.get('players') }}</p>
+
+    <p> Number of cards per player: {{ app.request.get('cards') }} </p>
+
+                        {% if removedCardsSet == [] %}
+
+                            <p> You don't have enough cards left to draw.</p>
+                        {% else %}
+
+                        {# // Det fanns tillräckligt många kort #}
+                        {# Skriv för varje spelare ut de kort de fick, cardhand #}
+
+                        {% set count = 0 %}
+                        {% for player in playersArray %}
+                        {% set count = count + 1 %}
+                            <p>Player {{ count }}: </p>
+                            <div class = "drawn">
+                                {% for card in player.get_cardhand().get_cards() %}
+
+                                    <div class= "card">
+                                        <div class = "{{ card.get_details[1] }}">
+                                            {{ card.get_details[1] }}
+                                        </div>
+                                        <div>
+                                            {{ card.get_details[0] }}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    {% endif %} 
+        {% endif %}
+{% endif %} 
+
+<p>Cards left in deck: {{ cardsLeft }} </p>
+
+{% endblock %}
+

@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Draw number {% endblock %}
+
+{% block content %} 
+
+
+<form>
+    <p>
+        <label>Number of cards to draw:
+            <input type="search" name="number" value="{{number}}">
+        </label>
+    </p>
+</form>
+
+<p>Cards left in deck: {{cardsLeft}}</p>
+
+
+{% if number %}
+    <p> You have chosen {{ app.request.get('number') }} cards to draw.</p>
+
+                    {% if removedCardsSet == [] %}
+                        <p> You don't have enough cards left to draw.</p>
+                    {% else %}
+                        <div class = "drawn">
+                            {% for card in removedCardsSet %}
+                                <div class= "card">
+                                <div class = "{{ card[0].get_details[1] }}">
+                                    {{ card[0].get_details[1] }}
+                                </div>
+                                <div>
+                                    {{ card[0].get_details[0] }}
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    
+
+                    {% endif %} 
+
+{% endif %} 
+
+{% endblock %}

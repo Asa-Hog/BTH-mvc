@@ -7,22 +7,17 @@
 
 <h3>Classes</h3>
 
-<a href = "{{ path("deck") }}">card/deck</a></br>
-<a href = "{{ path("shuffle") }}">card/deck/shuffle</a></br>
-<a href = "{{ path("draw") }}">card/deck/draw</a></br>
-{# <a href = "{{ path("draw/:number") }}">card/deck/draw/:number</a></br>
-<a href = "{{ path("lucky-number") }}">card/deck/deal/:players/:cards</a></br>
-<a href = "{{ path("lucky-number") }}">card/deck2</a> #}
+<a href = "{{ asset("deck") }}">card/deck</a></br>
+<a href = "{{ asset("shuffle") }}">card/deck/shuffle</a></br>
+<a href = "{{ asset("draw") }}">card/deck/draw</a></br>
+<a href = "{{ asset("draw-number") }}">card/deck/draw/:number</a></br>
+<a href = "{{ asset("deal") }}">card/deck/deal/:players/:cards</a></br>
+<a href = "{{ asset("deck2") }}">card/deck2</a>
 
 <h3>JSON API</h3>
-{# <a href = "{{ path("api-deck") }}">card/api/deck</a></br>
-<a href = "{{ path("api-deck-shuffle") }}">card/api/deck/shuffle</a></br>
-<a href = "{{ path("api/deck/draw") }}">card/api/deck/draw</a></br>
-<a href = "{{ path("api/deck/draw/:number") }}">card/api/deck/draw/:number</a></br>
-<a href = "{{ path("api/deck/deal/:players/:cards") }}">card/api/deck/deal/:players/:cards</a></br> #}
-
+<a href = "{{ asset("api/deck") }}">card/api/deck</a></br>
 
 <h3>Problem solving</h3>
-{# <a href = "{{ path("game-card") }}">game/card</a></br> #}
+<a href = "{{ asset("game-card") }}">game/card</a></br>
 
 {% endblock %}

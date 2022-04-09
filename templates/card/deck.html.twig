@@ -1,0 +1,68 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Deck {% endblock %}
+
+
+{% block content %} 
+
+
+<p>Deck content:</p>
+
+<div class = "deck">
+
+    <div class = "cards">
+        {% for card in get_cards[0:13] %}
+            <div class= "card">
+                <div class = "{{ card.get_details[1] }}">
+                    {{ card.get_details[1] }}
+                </div>
+                <div>
+                    {{ card.get_details[0] }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class = "cards">
+        {% for card in get_cards[13:13] %}
+            <div class= "card">
+                <div class = "{{ card.get_details[1] }}">
+                    {{ card.get_details[1] }}
+                </div>
+                <div>
+                    {{ card.get_details[0] }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class = "cards">
+        {% for card in get_cards[26:13] %}
+            <div class= "card">
+                <div class = "{{ card.get_details[1] }}">
+                    {{ card.get_details[1] }}
+                </div>
+                <div>
+                    {{ card.get_details[0] }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class = "cards">
+        {% for card in get_cards[39:13] %}
+            <div class= "card">
+                <div class = "{{ card.get_details[1] }}">
+                    {{ card.get_details[1] }}
+                </div>
+                <div>
+                    {{ card.get_details[0] }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+
+
+
+{% endblock %}

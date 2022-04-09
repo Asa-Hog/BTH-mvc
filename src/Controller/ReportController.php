@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ReportController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/home", name="home")
      */
     public function home(): Response
     {
@@ -53,7 +53,7 @@ class ReportController extends AbstractController
      */
     public function debug(): Response
     {
-    $data = [
+        $data = [
         'message' => 'Welcome to the lucky number API',
         'number' => random_int(0, 100)
     ];
@@ -61,4 +61,11 @@ class ReportController extends AbstractController
         return $this->render('debug.html.twig', $data);
     }
 
+    /**
+     * @Route("/card", name="card")
+     */
+    public function card(): Response
+    {
+        return $this->render('card.html.twig');
+    }
 }

@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Deal {% endblock %}
+
+
+{% block content %} 
+
+
+<h1>Problem solving</h1>
+
+<h2>Beskrivning</h2>
+<p>Jag har valt en enkel variant av kortspelet 21. Spelet består av två spelare. Varje spelare får en i taget ta ett antal kort för att komma så nära 21 som möjligt. Antingen väljer spelaren att vara klar eller så råkar spelaren ta ett kort så summan av värdena på spelarens alla kort överstiger 21. Då har spelaren förlorat omgången och får 0p. Om båda spelarna stoppar innan de fått för hög summa vinner den som har högst summa, värdet på korten blir dess poäng. Om båda får för hög summa (0p) blir omgången oavgjord.</p>
+
+<h2>Flödesschema över grunderna i spelet</h2>
+<img src = "{{ asset("img/Kortspel21.png") }}" width = "500px" alt = "Flödesschema">
+
+<h2>Pseudokod</h2>
+
+<pre>
+// Create players
+// Create deck
+// Shuffle deck
+for player in players
+    // while continue == y
+        // Draw card
+        // Add points from card
+        // continue?
+        // break?
+    // Calculate total points
+    if total points > 21 
+        //Total points for the player == 0
+for player in players
+    // if total points for player1 > points for player2 - player1 is winner
+    // if total points for player1 < points for player2 - player2 is winner
+    // if total points for player1 = points for player2 - draw
+// display message
+</pre>
+
+<h2>Klasser</h2>
+
+<h4>Player</h4>
+<p>Beskriver en spelare</p>
+
+<h4>Deck</h4>
+<p>Beskriver en kortlek</p>
+
+<h4>Scorecard?</h4>
+<p>Sparar vilka poäng de olika spelarna har</p>
+
+
+
+{% endblock %}
+
+
+
+
+

@@ -1,4 +1,18 @@
-kmom02
+Kmom02 - Objektorientering
 -------------------------
 
-Text
+Inom objektorientering används konstruktionerna arv, komposition, interface och trait.
+
+Arv är när en subklass ärver från en föräldraklass. Det kan man använda om man vill att subklassen ska ha liknande beteende som föräldraklassen, men vara mer specialicerat. T ex är en hund ett djur. Man kan säga att subklassen Hund ärver från basklassen Djur. Man skriver class Hund extends Djur. Det betyder att alla publika och protected metoder och medlemsvariabler i Djur går att använda i Hund. Subklassen ska kunna ersätta föräldraklassen överallt.
+
+Med komposition menas att en klass använder sig av andra klasser, och de inte kan existera utan varandra. T ex ett hus har rum. Rummen kan inte finnas om inte huset finns, och huset har minst ett rum, så det finns inte om inte rum finns. En lösare form av denna konstruktion kallas aggregataion, då kan klasserna använda sig av varandra men även existera utan varandra. T ex ett hus och dess inneboende. Inneboende kan fortfarande finnas även om ett specifikt hus inte finns längre, och även om inneboebde flyttar ut finns huset kvar.
+
+Interface är ett antal publika metoder som man samlat. Själva interfacet är en sorts kontrakt och man säger att en klass som implementerar interfacet måste uppfylla metoderna i interfacet.
+
+Trait är kod som kan återanvändas inuti klasser. Man kan säga att klasser som använder trait har de tillgång till den koden som ligger i traiten, utanför klassen.
+
+Jag löste uppgiften genom tid, mycket tid, och att inte ge upp. Därmed är jag nöjd med min prestation. Jag tycker det var alldeles för omfattande uppgift för enbart ett kursmoment, jag satt dubbla tiden. Därför har jag inte hunnit kika så mycket på om min kod är bra eller inte, jag fokuserade på att bara bil klar. En sak jag tänkte på är att jag på några ställen jobbar med arrayer som jag returnerar, men det hade varit enklare att objektens medlemsvariabler, och ha fler get- metoder för att hämta ut det man behöver från objekten, i st för att spara data i arrayer.
+
+Modelleringen av kortspelet gick bra. Flödesdiagrammet var inga konstigheter, pseudokoden var lite svårare för den kan lätt bli väldigt detaljerad, och jag kanske inte bestämt hur jag ska lösa något än. Jag tänkte inget särskilt när jag funderade på hur spelet skulle gå till, mest att ta det stegvis, det som händer först, och efter det mm. Och sen tänkte jag KISS, Keep it simple, och ta detaljer sen när det behövs.
+
+I det här kursmomentet har jag lärt mig att man klarar mer än man tror, bara man tar en sak i taget.

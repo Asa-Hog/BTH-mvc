@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="favicon.ico">
-        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="icon" href="{{ asset("favicon.ico") }}">
+        <link rel="stylesheet" href="{{ asset("css/style.css") }}"/>
     </head>
 
     <body>
@@ -19,10 +19,11 @@
                     <div class="navbar">
                         <nav>
                             <ul>
-                                <li><a href = "{{ url("home") }}">Home</a></li>
-                                <li><a href = "{{ path("about") }}">About</a></li>
-                                <li><a href = "{{ path("report") }}">Report</a></li>
-                                <li><a href = "{{ path("debug") }}">Debug</a></li>
+                                <li><a href = "{{ asset("home") }}">Home</a></li>
+                                <li><a href = "{{ asset("about") }}">About</a></li>
+                                <li><a href = "{{ asset("report") }}">Report</a></li>
+                                <li><a href = "{{ asset("debug") }}">Debug</a></li>
+                                <li><a href = "{{ asset("card") }}">Card</a></li>
                             </ul>
                         </nav>
                     </div>

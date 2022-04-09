@@ -1,0 +1,178 @@
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Routing\Annotation\Route;
+
+class CardController extends AbstractController
+{
+    /**
+     * @Route("/deck", name="deck")
+     */
+    public function deck(): Response
+    {
+        $deck = new \App\Card\Deck(); // Skapa nytt deck-objekt
+        $data = [
+            'title' => 'Deck',
+            'get_cards' => $deck->get_cards()
+        ];
+
+        return $this->render('card/deck.html.twig', $data);
+    }
+
+    /**
+     * @Route("/shuffle", name="shuffle")
+     */
+    public function shuffle(SessionInterface $session): Response
+    {
+        $deck = new \App\Card\Deck(); // Skapa nytt deck-objekt
+
+        // Nollställer kortleken
+        $session->set("deck", $deck);
+        $session->set("removedCardsTotal", []);
+
+        $data = [
+            'title' => 'Shuffle',
+            'get_cards' => $deck->get_shuffled_cards()
+        ];
+
+
+        return $this->render('card/shuffle.html.twig', $data);
+    }
+
+    /**
+     * @Route("/draw", name="draw")
+     */
+    public function draw(
+        SessionInterface $session
+    ): Response {
+        // Hämta kortleken från sessionen eller skapa nytt deck-objekt
+        $deck = $session->get("deck") ?? new \App\Card\Deck();
+
+        $data = [
+            'title' => 'Draw',
+            'card_data' => $deck->draw()
+        ];
+
+        $session->set("deck", $deck);
+
+        return $this->render('card/draw.html.twig', $data);
+    }
+
+    /**
+     * @Route("/draw-number", name="draw-number",
+     * methods={"GET", "POST"})
+     */
+    public function drawNumber(Request $request, SessionInterface $session): Response
+    {
+        // Hämta kortleken från sessionen eller skapa nytt deck-objekt
+        $deck = $session->get("deck") ?? new \App\Card\Deck();
+        // Hämta alla kort som blivit dragna hittills
+        $removedCardsTotal = $session->get("removedCardsTotal") ?? [];
+
+        $data = [
+            'number' => $request->query->get('number'),
+            'cardsLeft' => $deck->cards_in_deck(),
+        ];
+
+        $removedCardsSet = [];
+        if ($data["cardsLeft"] >= $data["number"]) {
+            for ($i = 0; $i < $data["number"]; $i++) {
+                $drawn = $deck->draw();// korten tas bort från kortleken här
+                array_push($removedCardsSet, $drawn); // Borttagna kort läggs här
+            }
+        }
+
+        $data['cardsLeft'] = $deck->cards_in_deck();
+        $data['cards'] = $deck->get_cards(); // Detta är korten som är kvar
+        $data['removedCardsSet'] = $removedCardsSet; // Detta är borttagna kort
+
+        $removedCardsTotal = $removedCardsTotal + $removedCardsSet; // Lägger till nya kort
+        // som dragits
+        $session->set("deck", $deck);
+        $session->set("removedCardsTotal", $removedCardsTotal);
+
+        return $this->render('card/drawNumber.html.twig', $data);
+    }
+
+    // /deal/{players}/{cards}
+    /**
+     * @Route("/deal", name="deal",
+     * methods={"GET", "POST"}))
+     */
+    public function deal(
+        Request $request,
+        SessionInterface $session
+    ): Response
+    {
+        $deck = $session->get("deck") ?? new \App\Card\Deck();
+        $removedCardsTotal = $session->get("removedCardsTotal") ?? [];
+
+        $data = [
+            'title' => 'Deal',
+            'players' => $request->query->get('players'),
+            'cards' => $request->query->get('cards'),
+            'cardsLeft' => $deck->cards_in_deck()
+        ];
+
+        $removedCardsSet = []; // de som försvinner från kortleken
+        $playersArray = [];
+        if ($data["cardsLeft"] >= $data["cards"]*$data["players"]) {
+            for ($i = 0; $i < $data["players"]; $i++) {
+                $player = new \App\Card\Player(); //skapa spelare
+                $cardhand = new \App\Card\CardHand(); //skapa korthand
+                $player->add_cardhand($cardhand);
+                array_push($playersArray, $player);
+
+                for ($j = 0; $j < $data["cards"]; $j++) {
+                    $drawn = $deck->draw();// ta bort kort från kortleken
+                    $cardhand->add_card($drawn[0]); // lägger det till spelarens hand
+                    array_push($removedCardsSet, $drawn); // lägg kortet här
+                }
+            }
+        }
+
+        $data['cardsLeft'] = $deck->cards_in_deck();
+        $data['removedCardsSet'] = $removedCardsSet; //  borttagna kort
+        $data['playersArray'] = $playersArray;
+        $data['noOfPlayers'] = count($playersArray);
+
+
+        $removedCardsTotal = $removedCardsTotal + $removedCardsSet;
+        $session->set("deck", $deck);
+        $session->set("removedCardsTotal", $removedCardsTotal);
+
+        return $this->render('card/deal.html.twig', $data);
+    }
+
+    /**
+     * @Route("/deck2", name="deck2")
+     */
+    public function deck2(): Response
+    {
+        $deck2 = new \App\Card\Deck2(); // Skapa nytt deck2-objekt
+        $data = [
+            'title' => 'Deck2',
+            'get_cards' => $deck2->get_cards()
+        ];
+
+        return $this->render('card/deck2.html.twig', $data);
+    }
+
+    /**
+     * @Route("/game-card", name="game-card")
+     */
+    public function gameCard(): Response
+    {
+        $data = [
+            'title' => 'Game card'
+        ];
+
+        return $this->render('card/gameCard.html.twig', $data);
+    }
+}
