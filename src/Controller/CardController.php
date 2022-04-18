@@ -9,6 +9,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
+use App\Card\Deck;
+use App\Card\Player;
+use App\Card\CardHand;
+use App\Card\Deck2;
+
 class CardController extends AbstractController
 {
     /**
@@ -16,10 +21,10 @@ class CardController extends AbstractController
      */
     public function deck(): Response
     {
-        $deck = new \App\Card\Deck(); // Skapa nytt deck-objekt
+        $deck = new Deck(); // Skapa nytt deck-objekt
         $data = [
             'title' => 'Deck',
-            'get_cards' => $deck->get_cards()
+            'get_cards' => $deck->getCards()
         ];
 
         return $this->render('card/deck.html.twig', $data);
@@ -30,7 +35,7 @@ class CardController extends AbstractController
      */
     public function shuffle(SessionInterface $session): Response
     {
-        $deck = new \App\Card\Deck(); // Skapa nytt deck-objekt
+        $deck = new Deck(); // Skapa nytt deck-objekt
 
         // Nollställer kortleken
         $session->set("deck", $deck);
@@ -38,7 +43,7 @@ class CardController extends AbstractController
 
         $data = [
             'title' => 'Shuffle',
-            'get_cards' => $deck->get_shuffled_cards()
+            'get_cards' => $deck->getShuffledCards()
         ];
 
 
@@ -52,7 +57,7 @@ class CardController extends AbstractController
         SessionInterface $session
     ): Response {
         // Hämta kortleken från sessionen eller skapa nytt deck-objekt
-        $deck = $session->get("deck") ?? new \App\Card\Deck();
+        $deck = $session->get("deck") ?? new Deck();
 
         $data = [
             'title' => 'Draw',
@@ -71,7 +76,7 @@ class CardController extends AbstractController
     public function drawNumber(Request $request, SessionInterface $session): Response
     {
         // Hämta kortleken från sessionen eller skapa nytt deck-objekt
-        $deck = $session->get("deck") ?? new \App\Card\Deck();
+        $deck = $session->get("deck") ?? new Deck();
         // Hämta alla kort som blivit dragna hittills
         $removedCardsTotal = $session->get("removedCardsTotal") ?? [];
 
@@ -88,8 +93,8 @@ class CardController extends AbstractController
             }
         }
 
-        $data['cardsLeft'] = $deck->cards_in_deck();
-        $data['cards'] = $deck->get_cards(); // Detta är korten som är kvar
+        $data['cardsLeft'] = $deck->cardsInDeck();
+        $data['cards'] = $deck->getCards(); // Detta är korten som är kvar
         $data['removedCardsSet'] = $removedCardsSet; // Detta är borttagna kort
 
         $removedCardsTotal = $removedCardsTotal + $removedCardsSet; // Lägger till nya kort
@@ -108,9 +113,8 @@ class CardController extends AbstractController
     public function deal(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
-        $deck = $session->get("deck") ?? new \App\Card\Deck();
+    ): Response {
+        $deck = $session->get("deck") ?? new Deck();
         $removedCardsTotal = $session->get("removedCardsTotal") ?? [];
 
         $data = [
@@ -124,14 +128,14 @@ class CardController extends AbstractController
         $playersArray = [];
         if ($data["cardsLeft"] >= $data["cards"]*$data["players"]) {
             for ($i = 0; $i < $data["players"]; $i++) {
-                $player = new \App\Card\Player(); //skapa spelare
-                $cardhand = new \App\Card\CardHand(); //skapa korthand
-                $player->add_cardhand($cardhand);
+                $player = new Player(); //skapa spelare
+                $cardhand = new CardHand(); //skapa korthand
+                $player->addCardhand($cardhand);
                 array_push($playersArray, $player);
 
                 for ($j = 0; $j < $data["cards"]; $j++) {
                     $drawn = $deck->draw();// ta bort kort från kortleken
-                    $cardhand->add_card($drawn[0]); // lägger det till spelarens hand
+                    $cardhand->addCard($drawn[0]); // lägger det till spelarens hand
                     array_push($removedCardsSet, $drawn); // lägg kortet här
                 }
             }
@@ -155,10 +159,10 @@ class CardController extends AbstractController
      */
     public function deck2(): Response
     {
-        $deck2 = new \App\Card\Deck2(); // Skapa nytt deck2-objekt
+        $deck2 = new Deck2(); // Skapa nytt deck2-objekt
         $data = [
             'title' => 'Deck2',
-            'get_cards' => $deck2->get_cards()
+            'get_cards' => $deck2->getCards()
         ];
 
         return $this->render('card/deck2.html.twig', $data);

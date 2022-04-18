@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Game {% endblock %}
+
+
+{% block content %} 
+
+<h1>Kortspelet 21</h1>
+
+<h3>Information och regler</h3>
+<p>Min variant av kortspelet 21 består av två spelare, eller rättare sagt en spelare och en bank. Först får spelaren ta ett antal kort för att komma så nära 21 som möjligt. Antingen väljer spelaren att vara klar eller så råkar spelaren ta ett kort så summan av värdena på spelarens alla kort överstiger 21. Då får spelaren 0p. Sedan är det dags för banken. Banken väljer att ta fler kort så länge den inte fått över 17 poäng. Detta gör den oavsett spelarens poäng. Om både spelaren och banken stoppar innan de fått för hög summa vinner den som har högst summa, värdet på korten blir dess poäng. Om båda får för hög summa (0p) blir omgången oavgjord.</p>
+
+<h3>Här kan du starta spelet:</h3>
+<a href = "{{ path("start") }}">Starta spelet!</a></br>
+
+<h3>Mer dokumentation om spelets uppbyggnad finns här:</h3>
+<a href = "{{ path("game-card") }}">game/doc</a></br>
+
+{% endblock %}

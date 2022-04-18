@@ -99,7 +99,15 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
-        "csfix": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src"
+        "csfix": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src",
+        "phpmd": "tools/phpmd/vendor/bin/phpmd src text phpmd.xml || true",
+        "phpstan": "tools/phpstan/vendor/bin/phpstan analyse -l 5 src || true",
+        "phpcpd": "tools/phpcpd/vendor/bin/phpcpd src || true",
+        "lint": [
+            "@phpcpd",
+            "@phpmd",
+            "@phpstan"
+        ]
     },
     "conflict": {
         "symfony/symfony": "*"

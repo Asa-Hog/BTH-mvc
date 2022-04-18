@@ -15,12 +15,12 @@ class CardHand
     }
 
 
-    public function add_card(Card $card): void
+    public function addCard(Card $card): void
     {
         array_push($this->cards, $card);
     }
 
-    public function get_cards(): array
+    public function getCards(): array
     {
         return $this->cards;
     }

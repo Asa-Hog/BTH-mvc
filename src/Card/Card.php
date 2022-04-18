@@ -9,20 +9,22 @@ class Card
     */
     private string $value;
     private string $color;
+    private string $char;
 
-    public function __construct(string $value, string $color)
+    public function __construct(string $char, string $color, string $value)
     {
-        $this->value = $value;
         $this->color = $color;
+        $this->char = $char;
+        $this->value = $value;
     }
 
-    public function get_details(): array
+    public function getDetails(): array
     {
-        return  [$this->value, $this->color];
+        return  [$this->char, $this->color, $this->value]; // Kolla att tillägget sista elementet inte förstör nåt
     }
 
-    public function to_string(): string
+    public function toString(): string
     {
-        return  $this->color ." " .  $this->value;
+        return  $this->color ." " .  $this->char;
     }
 }

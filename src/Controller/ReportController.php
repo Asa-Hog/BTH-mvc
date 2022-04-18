@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ReportController extends AbstractController
 {
     /**
-     * @Route("/home", name="home")
+     * @Route("/", name="home")
      */
     public function home(): Response
     {
@@ -67,5 +67,13 @@ class ReportController extends AbstractController
     public function card(): Response
     {
         return $this->render('card.html.twig');
+    }
+
+    /**
+     * @Route("/game", name="game")
+     */
+    public function game(): Response
+    {
+        return $this->render('game.html.twig');
     }
 }

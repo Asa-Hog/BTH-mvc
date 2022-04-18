@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Game {% endblock %}
+
+{% block content %}
+
+<h1>Kortspelet 21</h1>
+
+<h2>Player: </h2>
+
+<a href = "draw">Draw card</a>
+<a href = "stop">Stop</a>
+    <div class = "drawn">
+        {% for card in game.getPlayer().getCardhand().getCards() %}
+            <div class= "card">
+                <div class = "{{ card.getDetails[1] }}">
+                    {{ card.getDetails[1] }}
+                </div>
+                <div>
+                    {{ card.getDetails[0] }}
+                </div>
+            </div>
+        {% endfor %} 
+    </div>
+    <p>Card sum: {{ game.getPlayer().getPoints() }} </p>
+
+        <h2>Bank:</h2>
+
+            <div class = "drawn">
+                {% for card in game.getBank().getCardhand().getCards() %}
+                    <div class= "card">
+                        <div class = "{{ card.getDetails[1] }}">
+                            {{ card.getDetails[1] }}
+                        </div>
+                        <div>
+                            {{ card.getDetails[0] }}
+                        </div>
+                    </div>
+                {% endfor %} 
+            </div>
+        <p>Card sum: {{ game.getBank().getPoints() }}</p>
+
+
+        
+        {% if ( game.getWinner() == "") %} 
+            <h2>  </h2>
+        {% else %}
+        <h2> {{ game.getMessage() }} </h2>
+        {% endif %} 
+
+{% endblock %}
