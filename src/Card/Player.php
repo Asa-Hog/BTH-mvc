@@ -16,6 +16,7 @@ class Player
     public function __construct()
     {
         $this->points = 0;
+        $this->cardhand = new CardHand();
     }
 
     /*

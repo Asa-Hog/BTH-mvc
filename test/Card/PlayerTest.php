@@ -11,36 +11,12 @@ use PHPUnit\Framework\TestCase;
  */
 class PlayerTest extends TestCase
 {
-    /**
-     * Construct object and verify that the object is of expected instance.
-     * Use no arguments.
-     */
-    public function testCreatePlayerWithNoArguments()
-    {
-        $player = new Player();
-        $this->assertInstanceOf("\App\Card\Player", $player);
-    }
 
 
-    /**
-     * 
-     */
-    public function testCardhandCreateObject()
-    {
-        $cardhand = new CardHand();
-        
-        $this->assertInstanceOf("\App\Card\CardHand", $cardhand);
-    }
 
-        /**
-     * 
-     */
-    public function testCardCreateObject()
-    {
-        $card = new Card("5", "♥", "5");
-        
-        $this->assertInstanceOf("\App\Card\Card", $card);
-    }
+
+
+
 
     /**
      * 
