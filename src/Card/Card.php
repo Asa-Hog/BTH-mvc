@@ -23,11 +23,11 @@ class Card
 
     /**
     * Gets details from a card
-    * @return
+    *
     */
     public function getDetails(): array
     {
-        return  [$this->char, $this->color, $this->value]; // Kolla att tillägget sista elementet inte förstör nåt
+        return  [$this->char, $this->color, $this->value];
     }
 
     /**

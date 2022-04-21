@@ -41,6 +41,11 @@ Search.appendIndex(
             "summary": "Describes\u0020a\u0020card\u0020hand",
             "url": "classes/App-Card-CardHand.html"
         },                {
+            "fqsen": "\\App\\Card\\CardHand\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Card-CardHand.html#method___construct"
+        },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003AaddCard\u0028\u0029",
             "name": "addCard",
             "summary": "Adds\u0020a\u0020card\u0020to\u0020the\u0020cardhand",

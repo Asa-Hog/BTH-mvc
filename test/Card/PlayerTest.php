@@ -11,60 +11,49 @@ use PHPUnit\Framework\TestCase;
  */
 class PlayerTest extends TestCase
 {
-
-
-
-
-
-
-
-    /**
-     * 
-     */
-    // public function testCardhandAddCard()
-    // {
-    //     $card = new Card();
-    //     $cardhand = new CardHand();
-    //     // $cardhand = $player->getCardhand();
-        
-    //     $this->assertInstanceOf("\App\Card\CardHand", $cardhand);
-    // }
-
     /**
      * Construct object and verify that the object is of expected instance.
-     * Use "Dealer".
+     * Use no arguments.
      */
-    // public function testCreateDealer()
-    // {
-    //     $player = new Player("Dealer");
-    //     $this->assertEquals("Dealer", $player->getName());
-    //     $this->assertEquals(3, $player->getNoOfDices());
-    //     $this->assertEquals(0, $player->getScore());
-    // }
+    public function testCreatePlayerWithNoArguments()
+    {
+        $player = new Player();
+        $this->assertInstanceOf("\App\Card\Player", $player);
+    }
 
     /**
-     * Construct object and verify that the object is of expected instance.
-     * Use "Player".
+     * Creates player and gets its cardhand and verifies that it's an instance of CardHand
      */
-    // public function testCreatePlayer()
-    // {
-    //     $player = new Player("Player");
-    //     $this->assertEquals("Player", $player->getName());
-    //     $this->assertEquals(3, $player->getNoOfDices());
-    //     $this->assertEquals(0, $player->getScore());
-    // }
+    public function testPlayerGetCardhand()
+    {
+        $player = new Player();
+        $res = $player->getCardhand();
+        $this->assertInstanceOf("\App\Card\CardHand", $res);
+    }
 
     /**
-     * Construct object and verify that the object is of expected instance.
-     * Use "Player".
+     * Verifies that the getPoints method returns a number
      */
-    // public function testCreatePlayerRollAndCheckScore()
-    // {
-    //     srand(12345);  // To seed random number for shuffle
-    //     $player = new Player("Player");
-    //     $this->assertEquals(0, $player->getScore());
-    //     $score = $player->rollDices();
-    //     $player->setScore($score);
-    //     $this->assertEquals($score, $player->getScore());
-    // }
+    public function testGetPoints()
+    {
+        $player = new Player();
+        $res = $player->getPoints();
+        $this->assertIsNumeric($res);
+    }
+
+    /**
+     * Verifies that the resetPoints method sets points to 0
+     */
+    public function testResetPoints()
+    {
+        $player = new Player();
+        $res = $player->resetPoints();
+        $this->assertEquals($res, 0);
+    }
+
+
+
+
+
+
 }

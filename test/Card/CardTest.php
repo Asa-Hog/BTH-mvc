@@ -1,9 +1,6 @@
 <?php
 
 namespace App\Card;
-use App\Card\Player;
-use App\Card\CardHand;
-use App\Game\Game;
 
 use PHPUnit\Framework\TestCase;
 
@@ -14,7 +11,7 @@ class CardTest extends TestCase
 {
     
     /**
-     * 
+     * Tests that created card object is instance of card
      */
     public function testCardCreateObject()
     {
@@ -24,121 +21,26 @@ class CardTest extends TestCase
     }
 
     /**
-     * 
+     * Tests that the getDetails method returns an array with three elements
+     **/
+    public function testCardGetDetails()
+    {
+        $card = new Card("5", "♥", "5");
+        $res = $card->getDetails();
+
+        $this->assertIsArray($res);
+        $this->assertSameSize($res, [1, 2, 3]);
+    }
+
+    /**
+     * Tests that the toString method returns a string
      */
     public function testCardToString()
     {
         $card = new Card("5", "♥", "5");
         $res = $card->toString();
+
         $this->assertIsString($res);
     }
-
-
-    // **************************************************
-    /**
-     * 
-     */
-    public function testCardhandCreateObject()
-    {
-        $cardhand = new CardHand();
-        
-        $this->assertInstanceOf("\App\Card\CardHand", $cardhand);
-    }
-
-    /**
-     * 
-     */
-    public function testCardhandGetCards()
-    {
-        $cardhand = new CardHand();
-        $res = $cardhand->getCards();
-        
-        $this->assertIsArray($res);
-    }
-
-
-    // **************************************************
-
-    /**
-     * 
-     */
-    public function testDeckCardsInDeck()
-    {
-        $deck = new Deck();
-        $res = $deck->cardsInDeck();
-        
-        $this->assertIsNumeric($res);
-    }
-
-        // **************************************************
-
-    /**
-     * Construct object and verify that the object is of expected instance.
-     * Use no arguments.
-     */
-    public function testCreatePlayerWithNoArguments()
-    {
-        $player = new Player();
-        $this->assertInstanceOf("\App\Card\Player", $player);
-    }
-
-    /**
-     * 
-     */
-    public function testPlayerGetCardhand()
-    {
-        $player = new Player();
-        $res = $player->getCardhand();
-        $this->assertInstanceOf("\App\Card\CardHand", $res);
-    }
-
-    /**
-     * 
-     */
-    public function testGetPoints()
-    {
-        $player = new Player();
-        $res = $player->getPoints();
-        $this->assertIsNumeric($res);
-    }
-
-    /**
-     * 
-     */
-    public function testResetPoints()
-    {
-        $player = new Player();
-        $res = $player->resetPoints();
-        $this->assertEquals($res, 0);
-    }
-
-    // ************************************
-
-    /**
-     * 
-     */
-    // public function testGameCreateObject()
-    // {
-    //     $deck = new Deck();
-    //     $player = new Player();
-    //     $bank = new Player();
-    //     $game = new Game($deck, $player, $bank);
-    //     $res = $game->getDeck();
-    //     $this->assertInstanceOf("\App\Card\Deck", $res);
-    // }
-
-    /**
-     * 
-     */
-    public function testGameGetMessage()
-    {
-        $deck = new Deck();
-        $player = new Player();
-        $bank = new Player();
-        $game = new Game($deck, $player, $bank);
-        $res = $game->getMessage();
-        $this->assertIsString($res);
-    }
-
 
 }
