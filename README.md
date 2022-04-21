@@ -31,3 +31,19 @@ composer phpstan
 composer phpcpd
 composer lint
 <!-- The command composer lint is intended to run all tools that do linting. It could be a good idea to also include phpcs to check your codestyle. -->
+
+<!-- PHP documentor -->
+tools/phpdoc/phpdoc
+
+<!-- DocBlock -->
+<!-- /** ............. */ -->
+
+composer phpdoc
+
+composer phpunit
+
+<!-- Review the code coverage -->
+
+<!-- Open a web browser to generated directory -->
+build/coverage/index.html
+ <!-- and review the report. -->

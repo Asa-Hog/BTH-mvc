@@ -2,15 +2,12 @@
 
 namespace App\Card;
 
+/**
+* Describes a deck of cards
+*/
 class Deck
 {
-    /**
-    * Describes a deck of cards
-    */
     private int $cardsInDeck;
-    // private array $shuffledCards;
-    // private int $numberOfCards;
-    // private Card $card;
     protected array $cards;
     private array $color = ["♥", "☘", "♦", "♠"];
     private array $char = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Kn", "Q", "K"];
@@ -18,10 +15,12 @@ class Deck
     private int $noOfColors;
     private int $noOfCards;
 
+    /*
+    * Constructor for deck. Creates cards and puts them in an array.
+    */
     public function __construct()
     {
         $this->cards = [];
-        // $this->shuffledCards = [];
         $this->noOfColors = 4;
         $this->noOfCards = 13;
 
@@ -33,17 +32,26 @@ class Deck
         }
     }
 
+    /*
+    * Gets the cards in the deck
+    */
     public function getCards()
     {
         return $this->cards;
     }
 
+    /*
+    * Returns number of cards left in the deck
+    */
     public function cardsInDeck()
     {
         $this->cardsInDeck = count($this->cards);
         return $this->cardsInDeck;
     }
 
+    /*
+    * Shuffles the cards in the deck
+    */
     public function getShuffledCards()
     {
         // Shufflar kortleken med alla kort i
@@ -51,6 +59,9 @@ class Deck
         return $this->cards;
     }
 
+    /*
+    * Draws a card from the deck
+    */
     public function draw()
     {
         // $shuffledCards = self::getShuffledCards($this->cards); // Slumpar korten i kortleken
