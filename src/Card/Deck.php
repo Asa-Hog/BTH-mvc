@@ -15,7 +15,7 @@ class Deck
     private int $noOfColors;
     private int $noOfCards;
 
-    /*
+    /**
     * Constructor for deck. Creates cards and puts them in an array.
     */
     public function __construct()
@@ -32,16 +32,18 @@ class Deck
         }
     }
 
-    /*
+    /**
     * Gets the cards in the deck
+    * @return array with the cards in the deck
     */
-    public function getCards()
+    public function getCards() : array
     {
         return $this->cards;
     }
 
-    /*
+    /**
     * Returns number of cards left in the deck
+    * @return int with number of cards in the deck
     */
     public function cardsInDeck()
     {
@@ -49,8 +51,9 @@ class Deck
         return $this->cardsInDeck;
     }
 
-    /*
+    /**
     * Shuffles the cards in the deck
+    * @return array with $this->cards in a shuffled order 
     */
     public function getShuffledCards()
     {
@@ -59,8 +62,9 @@ class Deck
         return $this->cards;
     }
 
-    /*
+    /**
     * Draws a card from the deck
+    * @return array with first element the drawn card, second element number of cards left in the deck
     */
     public function draw()
     {

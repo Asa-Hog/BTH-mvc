@@ -9,6 +9,9 @@ class CardHand
 {
     private array $cards; // Finns en array cards
 
+    /**
+    * Constructor for the class
+    */
     public function __construct()
     {
         $this->cards = []; // tillhör detta objekt
@@ -16,6 +19,7 @@ class CardHand
 
     /**
     * Adds a card to the cardhand
+    * @param Card $card to add to the cardhand
     */
     public function addCard(Card $card): void
     {
@@ -24,6 +28,7 @@ class CardHand
 
     /**
     * Gets the cards from the cardhand
+    * @return array with the cards in the cardhand
     */
     public function getCards(): array
     {

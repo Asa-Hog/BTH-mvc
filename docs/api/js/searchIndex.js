@@ -43,7 +43,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020for\u0020the\u0020class",
             "url": "classes/App-Card-CardHand.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003AaddCard\u0028\u0029",
@@ -68,12 +68,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Deck\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020for\u0020deck.\u0020Creates\u0020cards\u0020and\u0020puts\u0020them\u0020in\u0020an\u0020array.",
             "url": "classes/App-Card-Deck.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\Deck\u003A\u003AgetCards\u0028\u0029",
             "name": "getCards",
-            "summary": "",
+            "summary": "Gets\u0020the\u0020cards\u0020in\u0020the\u0020deck",
             "url": "classes/App-Card-Deck.html#method_getCards"
         },                {
             "fqsen": "\\App\\Card\\Deck\u003A\u003A\u0024cardsInDeck",
@@ -83,12 +83,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Deck\u003A\u003AgetShuffledCards\u0028\u0029",
             "name": "getShuffledCards",
-            "summary": "",
+            "summary": "Shuffles\u0020the\u0020cards\u0020in\u0020the\u0020deck",
             "url": "classes/App-Card-Deck.html#method_getShuffledCards"
         },                {
             "fqsen": "\\App\\Card\\Deck\u003A\u003Adraw\u0028\u0029",
             "name": "draw",
-            "summary": "",
+            "summary": "Draws\u0020a\u0020card\u0020from\u0020the\u0020deck",
             "url": "classes/App-Card-Deck.html#method_draw"
         },                {
             "fqsen": "\\App\\Card\\Deck\u003A\u003A\u0024cards",
@@ -138,32 +138,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor.\u0020Gives\u0020player\u00200\u0020points.",
             "url": "classes/App-Card-Player.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AaddCardhand\u0028\u0029",
             "name": "addCardhand",
-            "summary": "",
+            "summary": "Adds\u0020a\u0020cardhand\u0020to\u0020the\u0020player",
             "url": "classes/App-Card-Player.html#method_addCardhand"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AgetCardhand\u0028\u0029",
             "name": "getCardhand",
-            "summary": "",
+            "summary": "Gets\u0020the\u0020player\u0027s\u0020cardhand",
             "url": "classes/App-Card-Player.html#method_getCardhand"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AsetPoints\u0028\u0029",
             "name": "setPoints",
-            "summary": "",
+            "summary": "Set\u0020points",
             "url": "classes/App-Card-Player.html#method_setPoints"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AresetPoints\u0028\u0029",
             "name": "resetPoints",
-            "summary": "",
+            "summary": "Resets\u0020points\u0020for\u0020the\u0020player",
             "url": "classes/App-Card-Player.html#method_resetPoints"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003AgetPoints\u0028\u0029",
             "name": "getPoints",
-            "summary": "",
+            "summary": "Get\u0020player\u0027s\u0020points",
             "url": "classes/App-Card-Player.html#method_getPoints"
         },                {
             "fqsen": "\\App\\Card\\Player\u003A\u003A\u0024cardhand",
@@ -388,47 +388,47 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020for\u0020the\u0020class",
             "url": "classes/App-Game-Game.html#method___construct"
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003Astart\u0028\u0029",
             "name": "start",
-            "summary": "",
+            "summary": "Method\u0020that\u0020starts\u0020the\u0020game\u0020\u002D\u0020shuffles\u0020the\u0020deck",
             "url": "classes/App-Game-Game.html#method_start"
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003AgetBank\u0028\u0029",
             "name": "getBank",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020bank\u0020of\u0020the\u0020game",
             "url": "classes/App-Game-Game.html#method_getBank"
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003AgetPlayer\u0028\u0029",
             "name": "getPlayer",
-            "summary": "",
+            "summary": "Returns\u0020the\u0020player\u0020of\u0020the\u0020game",
             "url": "classes/App-Game-Game.html#method_getPlayer"
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003AgetDeck\u0028\u0029",
             "name": "getDeck",
-            "summary": "",
+            "summary": "Gets\u0020the\u0020deck",
             "url": "classes/App-Game-Game.html#method_getDeck"
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003AgetMessage\u0028\u0029",
             "name": "getMessage",
-            "summary": "",
+            "summary": "Returns\u0020a\u0020message\u0020of\u0020who\u0020won\u0020the\u0020game",
             "url": "classes/App-Game-Game.html#method_getMessage"
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003AsetMessage\u0028\u0029",
             "name": "setMessage",
-            "summary": "",
+            "summary": "Sets\u0020a\u0020message\u0020to\u0020the\u0020game",
             "url": "classes/App-Game-Game.html#method_setMessage"
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003AgetWinner\u0028\u0029",
             "name": "getWinner",
-            "summary": "",
+            "summary": "Gets\u0020the\u0020winner\u0020of\u0020the\u0020game",
             "url": "classes/App-Game-Game.html#method_getWinner"
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003AsetWinner\u0028\u0029",
             "name": "setWinner",
-            "summary": "",
+            "summary": "Sets\u0020when\u0020there\u0020is\u0020a\u0020winner\u0020of\u0020the\u0020game",
             "url": "classes/App-Game-Game.html#method_setWinner"
         },                {
             "fqsen": "\\App\\Game\\Game\u003A\u003A\u0024player",

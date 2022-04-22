@@ -13,6 +13,12 @@ class Game
     private string $winner;
     private string $message;
 
+    /**
+    * Constructor for the class
+    * @param Deck $deck Tha deck corresponding to the game
+    * @param Player $player The player in the game
+    * @param Player $bank The bank in the game
+    */
     public function __construct(Deck $deck, Player $player, Player $bank)
     {
         $this->deck = $deck;
@@ -23,26 +29,45 @@ class Game
         $this->setMessage("");
     }
 
+    /**
+     * Method that starts the game - shuffles the deck
+     */
     public function start(): void
     {
         $this->deck->getShuffledCards();
     }
 
+    /**
+     * Returns the bank of the game
+     * @return Player $bank The bank in the game
+     */
     public function getBank(): Player
     {
         return $this->bank;
     }
 
+    /**
+     * Returns the player of the game
+     * @return Player $player The player in the game
+     */
     public function getPlayer(): Player
     {
         return $this->player;
     }
 
+    /**
+     * Gets the deck
+     * @return Deck $deck The deck corresponding to the game
+     */
     public function getDeck(): Deck
     {
         return $this->deck;
     }
 
+    /**
+     * Returns a message of who won the game
+     * @return string Message containing who won the game
+     */
     public function getMessage(): string
     {
         if ($this->getPlayer()->getPoints() > 21) {
@@ -68,17 +93,27 @@ class Game
         return $this->message;
     }
 
+    /**
+     * Sets a message to the game
+     */
     public function setMessage(string $message): void
     {
         $this->message = $message;
     }
 
 
+    /**
+     * Gets the winner of the game
+     * @return string $winner The winner of the game
+     */
     public function getWinner(): string
     {
         return $this->winner;
     }
 
+    /**
+     * Sets when there is a winner of the game
+     */
     public function setWinner(string $winner): void
     {
         $this->winner = $winner;
