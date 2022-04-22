@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Card;
+
 use App\Card\Player;
 use App\Card\CardHand;
 use App\Game\Game;

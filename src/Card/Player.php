@@ -21,7 +21,7 @@ class Player
 
     /**
     * Adds a cardhand to the player
-    * @param CardHand $cardhand that corresponds to the player 
+    * @param CardHand $cardhand that corresponds to the player
     */
     public function addCardhand(CardHand $cardhand): void
     {
@@ -39,7 +39,7 @@ class Player
 
     /**
     * Set points
-    * @param int The points the player got
+    * @param int $points The points the player got
     */
     public function setPoints(int $points): void
     {

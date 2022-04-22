@@ -36,7 +36,7 @@ class Deck
     * Gets the cards in the deck
     * @return array with the cards in the deck
     */
-    public function getCards() : array
+    public function getCards(): array
     {
         return $this->cards;
     }
@@ -53,7 +53,7 @@ class Deck
 
     /**
     * Shuffles the cards in the deck
-    * @return array with $this->cards in a shuffled order 
+    * @return array with $this->cards in a shuffled order
     */
     public function getShuffledCards()
     {

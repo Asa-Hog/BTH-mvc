@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Card;
+
 use App\Card\Player;
 use App\Card\CardHand;
 use App\Game\Game;
@@ -19,7 +20,7 @@ class DeckTest extends TestCase
     {
         $deck = new Deck();
         $res = $deck->cardsInDeck();
-        
+
         $this->assertIsNumeric($res);
         $this->assertEquals($res, 52);
     }
@@ -31,7 +32,7 @@ class DeckTest extends TestCase
     {
         $deck = new Deck();
         $res = $deck->draw();
-        
+
         $this->assertIsArray($res);
         $this->assertSameSize($res, [1, 2]);
     }

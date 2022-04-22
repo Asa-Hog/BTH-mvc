@@ -9,14 +9,13 @@ use PHPUnit\Framework\TestCase;
  */
 class CardTest extends TestCase
 {
-    
     /**
      * Tests that created card object is instance of card
      */
     public function testCardCreateObject()
     {
         $card = new Card("5", "♥", "5");
-        
+
         $this->assertInstanceOf("\App\Card\Card", $card);
     }
 
@@ -42,5 +41,4 @@ class CardTest extends TestCase
 
         $this->assertIsString($res);
     }
-
 }

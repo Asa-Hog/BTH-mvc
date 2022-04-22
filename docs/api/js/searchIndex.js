@@ -123,12 +123,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Deck2",
             "name": "Deck2",
-            "summary": "Describes\u0020a\u0020deck\u0020of\u0020cards",
+            "summary": "Describes\u0020a\u0020deck\u0020of\u0020cards\u0020with\u00202\u0020jokers",
             "url": "classes/App-Card-Deck2.html"
         },                {
             "fqsen": "\\App\\Card\\Deck2\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Describes\u0020a\u0020deck\u0020of\u0020cards\u0020with\u00202\u0020jokers",
+            "summary": "Constructor\u0020of\u0020the\u0020class",
             "url": "classes/App-Card-Deck2.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\Player",

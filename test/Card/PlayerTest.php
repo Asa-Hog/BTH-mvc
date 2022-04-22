@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Card;
+
 use App\Card\Player;
 use App\Card\CardHand;
 
@@ -50,10 +51,4 @@ class PlayerTest extends TestCase
         $res = $player->resetPoints();
         $this->assertEquals($res, 0);
     }
-
-
-
-
-
-
 }
