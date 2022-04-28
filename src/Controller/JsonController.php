@@ -14,7 +14,7 @@ use App\Card;
 class JsonController extends AbstractController
 {
     /**
-     * @Route("/api/deck", name="json-deck",
+     * @Route("/api/deck", name="card-api-deck",
      * methods={"GET","POST"})
      */
     public function jsonDeck(): Response
@@ -29,7 +29,7 @@ class JsonController extends AbstractController
         // }
 
         for ($i = 0, $size = count($cards); $i < $size; $i++) {
-            array_push($cardArray, $cards[$i]->to_string());
+            array_push($cardArray, $cards[$i]->toString());
             // array med strängar
         }
 

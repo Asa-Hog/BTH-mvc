@@ -7,8 +7,12 @@
 
 <h1>Home</h1>
 
-<p>I'm Åsa Höglund and this is my me page for the course <a href = "https://dbwebb.se/kurser/mvc-v2/">Object oriented web technologies</a> at BTH.</p>
+<div class = "home-container">
+    <img class = "me-pic" src = "{{ asset("img/me.jpg") }}" width = "200px"  alt = "Åsa Höglund">
 
-<img src = "{{ asset("img/me.jpg") }}" width = "200px" alt = "Åsa Höglund">
-{# <p><a href = "{{ absolute_url("img/me.jpg") }}">Larger image</a></p> #}
+    <p class = "right">I'm Åsa Höglund and this is my me page for the course <a href = "https://dbwebb.se/kurser/mvc-v2/">Object oriented web technologies</a> at BTH.</p>
+
+
+</div>
+
 {% endblock %}

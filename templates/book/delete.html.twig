@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Delete book{% endblock %}
+
+{% block content %} 
+
+<h1>Delete book</h1>
+
+<form method="post">
+    <fieldset>
+    <legend>Book details</legend>
+    <p>
+        <label>Title:
+            <input type="text" name="title" value="">
+        </label>
+    </p>
+    <p>
+        <label>ISBN:
+            <input type="number" name="isbn" value="" required>
+        </label>
+    </p>
+    <p>
+        <label>Author:
+            <input type="text" name="author" value="">
+        </label>
+    </p>
+    <p>
+        <label>Image link:
+            <input type="text" name="image" value="">
+        </label>
+    </p>
+    <p>
+        <input type="submit" value="Save">
+    </p>
+    </fieldset>
+</form>
+
+
+
+{% endblock %}

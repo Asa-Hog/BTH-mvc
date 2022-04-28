@@ -17,7 +17,7 @@ use App\Card\Deck2;
 class CardController extends AbstractController
 {
     /**
-     * @Route("/deck", name="deck")
+     * @Route("card/deck", name="card-deck")
      */
     public function deck(): Response
     {
@@ -31,7 +31,7 @@ class CardController extends AbstractController
     }
 
     /**
-     * @Route("/shuffle", name="shuffle")
+     * @Route("shuffle", name="card-shuffle")
      */
     public function shuffle(SessionInterface $session): Response
     {
@@ -51,7 +51,7 @@ class CardController extends AbstractController
     }
 
     /**
-     * @Route("/draw", name="draw")
+     * @Route("/draw", name="card-draw")
      */
     public function draw(
         SessionInterface $session
@@ -70,7 +70,7 @@ class CardController extends AbstractController
     }
 
     /**
-     * @Route("/draw-number", name="draw-number",
+     * @Route("/draw-number", name="card-draw-number",
      * methods={"GET", "POST"})
      */
     public function drawNumber(Request $request, SessionInterface $session): Response
@@ -82,7 +82,7 @@ class CardController extends AbstractController
 
         $data = [
             'number' => $request->query->get('number'),
-            'cardsLeft' => $deck->cards_in_deck(),
+            'cardsLeft' => $deck->cardsInDeck(),
         ];
 
         $removedCardsSet = [];
@@ -107,7 +107,7 @@ class CardController extends AbstractController
 
     // /deal/{players}/{cards}
     /**
-     * @Route("/deal", name="deal",
+     * @Route("/deal", name="card-deal",
      * methods={"GET", "POST"}))
      */
     public function deal(
@@ -121,7 +121,7 @@ class CardController extends AbstractController
             'title' => 'Deal',
             'players' => $request->query->get('players'),
             'cards' => $request->query->get('cards'),
-            'cardsLeft' => $deck->cards_in_deck()
+            'cardsLeft' => $deck->cardsInDeck()
         ];
 
         $removedCardsSet = []; // de som försvinner från kortleken
@@ -141,7 +141,7 @@ class CardController extends AbstractController
             }
         }
 
-        $data['cardsLeft'] = $deck->cards_in_deck();
+        $data['cardsLeft'] = $deck->cardsInDeck();
         $data['removedCardsSet'] = $removedCardsSet; //  borttagna kort
         $data['playersArray'] = $playersArray;
         $data['noOfPlayers'] = count($playersArray);
@@ -155,7 +155,7 @@ class CardController extends AbstractController
     }
 
     /**
-     * @Route("/deck2", name="deck2")
+     * @Route("/deck2", name="card-deck2")
      */
     public function deck2(): Response
     {
@@ -169,7 +169,7 @@ class CardController extends AbstractController
     }
 
     /**
-     * @Route("/game-card", name="game-card")
+     * @Route("/game-card", name="card-game-card")
      */
     public function gameCard(): Response
     {

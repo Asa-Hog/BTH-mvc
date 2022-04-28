@@ -9,17 +9,17 @@
 
 <h3>Classes</h3>
 
-<a href = "{{ asset("deck") }}">card/deck</a></br>
-<a href = "{{ asset("shuffle") }}">card/deck/shuffle</a></br>
-<a href = "{{ asset("draw") }}">card/deck/draw</a></br>
-<a href = "{{ asset("draw-number") }}">card/deck/draw/:number</a></br>
-<a href = "{{ asset("deal") }}">card/deck/deal/:players/:cards</a></br>
-<a href = "{{ asset("deck2") }}">card/deck2</a>
+<a href = "{{ path("card-deck") }}">card/deck</a></br>
+<a href = "{{ path("card-shuffle") }}">card/deck/shuffle</a></br>
+<a href = "{{ path("card-draw") }}">card/deck/draw</a></br>
+<a href = "{{ path("card-draw-number") }}">card/deck/draw/:number</a></br>
+<a href = "{{ path("card-deal") }}">card/deck/deal/:players/:cards</a></br>
+<a href = "{{ path("card-deck2") }}">card/deck2</a>
 
 <h3>JSON API</h3>
-<a href = "{{ asset("api/deck") }}">card/api/deck</a></br>
+<a href = "{{ path("card-api-deck") }}">card/api/deck</a></br>
 
 <h3>Problem solving</h3>
-<a href = "{{ asset("game-card") }}">game/card</a></br>
+<a href = "{{ path("card-game-card") }}">game/card</a></br>
 
 {% endblock %}

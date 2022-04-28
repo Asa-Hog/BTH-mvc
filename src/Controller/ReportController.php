@@ -76,4 +76,12 @@ class ReportController extends AbstractController
     {
         return $this->render('game.html.twig');
     }
+
+    /**
+     * @Route("/library", name="library")
+     */
+    public function library(): Response
+    {
+        return $this->render('library.html.twig');
+    }
 }

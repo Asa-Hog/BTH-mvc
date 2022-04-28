@@ -45,14 +45,14 @@
                         {% set count = count + 1 %}
                             <p>Player {{ count }}: </p>
                             <div class = "drawn">
-                                {% for card in player.get_cardhand().get_cards() %}
+                                {% for card in player.getCardhand().getCards() %}
 
                                     <div class= "card">
-                                        <div class = "{{ card.get_details[1] }}">
-                                            {{ card.get_details[1] }}
+                                        <div class = "{{ card.getDetails[1] }}">
+                                            {{ card.getDetails[1] }}
                                         </div>
                                         <div>
-                                            {{ card.get_details[0] }}
+                                            {{ card.getDetails[0] }}
                                         </div>
                                     </div>
                                 {% endfor %}

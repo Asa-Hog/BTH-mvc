@@ -19,7 +19,7 @@ use App\Game\Game;
 class GameController extends AbstractController
 {
     /**
-     * @Route("/start", name="start")
+     * @Route("/game/start", name="game-start")
      */
     public function start(SessionInterface $session): Response
     {
@@ -55,7 +55,7 @@ class GameController extends AbstractController
     }
 
     /**
-     * @Route("/draw", name="draw")
+     * @Route("/game/draw", name="game-draw")
      */
     public function draw(SessionInterface $session): Response
     {
@@ -76,7 +76,7 @@ class GameController extends AbstractController
     }
 
     /**
-     * @Route("/stop", name="stop")
+     * @Route("/game/stop", name="game-stop")
      */
     public function stop(SessionInterface $session): Response
     {

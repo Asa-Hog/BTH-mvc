@@ -4,12 +4,16 @@
 
 {% block content %}
 
-<h1>Kortspelet 21</h1>
+<h1>Card game 21</h1>
+
+<div class="playfield">
 
 <h2>Player: </h2>
 
-<a href = "draw">Draw card</a>
-<a href = "stop">Stop</a>
+
+
+<a href = "game-draw">Draw card</a>
+<a href = "game-stop">Stop</a>
     <div class = "drawn">
         {% for card in game.getPlayer().getCardhand().getCards() %}
             <div class= "card">
@@ -47,5 +51,6 @@
         {% else %}
         <h2> {{ game.getMessage() }} </h2>
         {% endif %} 
+</div>
 
 {% endblock %}

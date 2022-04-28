@@ -5,6 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="{{ asset("favicon.ico") }}">
         <link rel="stylesheet" href="{{ asset("css/style.css") }}"/>
+        {# <link rel="stylesheet" href="{{ url("css/style.css") }}"/> #}
     </head>
 
     <body>
@@ -13,7 +14,7 @@
             <div class="page-content">
                 <div class = "header">
                     <div class="siteheader">
-                        <h1>Object oriented web technologies - me page</h1>
+                        <h1 class = "sitetitle">Object oriented web technologies</h1>
                     </div>
 
                     <div class="navbar">
@@ -21,10 +22,11 @@
                             <ul>
                                 <li><a href = "{{ path("home") }}">Home</a></li>
                                 <li><a href = "{{ path("about") }}">About</a></li>
-                                <li><a href = "{{ path("report") }}">Report</a></li>
-                                <li><a href = "{{ path("debug") }}">Debug</a></li>
+                                {# <li><a href = "{{ path("debug") }}">Debug</a></li> #}
                                 <li><a href = "{{ path("card") }}">Card</a></li>
                                 <li><a href = "{{ path("game") }}">Game</a></li>
+                                <li><a href = "{{ path("book") }}">Library</a></li>
+                                <li><a href = "{{ path("report") }}">Report</a></li>
                             </ul>
                         </nav>
                     </div>
