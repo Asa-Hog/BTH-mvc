@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create user{% endblock %}
+
+{% block content %} 
+
+<h1>Create user</h1>
+
+<form action:"{{ path('user_create_save') }}" method="post">
+    <fieldset>
+    <legend>User details</legend>
+    <p>
+        <label>Email:
+            <input type="email" name="email" value="{{""}}">
+        </label>
+    </p>
+    <p>
+        <label>Acronym:
+            <input type="number" name="acronym" value="" required>
+        </label>
+    </p>
+    <p>
+        <label>Name:
+            <input type="text" name="name" value="">
+        </label>
+    </p>
+    <p>
+        <label>Password:
+            <input type="password" name="pwd" value="">
+        </label>
+    </p>
+    <p>
+        <label>Type (admin/doe):
+            <input type="type" name="type" value="">
+        </label>
+    </p>
+    <p>
+        <input class = "button" type="submit" value="Create">
+    </p>
+    </fieldset>
+</form>
+
+
+
+
+
+
+
+{% endblock %}
