@@ -32,45 +32,40 @@ class UserController extends AbstractController
         $entityManager = $doctrine->getManager();
 
         // $user = new User();
-        // $user->setTitle('Where the crawdads sing');
-        // $user->setIsbn(9781472154668);
-        // $user->setAuthor('Delia Owens');
-        // $user->setImage('where-the-crawdads-sing.jpg');
+        // $user->setEmail('doe@doe.com');
+        // $user->setAcronym('doe');
+        // $user->setName('doe');
+        // $user->setPwd('doe');
+        // $user->setType('doe');
         // $entityManager->persist($user);
 
         // $user = new User();
-        // $user->setTitle('A thousand splendid suns');
-        // $user->setIsbn(9780747585893);
-        // $user->setAuthor('Khaled Hosseini');
-        // $user->setImage('a-thousand-splendid-suns.jpg');
+        // $user->setEmail('admin@admin.com');
+        // $user->setAcronym('admin');
+        // $user->setName('admin');
+        // $user->setPwd('admin');
+        // $user->setType('admin');
         // $entityManager->persist($user);
 
-
         // GET FROM FORM
-        $title = $request->request->get('title');
-        $isbn = $request->request->get('isbn');
-        $author = $request->request->get('author');
-        $image = $request->request->get('image');
+        $email = $request->request->get('email');
+        $acronym = $request->request->get('acronym');
+        $name = $request->request->get('name');
+        $pwd = $request->request->get('pwd');
+        $type = $request->request->get('type');
 
         $user = new User();
-        $user->setTitle($title);
-        $user->setIsbn($isbn);
-        $user->setAuthor($author);
-        $user->setImage($image);
-        // $user->setName('Keyboard_num_' . rand(1, 9));
-        // $user->setValue(rand(100, 999));
+        $user->setEmail($email);
+        $user->setAcronym($acronym);
+        $user->setName($name);
+        $user->setPwd($pwd);
+        $user->setType($type);
 
-        // tell Doctrine you want to (eventually) save the User
-        // (no queries yet)
         $entityManager->persist($user);
 
-        // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
-        // return new Response('Saved new user with id '.$user->getId());
-        // return new Response('Saved new user' );
         return $this->redirectToRoute('user_show_all');
-        // return $this->render('user/show.html.twig');
     }
 
     /**
@@ -198,15 +193,17 @@ class UserController extends AbstractController
         }
 
         // GET FROM FORM
-        $title = $request->request->get('title');
-        $isbn = $request->request->get('isbn');
-        $author = $request->request->get('author');
-        $image = $request->request->get('image');
+        $email = $request->request->get('email');
+        $acronym = $request->request->get('acronym');
+        $name = $request->request->get('name');
+        $pwd = $request->request->get('pwd');
+        $type = $request->request->get('type');
 
-        $user->setTitle($title);
-        $user->setIsbn($isbn);
-        $user->setAuthor($author);
-        $user->setImage($image);
+        $user->setEmail($email);
+        $user->setAcronym($acronym);
+        $user->setName($name);
+        $user->setPwd($pwd);
+        $user->setType($type);
         // $user->setValue($value); // OBS Utför ändringarna här
         $entityManager->flush();
 

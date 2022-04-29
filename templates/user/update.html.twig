@@ -1,39 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Update book{% endblock %}
+{% block title %}Update user{% endblock %}
 
 {% block content %} 
 
-<h1>Update book</h1>
+<h1>Update user</h1>
 
 
-<form action:"{{ path('book_update_process', {'id':book.getId()} ) }}" method="post">
-    <fieldset>
-    <legend>Book details</legend>
-    <p>
-        <label>Title:
-            <input type="text" name="title" value="{{ book.getTitle() }}">
-        </label>
-    </p>
-    <p>
-        <label>ISBN:
-            <input type="number" name="isbn" value="{{ book.getIsbn() }}" required>
-        </label>
-    </p>
-    <p>
-        <label>Author:
-            <input type="text" name="author" value="{{ book.getAuthor() }}">
-        </label>
-    </p>
-    <p>
-        <label>Image link:
-            <input type="text" name="image" value="{{ book.getImage() }}">
-        </label>
-    </p>
-    <p>
-        <input class = "button" type="submit" value="Update">
-    </p>
-    </fieldset>
-</form>
-
-{% endblock %}
+<form action:"{{ path('user_update_process', {'id':user.getId()} ) }}" method="post">
+        <fieldset>
+            <legend>User details</legend>
+            <p>
+                <label>Email:
+                    <input type="email" name="email" value="{{ user.getEmail() }}">
+                </label>
+            </p>
+            <p>
+                <label>Acronym:
+                    <input type="text" name="acronym" value="{{ user.getAcronym() }}" required>
+                </label>
+            </p>
+            <p>
+                <label>Name:
+                    <input type="text" name="name" value="{{ user.getName() }}">
+                </label>
+            </p>
+            <p>
+                <label>Password:
+                    <input type="password" name="pwd" value="{{ user.getPwd() }}" required>
+                </label>
+            </p>
+            <p>
+                <label>Type (admin/doe):
+                    <input type="type" name="type" value="{{ user.getType() }}">
+                </label>
+            </p>
+            <p>
+                <input class = "button" type="submit" value="Update">
+            </p>
+        </fieldset>
+    </form>
+    
+    {% endblock %}
+    

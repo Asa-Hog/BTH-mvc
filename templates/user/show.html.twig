@@ -1,23 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Show all books{% endblock %}
+{% block title %}Show all users{% endblock %}
 
 {% block content %} 
 
-<h1>Show all books</h1>
+<h1>Show all users</h1>
 
-<a class="button" href = "{{ path("book_create") }}">Create book</a></br>
+<a class="button" href = "{{ path("user_create") }}">Create user</a></br>
 
 <table>
-    <th>Title</th><th>ISBN</th><th>Author</th><th>Image</th><th>Update</th><th>Delete</th>
-    {% for book in books %}
+    <th>Email</th><th>Acronym</th><th>Name</th><th>Password</th><th>Type</th><th>Update</th><th>Delete</th>
+    {% for user in users %}
         <tr>
-            <td><a href = "{{ path("book_by_id", {'id':book.getId()} ) }}">{{ book.getTitle() }}</a></td>
-            <td>{{ book.getIsbn() }}</td>
-            <td>{{ book.getAuthor() }}</td>
-            <td>{{ book.getImage() }}</td>
-            <td><a href = "{{ path("book_update", {'id':book.getId()} ) }}"> Update</a></td>
-            <td><a href = "{{ path("book_delete_by_id", {'id':book.getId()} ) }}"> Delete</a></td>
+            <td>{{ user.getEmail() }}</td>
+            <td><a href = "{{ path("user_by_id", {'id':user.getId()} ) }}">{{ user.getAcronym() }}</a></td>
+            <td>{{ user.getName() }}</td>
+            <td>{{ user.getPwd() }}</td>
+            <td>{{ user.getType() }}</td>
+            <td><a href = "{{ path("user_update", {'id':user.getId()} ) }}"> Update</a></td>
+            <td><a href = "{{ path("user_delete_by_id", {'id':user.getId()} ) }}"> Delete</a></td>
         </tr>
         {% endfor %}
     </table>

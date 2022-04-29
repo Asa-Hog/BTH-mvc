@@ -11,31 +11,31 @@
         <legend>User details</legend>
         <p>
             <label>Email:
-                <input type="email" name="email" value="">
+                <input type="email" name="email" value="{{ user.getEmail() }}">
             </label>
         </p>
         <p>
             <label>Acronym:
-                <input type="number" name="acronym" value="" required>
+                <input type="text" name="acronym" value="{{ user.getAcronym() }}" required>
             </label>
         </p>
         <p>
             <label>Name:
-                <input type="text" name="name" value="">
+                <input type="text" name="name" value="{{ user.getName() }}">
             </label>
         </p>
         <p>
             <label>Password:
-                <input type="password" name="pwd" value="">
+                <input type="password" name="pwd" value="{{ user.getPwd() }}" required>
             </label>
         </p>
         <p>
             <label>Type (admin/doe):
-                <input type="type" name="type" value="">
+                <input type="type" name="type" value="{{ user.getType() }}">
             </label>
         </p>
         <p>
-            <input class = "button" type="submit" value="Create">
+            <input class = "button" type="submit" value="Delete">
         </p>
     </fieldset>
 </form>

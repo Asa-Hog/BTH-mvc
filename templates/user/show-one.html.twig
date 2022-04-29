@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Create book{% endblock %}
+{% block title %}Create user{% endblock %}
 
 {% block content %} 
 
-<h1>Book details</h1>
+<h1>User details</h1>
 
 <div class = "center">
-    <img src = "{{ asset("img/"~book.getImage()) }}" width = "250px"  alt = "Book cover">
+    <img src = "{{ asset("img/"~user.getImage()) }}" width = "250px"  alt = "User image">
 
 
-    <h2>{{book.getTitle()}}</h2>
-    <p>Author: {{book.getAuthor()}}</h3><br>
+    <h2>{{user.getTitle()}}</h2>
+    <p>Author: {{user.getAuthor()}}</h3><br>
     <br>
-    <h3>ISBN: {{book.getIsbn()}}</h3>
+    <h3>ISBN: {{user.getIsbn()}}</h3>
 </div>
 
 {% endblock %} 
