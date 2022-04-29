@@ -9,10 +9,11 @@
 <a class="button" href = "{{ path("user_create") }}">Create user</a></br>
 
 <table>
-    <th>Email</th><th>Acronym</th><th>Name</th><th>Password</th><th>Type</th><th>Update</th><th>Delete</th>
+    <th>Email</th><th>Image</th><th>Acronym</th><th>Name</th><th>Password</th><th>Type</th><th>Update</th><th>Delete</th>
     {% for user in users %}
         <tr>
             <td>{{ user.getEmail() }}</td>
+            <td>{{ user.getImg() }}</td>
             <td><a href = "{{ path("user_by_id", {'id':user.getId()} ) }}">{{ user.getAcronym() }}</a></td>
             <td>{{ user.getName() }}</td>
             <td>{{ user.getPwd() }}</td>

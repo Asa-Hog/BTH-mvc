@@ -15,6 +15,11 @@
             </label>
         </p>
         <p>
+            <label>Image:
+                <input type="text" name="img" value="{{ user.getImg() }}">
+            </label>
+        </p>
+        <p>
             <label>Acronym:
                 <input type="text" name="acronym" value="{{ user.getAcronym() }}" required>
             </label>
@@ -26,7 +31,7 @@
         </p>
         <p>
             <label>Password:
-                <input type="password" name="pwd" value="{{ user.getPwd() }}" required>
+                <input type="password" name="pwd" value="{{ user.getPwd() }}">
             </label>
         </p>
         <p>

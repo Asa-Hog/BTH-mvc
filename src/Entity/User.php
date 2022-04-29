@@ -16,6 +16,9 @@ class User
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $email;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $img;
+
     #[ORM\Column(type: 'string', length: 255)]
     private $acronym;
 
@@ -41,6 +44,18 @@ class User
     public function setEmail(?string $email): self
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(?string $img): self
+    {
+        $this->img = $img;
 
         return $this;
     }

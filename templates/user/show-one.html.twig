@@ -7,13 +7,14 @@
 <h1>User details</h1>
 
 <div class = "center">
-    <img src = "{{ asset("img/"~user.getImage()) }}" width = "250px"  alt = "User image">
+    <img src = "{{ asset("img/"~user.getImg()) }}" width = "250px"  alt = "User image">
 
 
-    <h2>{{user.getTitle()}}</h2>
-    <p>Author: {{user.getAuthor()}}</h3><br>
-    <br>
-    <h3>ISBN: {{user.getIsbn()}}</h3>
+    <h3>Email: {{user.getEmail()}}</h3>
+    <h3>Acronym: {{user.getAcronym()}}</h3>
+    <h3>Name: {{user.getName()}}</h3>
+    <h3>Password (TOP SECRET!): {{user.getPwd()}}</h3>
+    <h3>Type: {{user.getType()}}</h3>
 </div>
 
 {% endblock %} 

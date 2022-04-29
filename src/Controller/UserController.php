@@ -33,6 +33,7 @@ class UserController extends AbstractController
 
         // $user = new User();
         // $user->setEmail('doe@doe.com');
+        // $user->setImg('smiley-pixabay.png');
         // $user->setAcronym('doe');
         // $user->setName('doe');
         // $user->setPwd('doe');
@@ -41,6 +42,7 @@ class UserController extends AbstractController
 
         // $user = new User();
         // $user->setEmail('admin@admin.com');
+        // $user->setImg('smiley-pixabay.png');
         // $user->setAcronym('admin');
         // $user->setName('admin');
         // $user->setPwd('admin');
@@ -49,6 +51,7 @@ class UserController extends AbstractController
 
         // GET FROM FORM
         $email = $request->request->get('email');
+        $img = $request->request->get('img');
         $acronym = $request->request->get('acronym');
         $name = $request->request->get('name');
         $pwd = $request->request->get('pwd');
@@ -56,6 +59,7 @@ class UserController extends AbstractController
 
         $user = new User();
         $user->setEmail($email);
+        $user->setImg($img);
         $user->setAcronym($acronym);
         $user->setName($name);
         $user->setPwd($pwd);
@@ -194,12 +198,14 @@ class UserController extends AbstractController
 
         // GET FROM FORM
         $email = $request->request->get('email');
+        $img = $request->request->get('img');
         $acronym = $request->request->get('acronym');
         $name = $request->request->get('name');
         $pwd = $request->request->get('pwd');
         $type = $request->request->get('type');
 
         $user->setEmail($email);
+        $user->setImg($img);
         $user->setAcronym($acronym);
         $user->setName($name);
         $user->setPwd($pwd);
