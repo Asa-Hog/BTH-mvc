@@ -6,35 +6,33 @@
 
 <h1>Delete book</h1>
 
-<form method="post">
+<form action:"{{ path('book_delete_by_id_process', {'id': book.getId()} ) }}" method="post">
     <fieldset>
     <legend>Book details</legend>
     <p>
         <label>Title:
-            <input type="text" name="title" value="">
+            <input type="text" name="title" value="{{ book.getTitle() }}">
         </label>
     </p>
     <p>
         <label>ISBN:
-            <input type="number" name="isbn" value="" required>
+            <input type="number" name="isbn" value="{{ book.getIsbn() }}" required>
         </label>
     </p>
     <p>
         <label>Author:
-            <input type="text" name="author" value="">
+            <input type="text" name="author" value="{{ book.getAuthor() }}">
         </label>
     </p>
     <p>
         <label>Image link:
-            <input type="text" name="image" value="">
+            <input type="text" name="image" value="{{ book.getImage() }}">
         </label>
     </p>
     <p>
-        <input type="submit" value="Save">
+        <input class = "button" type="submit" value="Delete">
     </p>
     </fieldset>
 </form>
-
-
 
 {% endblock %}

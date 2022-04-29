@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create book{% endblock %}
+
+{% block content %} 
+
+<h1>Book details</h1>
+
+<div class = "center">
+    <img src = "{{ asset("img/"~book.getImage()) }}" width = "250px"  alt = "Book cover">
+
+
+    <h2>{{book.getTitle()}}</h2>
+    <p>Author: {{book.getAuthor()}}</h3><br>
+    <br>
+    <h3>ISBN: {{book.getIsbn()}}</h3>
+</div>
+
+{% endblock %} 
+
+
+
+
