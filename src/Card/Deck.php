@@ -80,7 +80,7 @@ class Deck
         // Blir detta samma sak som ovanstående?
         $drawn = null;
 
-        if (count($this->cards)> 0) {
+        if (count($this->cards) > 0) {
             // Tar bort sista kortet i arrayen och returnerar det
             $drawn = array_pop($this->cards);
         }

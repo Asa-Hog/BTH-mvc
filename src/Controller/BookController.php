@@ -12,13 +12,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class BookController extends AbstractController
 {
-
     /**
      * @Route("/book/create", name="book_create",
      * methods={"GET"})
      */
-    public function showCreateForm(
-    ): Response {
+    public function showCreateForm(): Response
+    {
         return $this->render('book/create.html.twig');
     }
 
@@ -27,7 +26,8 @@ class BookController extends AbstractController
      * methods={"POST"})
      */
     public function createBook(
-        ManagerRegistry $doctrine, Request $request
+        ManagerRegistry $doctrine,
+        Request $request
     ): Response {
         $entityManager = $doctrine->getManager();
 
@@ -127,7 +127,7 @@ class BookController extends AbstractController
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id '.$id
+                'No book found for id ' . $id
             );
         }
 
@@ -143,7 +143,8 @@ class BookController extends AbstractController
      * methods={"POST"})
      */
     public function deleteBookByIdProcess(
-        ManagerRegistry $doctrine, Request $request,
+        ManagerRegistry $doctrine,
+        Request $request,
         int $id
     ): Response {
         $entityManager = $doctrine->getManager();
@@ -151,7 +152,7 @@ class BookController extends AbstractController
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id '.$id
+                'No book found for id ' . $id
             );
         }
 
@@ -167,7 +168,8 @@ class BookController extends AbstractController
      * methods={"GET"})
      */
     public function updateBook(
-        ManagerRegistry $doctrine, Request $request,
+        ManagerRegistry $doctrine,
+        Request $request,
         int $id
     ): Response {
         $entityManager = $doctrine->getManager();
@@ -175,7 +177,7 @@ class BookController extends AbstractController
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id '.$id
+                'No book found for id ' . $id
             );
         }
 
@@ -191,7 +193,8 @@ class BookController extends AbstractController
      * methods={"POST"})
      */
     public function updateBookProcess(
-        ManagerRegistry $doctrine, Request $request,
+        ManagerRegistry $doctrine,
+        Request $request,
         int $id
     ): Response {
         $entityManager = $doctrine->getManager();
@@ -199,7 +202,7 @@ class BookController extends AbstractController
 
         if (!$book) {
             throw $this->createNotFoundException(
-                'No book found for id '.$id
+                'No book found for id ' . $id
             );
         }
 
@@ -218,5 +221,4 @@ class BookController extends AbstractController
 
         return $this->redirectToRoute('book_show_all');
     }
-
 }

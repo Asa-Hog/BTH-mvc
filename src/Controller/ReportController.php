@@ -56,7 +56,7 @@ class ReportController extends AbstractController
         $data = [
         'message' => 'Welcome to the lucky number API',
         'number' => random_int(0, 100)
-    ];
+        ];
 
         return $this->render('debug.html.twig', $data);
     }

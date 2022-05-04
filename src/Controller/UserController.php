@@ -12,13 +12,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class UserController extends AbstractController
 {
-
     /**
      * @Route("/user/create", name="user_create",
      * methods={"GET"})
      */
-    public function showCreateForm(
-    ): Response {
+    public function showCreateForm(): Response
+    {
         return $this->render('user/create.html.twig');
     }
 
@@ -27,7 +26,8 @@ class UserController extends AbstractController
      * methods={"POST"})
      */
     public function createUser(
-        ManagerRegistry $doctrine, Request $request
+        ManagerRegistry $doctrine,
+        Request $request
     ): Response {
         $entityManager = $doctrine->getManager();
 
@@ -120,7 +120,7 @@ class UserController extends AbstractController
 
         if (!$user) {
             throw $this->createNotFoundException(
-                'No user found for id '.$id
+                'No user found for id ' . $id
             );
         }
 
@@ -136,7 +136,8 @@ class UserController extends AbstractController
      * methods={"POST"})
      */
     public function deleteUserByIdProcess(
-        ManagerRegistry $doctrine, Request $request,
+        ManagerRegistry $doctrine,
+        Request $request,
         int $id
     ): Response {
         $entityManager = $doctrine->getManager();
@@ -144,7 +145,7 @@ class UserController extends AbstractController
 
         if (!$user) {
             throw $this->createNotFoundException(
-                'No user found for id '.$id
+                'No user found for id ' . $id
             );
         }
 
@@ -160,7 +161,8 @@ class UserController extends AbstractController
      * methods={"GET"})
      */
     public function updateUser(
-        ManagerRegistry $doctrine, Request $request,
+        ManagerRegistry $doctrine,
+        Request $request,
         int $id
     ): Response {
         $entityManager = $doctrine->getManager();
@@ -168,7 +170,7 @@ class UserController extends AbstractController
 
         if (!$user) {
             throw $this->createNotFoundException(
-                'No user found for id '.$id
+                'No user found for id ' . $id
             );
         }
 
@@ -184,7 +186,8 @@ class UserController extends AbstractController
      * methods={"POST"})
      */
     public function updateUserProcess(
-        ManagerRegistry $doctrine, Request $request,
+        ManagerRegistry $doctrine,
+        Request $request,
         int $id
     ): Response {
         $entityManager = $doctrine->getManager();
@@ -192,7 +195,7 @@ class UserController extends AbstractController
 
         if (!$user) {
             throw $this->createNotFoundException(
-                'No user found for id '.$id
+                'No user found for id ' . $id
             );
         }
 
@@ -215,5 +218,4 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('user_show_all');
     }
-
 }

@@ -39,6 +39,6 @@ class Card
     */
     public function toString(): string
     {
-        return  $this->color ." " .  $this->char;
+        return  $this->color . " " .  $this->char;
     }
 }

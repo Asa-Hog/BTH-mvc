@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
-
 use App\Card\Deck;
 use App\Card\Player;
 use App\Card\CardHand;
@@ -126,7 +125,7 @@ class CardController extends AbstractController
 
         $removedCardsSet = []; // de som försvinner från kortleken
         $playersArray = [];
-        if ($data["cardsLeft"] >= $data["cards"]*$data["players"]) {
+        if ($data["cardsLeft"] >= $data["cards"] * $data["players"]) {
             for ($i = 0; $i < $data["players"]; $i++) {
                 $player = new Player(); //skapa spelare
                 $cardhand = new CardHand(); //skapa korthand
