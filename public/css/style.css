@@ -18,7 +18,7 @@ body {
   }
   
   .page-content {
-    padding-bottom: 3rem;    /* Footer height */
+    padding-bottom: 7rem;    /* Footer height */
 
   }
 
@@ -30,6 +30,7 @@ body {
   }
 
   .sitefooter {
+
     color: #1B324D;
     font-weight: bold;
     position: absolute;
@@ -299,3 +300,7 @@ th {
   font-weight: 400;
 }
 
+.metrics-pic {
+  width: 200px;
+
+}

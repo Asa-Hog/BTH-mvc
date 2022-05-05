@@ -28,57 +28,71 @@
 <p> Dessa fyra C ger alltså mått på kodkvaliteten. Det finns även flertalet andra mätvärden som kan användas som mått på kvaliteten på kod (t ex storlek på klasser, mått på hur mycket duplicerad kod man har etc) men denna rapport kommer främst koncentrera sig på den fyra C:na.</p>
 
 <h2>Phpmetrics</h2>
-Ett sätt att analysera kvaliteten på sin kod är att installera och använda verktyget phpmetrics lokalt och testa sin kod med hjälp av kommandot <pre>composer phpmetrics</pre>. Verktyget ger dels en sammanfattande rapport i terminalen och dels en HTML-rapport, där man kan gå in och klicka på olika delar av sin kod för mer detaljerade mätvärden.
+Ett sätt att analysera kvaliteten på sin kod är att installera och använda verktyget phpmetrics lokalt och testa sin kod med hjälp av kommandot <span style="font-family:'Courier New', Courier, monospace">composer phpmetrics</span>. Verktyget ger dels en sammanfattande rapport i terminalen och dels en HTML-rapport, där man kan gå in och klicka på olika delar för mer detaljerade mätvärden.</br>
 
-<img class = "me-pic" src = "{{ asset("img/quality_phpmetrics_terminal.JPG") }}" width = "200px"  alt = "Phpmetrics terminal report">
+<p>
+    <a href = "{{ asset("img/quality_phpmetrics_terminal.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_phpmetrics_terminal.JPG") }}" width = "200px"  alt = "Phpmetrics terminal report">
 
-<img class = "me-pic" src = "{{ asset("img/quality_phpmetrics_start.JPG") }}" width = "200px"  alt = "Php metrics HTML report">
+    <a href = "{{ asset("img/quality_phpmetrics_start.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_phpmetrics_start.JPG") }}" width = "200px"  alt = "Php metrics HTML report"></a> </a></br>
+</p>
 
-I detta fall är det src-mappen som är testad. 
+<p> Det rapporten visar är </p>
 
 
-Analysera dess rapport för din kod. 
-Använd 4C på utvalda delar av din kod och hitta minst ett ytterligare mätvärde som du väljer att ta upp. 
-Använd mätvärdena för att hitta flaskhalsar och svaga punkter i din kod. 
-Det vill alltså hitta koddelar som du kan uppdatera för att få bättre mätvärden.
+<span style="background-color: #FFFF00">Analysera dess rapport för din kod. </br></br>
+
+Använd 4C på utvalda delar av din kod och hitta minst ett ytterligare mätvärde som du väljer att ta upp. </br></br>
+
+Använd mätvärdena för att hitta flaskhalsar och svaga punkter i din kod. </br></br>
+
+Det vill alltså hitta koddelar som du kan uppdatera för att få bättre mätvärden.</span>
 
 <h2>Scrutinizer</h2>
-<p>Ett annat sätt att testa kodkvalitet är att använda Scrutinizer, som är ett verktyg som kopplas ihop med ett GitHub-repo. Varje gång man gör en commit till det repot får man automatiskt ut en rapport för kodens kvalitet.</p>
+<p>Ett annat sätt att testa kodkvalitet är att använda Scrutinizer, som är ett verktyg som kopplas ihop med ett GitHub-repo. Varje gång man gör en commit till det repot får man automatiskt en rapport för kodens kvalitet.</p>
 
-<img class = "me-pic" src = "{{ asset("img/quality_scrutinizer_start.JPG") }}" width = "200px"  alt = "Scrutinizer report">
+<p>
+    <a href = "{{ asset("img/quality_scrutinizer_start.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer_start.JPG") }}" width = "200px"  alt = "Scrutinizer report"></a>
+</p>
 
-Analysera dess rapport för din kod.
-Hitta minst 3 svagheter som kan förbättras. 
-Det kan vara samma som för phpmetrics eller nya. 
-Huvudsaken är att du kan använda rapporten från Scrutinizer som stöd för att det är delar som behöver förbättras. 
-Förutom 4C så skall du även hitta minst ett ytterligare mätvärde som du fann intressant hos Scrutinizer.
+<span style="background-color: #FFFF00">Analysera dess rapport för din kod.</br></br>
+Hitta minst 3 svagheter som kan förbättras. </br></br>
+
+Det kan vara samma som för phpmetrics eller nya. </br></br>
+
+Huvudsaken är att du kan använda rapporten från Scrutinizer som stöd för att det är delar som behöver förbättras. </br></br>
+
+Förutom 4C så skall du även hitta minst ett ytterligare mätvärde som du fann intressant hos Scrutinizer.</span>
 
 <h2>Förbättringar</h2>
-Exemplifiera med några mätvärden för de fyra C:na som är kopplade till din egen kod och ge en kort förklaring relaterad till kodkvalitet.</p>
+<span style="background-color: #FFFF00">
+Exemplifiera med några mätvärden för de fyra C:na som är kopplade till din egen kod och ge en kort förklaring relaterad till kodkvalitet.</p></span>
 
-Välj minst 3 förbättringar som du vill göra med din kod.
+<span style="background-color: #FFFF00">Välj minst 3 förbättringar som du vill göra med din kod.</span></br></br>
 
-För att förbättra kvaliteten i koden väljer jag att titta på de issues som finns i rapporten för Scrutinizer, för att se om det är några jag kan fösöka lösa där. Det känns som en "enkel" sak att göra i och med att man får direkta förslag på var i koden problemet ligger, och vad de anser kan förbättra den. I detta fall är det filerna BookController.php och UserController.php som fått kommentarerna att parametern <pre>$request</pre> inte används och kan tas bort, samt filen CardController.php som fått kommentaren <pre>It seems like $drawn[0] can also be of type null; however, parameter $card of App\Card\CardHand::addCard() does only seem to accept App\Card\Card, maybe add an additional type check?</pre> Eftersom det totala värdet var ganska bra från början så tror jag inte dessa ändringar kommer ge jättestor effekt, men det återstår att se.
-<img class = "me-pic" src = "{{ asset("img/quality_scrutinizer0.JPG") }}" width = "200px"  alt = "Scrutinizer report">
-<img class = "me-pic" src = "{{ asset("img/quality_scrutinizer1.JPG") }}" width = "200px"  alt = "Scrutinizer report">
-<img class = "me-pic" src = "{{ asset("img/quality_scrutinizer2.JPG") }}" width = "200px"  alt = "Scrutinizer report">
-<img class = "me-pic" src = "{{ asset("img/quality_scrutinizer3.JPG") }}" width = "200px"  alt = "Scrutinizer report">
-
-
-
-
-Börja med att skriva om förbättringarna, vad du tänker göra, varför du väljer dem och hur du tror det kommer påverka mätvärdena för kvalitet.
+För att förbättra kvaliteten i koden väljer jag att titta på de issues som finns i rapporten för Scrutinizer, för att se om det är några jag kan fösöka lösa där. Det känns som en "enkel" sak att göra i och med att man får direkta förslag på var i koden problemet ligger, och vad de anser kan förbättra den. I detta fall är det filerna BookController.php och UserController.php som fått kommentarerna att parametern <span style="font-family:'Courier New', Courier, monospace"> $request </span>inte används och kan tas bort, samt filen CardController.php som fått kommentaren <span style="font-family:'Courier New', Courier, monospace">It seems like $drawn[0] can also be of type null; however, parameter $card of App\Card\CardHand::addCard() does only seem to accept App\Card\Card, maybe add an additional type check?</span> Eftersom det totala värdet var ganska bra från början så tror jag inte dessa ändringar kommer ge jättestor effekt, men det återstår att se.
+<p>
+    <a href = "{{ asset("img/quality_scrutinizer0.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer0.JPG") }}" width = "200px"  alt = "Scrutinizer report"></a>
+    <a href = "{{ asset("img/quality_scrutinizer1.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer1.JPG") }}" width = "200px"  alt = "Scrutinizer report"></a>
+    <a href = "{{ asset("img/quality_scrutinizer2.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer2.JPG") }}" width = "200px"  alt = "Scrutinizer report"></a>
+    <a href = "{{ asset("img/quality_scrutinizer3.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer3.JPG") }}" width = "200px"  alt = "Scrutinizer report"></a>
+</p>
 
 
-Implementera sedan förbättringarna.
+<span style="background-color: #FFFF00">
+Börja med att skriva om förbättringarna, varför du väljer dem, vad du tänker göra, och hur du tror det kommer påverka mätvärdena för kvalitet.</br></br>
 
-Analysera därefter rapporterna från phpmetrics och Scrutinizer och notera de nya mätvärdena.
+Implementera sedan förbättringarna.</br></br>
 
-Gör det tydligt hur mätvärdena såg ut innan och efter dina förbättringar.
+Analysera därefter rapporterna från phpmetrics och Scrutinizer och notera de nya mätvärdena.</br></br>
+
+Gör det tydligt hur mätvärdena såg ut innan och efter dina förbättringar.</span>
 
 <h2>Diskussion</h2>
-Genom att arbeta igenom de förslag och svagheter som nämns som problem i koden kan man alltså förbättra kvaliteten 
+<span style="background-color: #FFFF00">
+Genom att arbeta igenom de förslag och svagheter som nämns som problem i koden kan man alltså förbättra kvaliteten </br></br>
 
-Diskutera kort kring det du nyss gjort. Kan man aktivt jobba med kodkvalitet på detta sättet? Finns det fördelar och kanske nackdelar?
+Diskutera kort kring det du nyss gjort. </br></br>
+
+Kan man aktivt jobba med kodkvalitet på detta sättet? Finns det fördelar och kanske nackdelar?</span>
 
 {% endblock %}
