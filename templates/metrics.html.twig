@@ -1,0 +1,84 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Metrics {% endblock %}
+
+{% block content %} 
+
+<h1>Metrics</h1>
+
+<h2>Introduktion</h2>
+<p>Man brukar prata om fyra C:n och hur de är kopplade till kodkvalitet. C:na står för </p>
+
+<ul class = "list">
+    <li>Coverage</li>
+    <li>Complexity</li>
+    <li>Cohesion</li>
+    <li>Coupling</li>
+</ul>
+
+<span style="font-weight: bolder"></span>
+<p>Coverage, eller kodtäckning, är den del av koden som är täckt av enhetstester. Om en stor del av koden är täckt av enhetstester så bör den också vara av hög kvalitet, eftersom tester har gjorts för att kontrollera att koden beter sig som tänkt, och eventuella fel som smugit sig in har blivit åtgärdade. Här pratar man om procenttal, från 0-100% av kodens rader, metoder eller klasser. Ju högre procenttal kod som är testad desto bättre.</p>
+
+<p>Complexity, kodkomplexitet är ett mått på hur komplex koden är. Måttet visar på hur många beslutspunkter som finns i koden, där koden kan ta flera vägar, t ex en if-else-sats. För varje gång koden kan ta olika vägar ökar komplexiteten med 1. Den enklaste metoden har en komplexitet av 1, den returnerar endast en sak. En enkel metod med låg komplexitet är relativt enkel att testa, medan den blir betydligt svårare att testa om komplexiteten är hög. Det kommer krävas fler testfall, och leder alltså till mer jobb i form av test, men även felsökning/ ändring av koden. Den är även lättare att läsa. Man kan enkelt säga att rak kod som inte är intabbad har låg komplexitet, och det är det man strävar efter, det blir även ett lågt kodkomplexitetsvärde. Man bör ha ett komplexitetsvärde under 10. </p>
+
+<p>Cohesion står för hur väl olika delar i en modul/ metod/ klass är kopplade till varandra. Man talar om att klasser och metoder enbart ska göra en sak, och cohesion är ett mått på hur väl det är uppfyllt. Det innebär en välstrukturerad och mindre rörig kod om de delar som hänger ihop faktiskt är samlade på ett ställe. Cohesion mäts med LCOM (Lack of Cohesive Methods) och ideala värdet för en klass är 1. Det innebär att klassen gör en sak. Högre värden innebär att klassen gör flera saker som inte hänger ihop, och det är inte önskvärt. </p>
+
+<p>Coupling är ett mått på hur många kopplingar eller beroenden min klass har till andra klasser. Dels kan det finnas utgående beroenden (efferent coupling, Ce), dvs min klass använder andra klasser, och dels kan det finnas ingående beroenden (afferent coupling, Ca) då min klass används av andra klasser. Det man vill är att en klass ska vara löst kopplad till andra klasser och vara fristående. Den är då lättare att testa, och även att felsöka/ ändra, då den inte beror av andra klasser. Utgående (efferent) coupling mäts med hjälp av formeln Ce/(Ce + Ca), dvs utgående kopplingar i relation till totala antalet kopplingar. Värdet hamnar mellan 0 och 1, där 0 betyder stabil (inte många kopplingar till andra klasser) och 1 instabil (väldigt många kopplingar till andra klasser). Om man gör ändringar i en klass med många ingående kopplingar så kan det påverka många andra klasser. </p>
+
+<p> Dessa fyra C ger alltså mått på kodkvaliteten. Det finns även flertalet andra mätvärden som kan användas som mått på kvaliteten på kod (t ex storlek på klasser, mått på hur mycket duplicerad kod man har etc) men denna rapport kommer främst koncentrera sig på den fyra C:na.</p>
+
+<h2>Phpmetrics</h2>
+Ett sätt att analysera kvaliteten på sin kod är att installera och använda verktyget phpmetrics lokalt och testa sin kod med hjälp av kommandot <pre>composer phpmetrics</pre>. Verktyget ger dels en sammanfattande rapport i terminalen och dels en HTML-rapport, där man kan gå in och klicka på olika delar av sin kod för mer detaljerade mätvärden.
+
+<img class = "me-pic" src = "{{ asset("img/quality_phpmetrics_terminal.JPG") }}" width = "200px"  alt = "Phpmetrics terminal report">
+
+<img class = "me-pic" src = "{{ asset("img/quality_phpmetrics_start.JPG") }}" width = "200px"  alt = "Php metrics HTML report">
+
+I detta fall är det src-mappen som är testad. 
+
+
+Analysera dess rapport för din kod. 
+Använd 4C på utvalda delar av din kod och hitta minst ett ytterligare mätvärde som du väljer att ta upp. 
+Använd mätvärdena för att hitta flaskhalsar och svaga punkter i din kod. 
+Det vill alltså hitta koddelar som du kan uppdatera för att få bättre mätvärden.
+
+<h2>Scrutinizer</h2>
+<p>Ett annat sätt att testa kodkvalitet är att använda Scrutinizer, som är ett verktyg som kopplas ihop med ett GitHub-repo. Varje gång man gör en commit till det repot får man automatiskt ut en rapport för kodens kvalitet.</p>
+
+<img class = "me-pic" src = "{{ asset("img/quality_scrutinizer_start.JPG") }}" width = "200px"  alt = "Scrutinizer report">
+
+Analysera dess rapport för din kod.
+Hitta minst 3 svagheter som kan förbättras. 
+Det kan vara samma som för phpmetrics eller nya. 
+Huvudsaken är att du kan använda rapporten från Scrutinizer som stöd för att det är delar som behöver förbättras. 
+Förutom 4C så skall du även hitta minst ett ytterligare mätvärde som du fann intressant hos Scrutinizer.
+
+<h2>Förbättringar</h2>
+Exemplifiera med några mätvärden för de fyra C:na som är kopplade till din egen kod och ge en kort förklaring relaterad till kodkvalitet.</p>
+
+Välj minst 3 förbättringar som du vill göra med din kod.
+
+För att förbättra kvaliteten i koden väljer jag att titta på de issues som finns i rapporten för Scrutinizer, för att se om det är några jag kan fösöka lösa där. Det känns som en "enkel" sak att göra i och med att man får direkta förslag på var i koden problemet ligger, och vad de anser kan förbättra den. I detta fall är det filerna BookController.php och UserController.php som fått kommentarerna att parametern <pre>$request</pre> inte används och kan tas bort, samt filen CardController.php som fått kommentaren <pre>It seems like $drawn[0] can also be of type null; however, parameter $card of App\Card\CardHand::addCard() does only seem to accept App\Card\Card, maybe add an additional type check?</pre> Eftersom det totala värdet var ganska bra från början så tror jag inte dessa ändringar kommer ge jättestor effekt, men det återstår att se.
+<img class = "me-pic" src = "{{ asset("img/quality_scrutinizer0.JPG") }}" width = "200px"  alt = "Scrutinizer report">
+<img class = "me-pic" src = "{{ asset("img/quality_scrutinizer1.JPG") }}" width = "200px"  alt = "Scrutinizer report">
+<img class = "me-pic" src = "{{ asset("img/quality_scrutinizer2.JPG") }}" width = "200px"  alt = "Scrutinizer report">
+<img class = "me-pic" src = "{{ asset("img/quality_scrutinizer3.JPG") }}" width = "200px"  alt = "Scrutinizer report">
+
+
+
+
+Börja med att skriva om förbättringarna, vad du tänker göra, varför du väljer dem och hur du tror det kommer påverka mätvärdena för kvalitet.
+
+
+Implementera sedan förbättringarna.
+
+Analysera därefter rapporterna från phpmetrics och Scrutinizer och notera de nya mätvärdena.
+
+Gör det tydligt hur mätvärdena såg ut innan och efter dina förbättringar.
+
+<h2>Diskussion</h2>
+Genom att arbeta igenom de förslag och svagheter som nämns som problem i koden kan man alltså förbättra kvaliteten 
+
+Diskutera kort kring det du nyss gjort. Kan man aktivt jobba med kodkvalitet på detta sättet? Finns det fördelar och kanske nackdelar?
+
+{% endblock %}

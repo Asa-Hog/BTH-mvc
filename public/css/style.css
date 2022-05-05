@@ -291,5 +291,11 @@ th {
   color: black;
 }
 
-
+.list {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  list-style:disc;
+  font-weight: 400;
+}
 
