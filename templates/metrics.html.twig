@@ -32,9 +32,9 @@ Ett sätt att analysera kvaliteten på sin kod är att installera och använda v
 
 <figure>
     <div class = "pics">
-    <a href = "{{ asset("img/quality_phpmetrics_terminal.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_phpmetrics_terminal.JPG") }}" width = "200px"  alt = "Phpmetrics terminal report">
+    <a href = "{{ asset("img/quality_phpmetrics_terminal.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_phpmetrics_terminal.JPG") }}" alt = "Phpmetrics terminal report">
 
-    <a href = "{{ asset("img/quality_phpmetrics_start.JPG") }}" ><img class = "metrics-pic wide-pic" src = "{{ asset("img/quality_phpmetrics_start.JPG") }}" width = "200px"  alt = "Php metrics HTML report"></a> </a></br>
+    <a href = "{{ asset("img/quality_phpmetrics_start.JPG") }}" ><img class = "metrics-pic wide-pic" src = "{{ asset("img/quality_phpmetrics_start.JPG") }}" alt = "Php metrics HTML report"></a> </a></br>
     </div>
         <figcaption>Rapporter från phpMetrics.</figcaption>
 </figure>
@@ -42,97 +42,105 @@ Ett sätt att analysera kvaliteten på sin kod är att installera och använda v
 <p> Från rapporten ser jag att jag har 1 violation på klassen CardController, som säger att den i teorin har 0,44 buggar. Det är dock bara en uppskattning som är gjord beroende på komplexiteten av klassen mm, och är enbart en varning.</p>
 
 <figure>
-    <a href = "{{ asset("img/phpmetrics_violations.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/phpmetrics_violations.JPG") }}" width = "200px"  alt = "Php metrics HTML report"></a> </a>
+    <a href = "{{ asset("img/phpmetrics_violations.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/phpmetrics_violations.JPG") }}" alt = "Php metrics HTML report"></a>
     <figcaption>Class violation från phpMetrics.</figcaption>
+</figure>
+
+<p>Nedanstående bild visar en överblick över maintainability index. Färgen på cirklarna visar på hur lätt koden är att underhålla, och storleken visar på cyklomatiska komplexiteten. En stor röd cirkel är antagligen svår att underhålla. Hovrar man över cirklarna ser man vilka klasser det rör sig om, och vilka maintainability index de har. I den här bilden visas att klassen DiceHand är en halvstor röd cirkel (med ett maintainability index på 56), så den kan vara värd att kika lite extra på. Värdena ligger vanligtvis mellan 0-100, där under 65 räknas som kod svår att underhålla.</p>
+
+<figure>
+    <a href = "{{ asset("img/phpmetrics_maintainability.png") }}" ><img class = "metrics-pic" src = "{{ asset("img/phpmetrics_maintainability.png") }}" alt = "Php metrics HTML report"></a> 
+    <figcaption>Maintainability index från phpMetrics.</figcaption>
 </figure>
 
 <p>Följande fyra bilder visar klassernas mått på Complexity, Cohesion och Coupling, samt även mått på klassernas storlek. </p>
 
 <figure>
     <div class = "pics">
-    <a href = "{{ asset("img/phpmetrics_complexity.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/phpmetrics_complexity.JPG") }}" width = "200px"  alt = "Php metrics HTML report"></a> 
+    <a href = "{{ asset("img/phpmetrics_complexity.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/phpmetrics_complexity.JPG") }}" alt = "Php metrics HTML report"></a> 
 
-    <a href = "{{ asset("img/phpmetrics_cohesive.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/phpmetrics_cohesive.JPG") }}" width = "200px"  alt = "Php metrics HTML report"></a>
+    <a href = "{{ asset("img/phpmetrics_cohesive.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/phpmetrics_cohesive.JPG") }}" alt = "Php metrics HTML report"></a>
 
-    <a href = "{{ asset("img/phpmetrics_coupling.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/phpmetrics_coupling.JPG") }}" width = "200px"  alt = "Php metrics HTML report"></a>
+    <a href = "{{ asset("img/phpmetrics_coupling.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/phpmetrics_coupling.JPG") }}" alt = "Php metrics HTML report"></a>
 
-    <a href = "{{ asset("img/phpmetrics_size.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/phpmetrics_size.JPG") }}" width = "200px"  alt = "Php metrics HTML report"></a> 
+    <a href = "{{ asset("img/phpmetrics_size.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/phpmetrics_size.JPG") }}"  alt = "Php metrics HTML report"></a> 
 </div>
     <figcaption>Mätvärden från phpMetrics avseende Complexity, Cohesion, Coupling och Size. </figcaption>
 </figure>
 
-
-<p><span style="background-color: #FFFF00">Använd 4C på utvalda delar (nån specifik klass eller två?) av din kod. Använd mätvärdena för att hitta flaskhalsar och svaga punkter i din kod.</span> </p>
-
-<p>Nedanstående bild visar en överblick över maintainability index. Färgen på cirklarna visar på hur lätt koden är att underhålla, och storleken visar på cyklomatiska komplexiteten. En stor röd cirkel är antagligen svår att underhålla. Hovrar man över cirklarna ser man vilka klasser det rör sig om. I den här bilden visas att klassen DiceHand är en halvstor röd cirkel, så den kan vara värd att kika lite extra på. Värdena ligger vanligtvis mellan 0-100, där under 65 räknas som kod svår att underhålla.</p>
-<figure>
-    <a href = "{{ asset("img/phpmetrics_maintainability.png") }}" ><img class = "metrics-pic" src = "{{ asset("img/phpmetrics_maintainability.png") }}" width = "200px"  alt = "Php metrics HTML report"></a> 
-    <figcaption>Maintainability index från phpMetrics.</figcaption>
-</figure>
+<p>Från mätvärdena ser man att komplexiteten för klasserna håller sig under tio, med undantag för en controller-klass. Man ser att controller-filerna har högst värden på utgående kopplingar, men det är inte så konstigt med tanke på vad de gör, och det ligger under 10 per klass. Värdet för Cohesion, LCOM, är 1-2, och det är låga värden man eftersträvar. En förbättring som man skulle kunna göra är att kika på de klasser som har värdet 2 och se om det går att förbättra. Man skulle även kunna se över de klasser med högst komplexitet. Storleken på klasserna håller sig under 100 rader kod, vilket inte känns för stort. Överlag är värdena bra, och jag ser inget akut som avviker eller som jag känner att jag måste justera, men det går alltid att förbättra lite överallt, och på det sättet ändå öka kvaliteten. </p>
 
 <h2>Scrutinizer</h2>
-<p>Ett annat sätt att testa kodkvalitet är att använda Scrutinizer, som är ett verktyg som kopplas ihop med ett GitHub-repo. Varje gång man gör en commit till det repot får man automatiskt en rapport för kodens kvalitet.</p>
+<p>Ett annat sätt att testa kodkvalitet är att använda Scrutinizer, som är ett verktyg som kopplas ihop med ett GitHub-repo. Varje gång man pushar till det repot får man automatiskt en rapport för kodens kvalitet.</p>
 
 <figure>
-    <a href = "{{ asset("img/quality_scrutinizer_start.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer_start.JPG") }}" width = "200px"  alt = "Scrutinizer report"></a>
+    <a href = "{{ asset("img/quality_scrutinizer_start.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer_start.JPG") }}"  alt = "Scrutinizer report"></a>
     <figcaption>Scrutinizer rapport.</figcaption>
 </figure>
-<p>De värden som Scrutinizer presenterar för kodkvaliteten syns i nedanstående bild.</p>
+<p>De värden som Scrutinizer presenterar för kodkvaliteten syns i nedanstående bilder. Här ser man värden på storlek, komplexitet och kodtäckning för klasser och metoder. </p>
 <figure>
-    <a href = "{{ asset("img/scrutinizer_data_before.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/scrutinizer_data_before.JPG") }}" width = "200px"  alt = "Scrutinizer report"></a>
-    <figcaption>Scrutinizer mätvärden.</figcaption>
+    <div class="pics">
+        <a href = "{{ asset("img/scrutinizer_data_before.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/scrutinizer_data_before.JPG") }}"  alt = "Scrutinizer report"></a>
+        <a href = "{{ asset("img/change1.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/change1.JPG") }}" alt = "Scrutinizer report"></a>
+    </div>
+    <figcaption>Scrutinizer mätvärden för klasser (t v) och metoder (t h).</figcaption>
 </figure>
-<p>Här ser man värden på storlek, komplexitet och kodtäckning. Det går även att få värden för Cohesion och Coupling. </p>
 
-<span style="background-color: #FFFF00">
-Hitta minst 3 svagheter som kan förbättras. Det kan vara samma som för phpmetrics eller nya. Huvudsaken är att du kan använda rapporten från Scrutinizer som stöd för att det är delar som behöver förbättras. </br></br>
+<p>I rapporten för metoder syns att komplexiteten för metoden App\Game\Game::getMessage() är 6. Det är något som kan undersökas för att se om det skulle gå att minska.</p>
 
-Förutom 4C så skall du även hitta minst ett ytterligare mätvärde som du fann intressant hos Scrutinizer.</span>
-
-<h2>Förbättringar</h2>
-<span style="background-color: #FFFF00">
-Exemplifiera med några mätvärden för de fyra C:na som är kopplade till din egen kod och ge en kort förklaring relaterad till kodkvalitet.</p></span>
-
-<span style="background-color: #FFFF00">Välj minst 3 förbättringar som du vill göra med din kod.</span></br></br>
-
-För att förbättra kvaliteten i koden väljer jag att titta på de issues som finns i rapporten för Scrutinizer, för att se om det är några jag kan fösöka lösa där. Det känns som en "enkel" sak att göra i och med att man får direkta förslag på var i koden problemet ligger, och vad de anser kan förbättra den. I detta fall är det filerna BookController.php och UserController.php som fått kommentarerna att parametern <span style="font-family:'Courier New', Courier, monospace"> $request </span>inte används och kan tas bort, samt filen CardController.php som fått kommentaren <span style="font-family:'Courier New', Courier, monospace">It seems like $drawn[0] can also be of type null; however, parameter $card of App\Card\CardHand::addCard() does only seem to accept App\Card\Card, maybe add an additional type check?</span> Eftersom det totala värdet var ganska bra från början så tror jag inte dessa ändringar kommer ge jättestor effekt, men det återstår att se.
+<p>Scrutinizer visar även på en del issues som kan finnas med koden. I rapporten kan man se följande:</p>
 <figure>
     <div class = "pics">
-        <a href = "{{ asset("img/quality_scrutinizer0.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer0.JPG") }}" width = "200px"  alt = "Scrutinizer report"></a>
-        <a href = "{{ asset("img/quality_scrutinizer1.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer1.JPG") }}" width = "200px"  alt = "Scrutinizer report"></a>
-        <a href = "{{ asset("img/quality_scrutinizer2.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer2.JPG") }}" width = "200px"  alt = "Scrutinizer report"></a>
-        <a href = "{{ asset("img/quality_scrutinizer3.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer3.JPG") }}" width = "200px"  alt = "Scrutinizer report"></a>
+        <a href = "{{ asset("img/quality_scrutinizer0.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer0.JPG") }}" alt = "Scrutinizer report"></a>
+        <a href = "{{ asset("img/quality_scrutinizer1.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer1.JPG") }}" alt = "Scrutinizer report"></a>
+        <a href = "{{ asset("img/quality_scrutinizer2.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer2.JPG") }}" alt = "Scrutinizer report"></a>
+        <a href = "{{ asset("img/quality_scrutinizer3.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_scrutinizer3.JPG") }}" alt = "Scrutinizer report"></a>
     </div>
     <figcaption>Issues från Scrutinizer.</figcaption>
 </figure>
 
+<p>Rapporten ger höga värden på kodkvaliteten så det är inte enkelt att se vad man kan förbättra, men man skulle kunna kolla på storleken på metoden Controller\CardController::deal(). Den är i nuläget 27 rader och skulle eventuellt kunna delas upp i flera metoder. Eventuellt skulle man även kunna se över storleken på App\Controller\BookController och App\Controller\UserController som båda har äver 200 rader kod.</p> 
+    
+<p>Det finns även något som heter CRAP score, som jämför antal tester med komplexiteten på koden. Ju mer komplex kod desto fler tester kan man vilja göra. I detta fall är det Game::getMessage() som får det absolut sämsta värdet, och CardController::deal() därefter. Följande bild visar CRAP score för koden.</p>
+
+<figure>
+        <a href = "{{ asset("img/crap.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/crap.JPG") }}" alt = "Scrutinizer report"></a>
+    <figcaption>Crap score från Scrutinizer.</figcaption>
+</figure>
+
+<h2>Förbättringar</h2>
 <p>Genom att titta på första bilden från Scrutinizer ser man att test coverage inte var enablat. Detta beror på att en konfigurationsfil inte har blivit pushad till GitHub-repot. Det tänker jag göra så att korrekta mätvärden kan fås. Oklart om det kommer påverka mätvärdena, men om det saknas information borde måttet på kodkvaliteten bli lägre, det borde ge samma resultat som om koden inte är testad.</p>
 
-<p>Jag väljer även att titta på </p>
+<p>För att förbättra kvaliteten ytterligare i koden väljer jag att titta på de issues som finns i rapporten för Scrutinizer, för att se om det är några jag kan försöka lösa där. Det känns som en "enkel" sak att göra i och med att man får direkta förslag på var i koden problemet ligger, och vad de anser kan förbättra den. I detta fall är det filerna BookController.php och UserController.php som fått kommentarerna att parametern <span style="font-family:'Courier New', Courier, monospace"> $request </span>inte används och kan tas bort, samt filen CardController.php som fått kommentaren <span style="font-family:'Courier New', Courier, monospace">It seems like $drawn[0] can also be of type null; however, parameter $card of App\Card\CardHand::addCard() does only seem to accept App\Card\Card, maybe add an additional type check?</span> Eftersom det totala värdet var ganska bra från början så tror jag inte dessa ändringar kommer ge jättestor effekt, men det återstår att se.</p>
+
+<p>Jag väljer även att titta på om det går att minska komplexiteten för metoden App\Game\Game::getMessage() för att se om jag kan få ner det värdet. Det borde inte ge effekt på den totala kodkvaliteten, eftersom den redan är 10,0 men intressant att se hur man kan jobba själv för att minska komplexiteten på en metod, och förhoppningsvis minska det värdet.</p>
+
+<p>Jag försöker också minska CRAP score på metoden Game::getMessage() genom att införa något extra test.</p>
 
 <span style="background-color: #FFFF00">
-Börja med att skriva om förbättringarna, varför du väljer dem, vad du tänker göra, och hur du tror det kommer påverka mätvärdena för kvalitet.</br></br>
-
-Implementera sedan förbättringarna.</br></br>
-
-Analysera därefter rapporterna från phpmetrics och Scrutinizer och notera de nya mätvärdena.</br></br>
-
+Implementera förbättringarna.</br></br>
+Notera de nya mätvärdena.</br></br>
 Gör det tydligt hur mätvärdena såg ut innan och efter dina förbättringar.</span>
 
 
 
 <p>Genom att se till att konfigurationsfilen blev pushad till GitHub-repot så kan man direkt se att det gav effekt på kodkvalieten. Värdet ökade från 9,93 till 10,0.</p>
 <figure>
-    <a href = "{{ asset("img/quality_phpmetrics_start_new.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_phpmetrics_start_new.JPG") }}" width = "200px"  alt = "Scrutinizer report"></a>
+    <a href = "{{ asset("img/quality_phpmetrics_start_new.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_phpmetrics_start_new.JPG") }}" alt = "Scrutinizer report"></a>
     <figcaption>Rapport från Scrutinizer efter tillagd konfigurationsfil.</figcaption>
 </figure>
 
+<p>När det gäller de issues som fanns gick den enkelt att endast ta bort $request, då det var kod som inte behövdes.</p>
+
+<p>Det gick att minska komplexiteten på metoden App\Game\Game::getMessage() genom att dela upp den i två metoder. Första delen avser egentligen en poängräkning, och kan göras separat från att hämta meddelande. </p>
+
+
 <h2>Diskussion</h2>
-<span style="background-color: #FFFF00">
-Genom att arbeta igenom de förslag och svagheter som nämns som problem i koden kan man alltså förbättra kvaliteten </br></br>
 
-Diskutera kort kring det du nyss gjort. </br></br>
+<p>Genom att arbeta igenom de förslag och svagheter som nämns som problem i koden kan man alltså förbättra kvaliteten på ett enkelt sätt. </p>
 
-Kan man aktivt jobba med kodkvalitet på detta sättet? Finns det fördelar och kanske nackdelar?</span>
+<span style="background-color: #FFFF00">Diskutera kort kring det du nyss gjort. </br></span>
+
+</p>För t ex metoden App\Game\Game::getMessage() så var det väldigt tydligt att se vad komplexiteten var, och därmed enkelt att sätta igång och försöka förbättra mätvärdet och kvaliteten på koden. Verktygen ger en tydlig överblick över hur det ser ut, och är därför smidiga att använda som hjälp för att få högkvalitativ kod. När man pushar sin kod till GitHub och gör helhetspoängen, och att man lätt kan se vad den tidigare poängen var, att man lätt kan se om man är på väg åt rätt håll då man uppdaterar sin kod, och det blir även roligt att försöka tävla med sig själv i att få till en bra kod.</p>
 
 {% endblock %}

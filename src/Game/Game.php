@@ -64,6 +64,23 @@ class Game
         return $this->deck;
     }
 
+
+    // /**
+    //  * Checks if player or bank got over 21 points and sets it to 0 in that case
+    //  */
+    // public function checkPointsOver21(): string
+    // {
+    //     if ($this->getPlayer()->getPoints() > 21) {
+    //         $this->getPlayer()->resetPoints();
+    //     }
+
+    //     if ($this->getBank()->getPoints() > 21) {
+    //         $this->getBank()->resetPoints();
+    //     }
+
+    // }
+
+
     /**
      * Returns a message of who won the game
      * @return string Message containing who won the game

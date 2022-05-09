@@ -1,10 +1,13 @@
 Kmom06 - Automatiserad test
 -------------------------
 
-Hur uppfattade du verktyget phpmetrics och fann du några särskilda bitar mer värdefulla än andra? Var det några särskilda metrics eller bilder du uppskattade?
+phpMetrics tydliggjorde många mätvärden som är av intresse för kodkvalitet så de var enkla att se. Jag tyckte bilden över maintainability/ complexity med cirklar i olika storlekar och färg var en bra sätt att visa de olika filerna så man lätt kunde se vilka man skulle kunna lägga mer kraft på att förbättra/ förenkla. Annars var det smidigt att bara kunna gå in och sortera på valfritt mätvärde.
 
-Berätta hur det gick att integrera med Scrutinizer och vilken är din första känsla av verktyget och dess badges? Vilken kodtäckning och kodkvalitet fick du efter första bygget?
 
-Hur är din egen syn på kodkvalitet, berätta lite om den? Tror du man kan man påvisa kodkvalitet i någon viss mån med badges eller vad tror du?
+Vilken kodtäckning fick du efter första bygget?
 
-Vilken är din TIL för detta kmom?
+Jag fick en bra känsla av Scrutinizer, men jag hade problem att få det att visa kodtäckningen. Jag fick 9.93 på första bygget men då hade jag missat att pusha konfigfilen till GitHub så kodtäckningen var inte enablad. Efter att jag gjort det fick jag 10.0. Jag gillade att det fanns badges, tycker det går lätt och tydligt att se om grunderna i kvaliteten finns där. Om man ser att en hög procent av kod är täckt av tester så känns den säker och genomarbetad. Tycker också det verkar smidigt att se kvaliteten på kod som är pushad till GitHub, speciellt om man är flera som arbetar med ett projekt, så man kan se hur de olika delarna påverkar, till exempel om en ny del sänker eller höjer betyget.
+
+Jag tror badges kan vara ett sätt att visa att koden uppfyller i alla fall det absolut nödvändigaste. Sedan är jag osäker på hur väl det fungerar med alla typer av program, om det kanske finns de varianter som får sämre kodkvalitet men "behöver" vara på det sättet, och egentligen inte då är "sämre". Jag tycker i alla fall det är ett bra sätt att tydliggöra att man har tänkt på kvaliteten, och det känns som en kvalitetsstämpel bara det. Sedan är det också lättare att jobba med den när man lätt kan se mätvärden på olika saker som visar vad den uppfyller, som t ex procent kodtäckning.
+
+I det här kursmomentet har jag lärt mig mer att arbeta med kodkvalitet. Det har inneburit en ytterligare dimension, att inte bara sitta och försöka få en applikation att fungera, utan även tänka på att den ska fungera bra, vara lätt att uppdatera mm, och det känns bra att ha med den aspekten när man sitter och kodar.
