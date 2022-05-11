@@ -1,0 +1,21 @@
+{% extends "baseProj.html.twig" %}
+
+{% block title %} Project {% endblock %}
+
+{% block content %}
+
+<h1>Logga ut</h1>
+
+
+<form action:"{{ path('user_create_save') }}" method="post">
+    <fieldset>
+    <legend>Är du säker?</legend>
+
+    <p>
+        <input class = "button" type="submit" value="Logga ut">
+    </p>
+    </fieldset>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="{{ asset("favicon.ico") }}">
+        <link rel="stylesheet" href="{{ asset("css/styleProj.css") }}"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Kotta+One&family=Quando&family=Courgette&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="page-content">
+                <div class = "header">
+                    <div class="siteheader">
+                        <h1 class = "sitetitle">Projekt</h1>
+                    </div>
+
+                    <div class="navbar">
+                        <nav>
+                            <ul>
+                                <li><a href = "{{ path("proj") }}">Hem</a></li>
+                                <li><a href = "{{ path("aboutProj") }}">Om</a></li>
+                                <li><a href = "{{ path("cleancodeProj") }}">Snygg kod</a></li>
+                                <li><a href = "{{ path("loginProj") }}">Användare</a></li>
+                                <li><a href = "{{ path("home") }}">ÅTER KURSSIDA</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                {% block content %}
+                Default content
+                {% endblock %}
+
+            </div>
+            {# slut page-content #}
+
+
+            <div class="sitefooter">
+                <p class = "footer-text">&copy; Åsa Höglund 2022</p>
+            </div>
+
+        </div> 
+        {# slut container #}
+
+
+
+
+    </body>
+
+
+
+
+    </html>

@@ -1,0 +1,25 @@
+{% extends 'baseProj.html.twig' %}
+
+{% block title %}Create user{% endblock %}
+
+{% block content %} 
+
+<h1>Användardetaljer</h1>
+
+<div class = "center">
+    <img src = "{{ asset("img/"~user.getImg()) }}" width = "250px"  alt = "User image">
+
+
+    <h3>Email: {{user.getEmail()}}</h3>
+    <h3>Akronym: {{user.getAcronym()}}</h3>
+    <h3>Namn: {{user.getName()}}</h3>
+    <h3>Lösenord: {{user.getPwd()}}</h3>
+    <h3>Typ: {{user.getType()}}</h3>
+</div>
+
+<a class = "button" href = "{{ path("updateUserByIdProj", {{"id": user.getId()}}) }}">Uppdatera</a></br>
+{# {% if ({{$session->get("userType")}} == "doe") %}
+    <a class = "button" href = "{{ path("logoutProj") }}">Logga ut</a></br>
+{% endif %} #}
+
+{% endblock %} 

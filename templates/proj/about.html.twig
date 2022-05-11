@@ -1,0 +1,33 @@
+{% extends "baseProj.html.twig" %}
+
+{% block title %} Project {% endblock %}
+
+{% block content %}
+
+<h1>Om projektet</h1>
+
+
+<p>Projektet går ut på... En sida /proj/about som berättar någorlunda utförligt om ditt projekt och vad det handlar om.</p>
+
+<h2>Dokumentation</h2>
+Din about-sida skall innehålla en sektion om dokumentation av ditt projekt där följande är inkluderat.
+
+<ul class = "list">
+    <li><a href=" "> Länk till dokumentationen som är genererad via phpdoc. </a></li>
+    <li><a href=" "> Länk till rapporten från phpmetrics. </a></li>
+    <li><a href=" "> Länk till ditt GitHub repo. </a></li>
+    <li><a href=" "> Länk till Scrutinizer för ditt repo. </a></li>
+</ul>
+
+
+<h2>Summering</h2>
+Din about-sida skall innehålla en summering där du berättar om projektets kodkvalitet. </br>
+
+Berätta vilka eventuella åtgärder du gjort för att kvalitetssäkra projektet och hur du jobbat med kodkvaliteten och vilka verktyg du använt.</br>
+
+Har du fokuserat på några speciella saker, verktyg eller metrics, så kan du berätta om dem.</br>
+
+<h2>Återställ</h2>
+Det skall finnas en route /proj/reset som återställer databasen till dess ursprungliga läge. 
+<p><a class = "button" href=" "> Återställ</a></p>
+{% endblock %}

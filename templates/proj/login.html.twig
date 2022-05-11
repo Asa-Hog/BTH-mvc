@@ -1,0 +1,53 @@
+{% extends "baseProj.html.twig" %}
+
+{% block title %} Project {% endblock %}
+
+{% block content %}
+
+
+<h1>Logga in</h1>
+
+<form action:"{{ path('loginProcessProj') }}" method="post">
+    <fieldset>
+    <legend>Detaljer</legend>
+
+    <p>
+        <label>Akronym:
+            <input type="text" name="acronym" value="" required>
+        </label>
+    </p>
+    <p>
+        <label>Lösenord:
+            <input type="password" name="pwd" value="" required>
+        </label>
+    </p>
+
+    <p>
+        <input class = "button" type="submit" value="Logga in">
+    </p>
+    </fieldset>
+</form>
+
+</br>
+<p>
+
+    <p>Följande användare finns redan i systemet och kan användas för att logga in
+        <ul class = "list">
+            <li>akronym doe, lösenord doe</li>
+            <li>akronym admin, lösenord admin</li>
+        </ul>
+	</p>
+    
+
+    Användare har en profilsida med detaljer om användaren. Någon av detaljerna skall kunna redigeras av användaren.
+
+
+
+
+    <a class = "button green" href = "{{ path("createUserProj") }}">Registrera</a></br>
+
+
+
+
+
+{% endblock %}

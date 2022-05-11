@@ -1,0 +1,50 @@
+{% extends 'baseProj.html.twig' %}
+
+{% block title %}Update user{% endblock %}
+
+{% block content %} 
+
+<h1>Update user</h1>
+
+
+<form action:"{{ path('user_update_process', {'id':user.getId()} ) }}" method="post">
+        <fieldset>
+            <legend>User details</legend>
+            <p>
+                <label>Email:
+                    <input type="email" name="email" value="{{ user.getEmail() }}">
+                </label>
+            </p>
+            <p>
+                <label>Image:
+                    <input type="text" name="img" value="{{ user.getImg() }}">
+                </label>
+            </p>
+            <p>
+                <label>Acronym:
+                    <input type="text" name="acronym" value="{{ user.getAcronym() }}" required>
+                </label>
+            </p>
+            <p>
+                <label>Name:
+                    <input type="text" name="name" value="{{ user.getName() }}">
+                </label>
+            </p>
+            <p>
+                <label>Password:
+                    <input type="password" name="pwd" value="{{ user.getPwd() }}" required>
+                </label>
+            </p>
+            <p>
+                <label>Type (admin/doe):
+                    <input type="type" name="type" value="{{ user.getType() }}">
+                </label>
+            </p>
+            <p>
+                <input class = "button" type="submit" value="Update">
+            </p>
+        </fieldset>
+    </form>
+    
+    {% endblock %}
+    

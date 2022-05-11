@@ -22,7 +22,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/user/create", name="user_create_save"),
+     * @Route("/user/create", name="user_create_save",
      * methods={"POST"})
      */
     public function createUser(

@@ -1,0 +1,48 @@
+{% extends 'baseProj.html.twig' %}
+
+{% block title %}Skapa användare{% endblock %}
+
+{% block content %} 
+
+<h1>Registrera</h1>
+
+<form action:"{{ path('createUserSaveProj') }}" method="post">
+    <fieldset>
+    <legend>Detaljer</legend>
+    <p>
+        <label>Email:
+            <input type="email" name="email" value="">
+        </label>
+    </p>
+    <p>
+        <label>Bildlänk:
+            <input type="text" name="img" value="smiley-pixabay.png">
+        </label>
+    </p>
+    <p>
+        <label>Akronym:
+            <input type="text" name="acronym" value="" required>
+        </label>
+    </p>
+    <p>
+        <label>Namn:
+            <input type="text" name="name" value="">
+        </label>
+    </p>
+    <p>
+        <label>Lösenord:
+            <input type="password" name="pwd" value="">
+        </label>
+    </p>
+    <p>
+        <label>Typ (admin/doe):
+            <input type="type" name="type" value="">
+        </label>
+    </p>
+    <p>
+        <input class = "button" type="submit" value="Skapa">
+    </p>
+    </fieldset>
+</form>
+
+{% endblock %}

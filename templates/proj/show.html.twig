@@ -1,0 +1,33 @@
+{% extends 'baseProj.html.twig' %}
+
+{% block title %}Show all users{% endblock %}
+
+{% block content %} 
+
+
+<h1>Alla användare</h1>
+
+<a class = "button green" href = "{{ path("createUserProj") }}">Skapa användare</a></br>
+
+<table>
+    <th>Email</th><th>Bildlänk</th><th>Akronym</th><th>Namn</th><th>Lösenord</th><th>Typ</th><th>Uppdatera</th><th>Radera</th>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.getEmail() }}</td>
+            <td>{{ user.getImg() }}</td>
+            <td><a href = "{{ path("showUserByIdProj", {'id':user.getId()} ) }}">{{ user.getAcronym() }}</a></td>
+            {# <td><a href = "{{ path("showUserByIdProj") }}">{{ user.getAcronym() }}</a></td> #}
+            <td>{{ user.getName() }}</td>
+            <td>{{ user.getPwd() }}</td>
+            <td>{{ user.getType() }}</td>
+            <td><a href = "{{ path("updateUserByIdProj", {'id':user.getId()} ) }}"> Uppdatera</a></td>
+            <td><a href = "{{ path("deleteUserByIdProj", {'id':user.getId()} ) }}"> Radera</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a class = "button" href = "{{ path("logoutProj") }}">Logga ut</a></br>
+
+
+
+{% endblock %}
