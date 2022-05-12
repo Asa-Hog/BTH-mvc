@@ -54,6 +54,20 @@ class GameTest extends TestCase
         $this->assertIsString($res);
     }
 
+    // /**
+    //  * Verifies that the getMessage method returns a string
+    //  */
+    // public function testGameGetMessage()
+    // {
+    //     $deck = new Deck();
+    //     $player = new Player();
+    //     $bank = new Player();
+    //     $game = new Game($deck, $player, $bank);
+
+    //     $res = $game->getMessage();
+    //     $this->assertIsString($res);
+    // }
+
     /**
      * Verifies that the setWinner method sets a string
      */
@@ -71,5 +85,24 @@ class GameTest extends TestCase
 
         $resAfter = $game->getWinner();
         $this->assertEquals($resAfter, "exists");
+    }
+
+    /**
+     * Verifies that the checkPointsOver21 resets points to 0
+     */
+    public function testCheckPointsOver21()
+    {
+        $deck = new Deck();
+        $player = new Player();
+        $bank = new Player();
+        $game = new Game($deck, $player, $bank);
+
+        $player->setPoints(19);
+        $bank->setPoints(22);
+
+        $game->checkPointsOver21();
+        $res = $game->getMessage();
+
+        $this->assertEquals($res, "The winner is the player!");
     }
 }

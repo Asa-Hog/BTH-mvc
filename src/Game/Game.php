@@ -68,7 +68,7 @@ class Game
     /**
      * Checks if player or bank got over 21 points and sets it to 0 in that case
      */
-    public function checkPointsOver21(): string
+    public function checkPointsOver21(): void
     {
         if ($this->getPlayer()->getPoints() > 21) {
             $this->getPlayer()->resetPoints();

@@ -111,9 +111,9 @@ Ett sätt att analysera kvaliteten på sin kod är att installera och använda v
 <h2>Förbättringar</h2>
 <p>Genom att titta på första bilden från Scrutinizer ser man att test coverage inte var enablat. Detta beror på att en konfigurationsfil inte har blivit pushad till GitHub-repot. Det tänker jag göra så att korrekta mätvärden kan fås. Oklart om det kommer påverka mätvärdena, men om det saknas information borde måttet på kodkvaliteten bli lägre, det borde ge samma resultat som om koden inte är testad.</p>
 
-<p>För att förbättra kvaliteten ytterligare i koden väljer jag att titta på de issues som finns i rapporten för Scrutinizer, för att se om det är några jag kan försöka lösa där. Det känns som en "enkel" sak att göra i och med att man får direkta förslag på var i koden problemet ligger, och vad de anser kan förbättra den. I detta fall är det filerna BookController.php och UserController.php som fått kommentarerna att parametern <span style="font-family:'Courier New', Courier, monospace"> $request </span>inte används och kan tas bort, samt filen CardController.php som fått kommentaren <span style="font-family:'Courier New', Courier, monospace">It seems like $drawn[0] can also be of type null; however, parameter $card of App\Card\CardHand::addCard() does only seem to accept App\Card\Card, maybe add an additional type check?</span> Eftersom det totala värdet var ganska bra från början så tror jag inte dessa ändringar kommer ge jättestor effekt, men det återstår att se.</p>
+<p>För att förbättra kvaliteten ytterligare i koden väljer jag att titta på de issues som finns i rapporten för Scrutinizer, för att se om det är några jag kan försöka lösa där. Det känns som en "enkel" sak att göra i och med att man får direkta förslag på var i koden problemet ligger, och vad de anser kan förbättra den. I detta fall är det filerna BookController.php och UserController.php som fått kommentarerna att parametern <span style="font-family:'Courier New', Courier, monospace"> $request </span>inte används och kan tas bort, samt filen CardController.php som fått kommentaren <span style="font-family:'Courier New', Courier, monospace">It seems like $drawn[0] can also be of type null; however, parameter $card of App\Card\CardHand::addCard() does only seem to accept App\Card\Card, maybe add an additional type check?</span>Eftersom det totala värdet var bra från början så tror jag inte dessa två ändringar kommer ge jättestor effekt, men det återstår att se.</p>
 
-<p>Jag väljer även att titta på om det går att minska komplexiteten för metoden App\Game\Game::getMessage() för att se om jag kan få ner det värdet. Det borde inte ge effekt på den totala kodkvaliteten, eftersom den redan är 10,0 men intressant att se hur man kan jobba själv för att minska komplexiteten på en metod, och förhoppningsvis minska det värdet.</p>
+<p>Jag väljer även att titta på om det går att minska komplexiteten för metoden App\Game\Game::getMessage() för att se om jag kan få ner det värdet. Det borde inte ge stor effekt på den totala kodkvaliteten, eftersom den redan är hög, men intressant att se hur man kan jobba själv för att minska komplexiteten på en metod, och förhoppningsvis minska det värdet.</p>
 
 <p>Jag försöker också minska CRAP score på metoden Game::getMessage() genom att införa något extra test.</p>
 
@@ -123,23 +123,17 @@ Ett sätt att analysera kvaliteten på sin kod är att installera och använda v
     <figcaption>Rapport från Scrutinizer efter tillagd konfigurationsfil.</figcaption>
 </figure>
 
-<p>När det gäller de issues som fanns gick den enkelt att endast ta bort $request, då det var kod som inte behövdes.</p>
+<p>När det gäller de issues som fanns gick den enkelt att endast ta bort $request, då det var kod som inte behövdes. Det märktes dock inte på den totala kvaliteten då den redan var 10,0.</p>
 
-<p>Det gick att minska komplexiteten på metoden App\Game\Game::getMessage() genom att dela upp den i två metoder. Första delen avser egentligen en poängräkning, och kan göras separat från att hämta meddelande. Här fick alltså kontrollen över kvaliteten mig att inse att jag hade en metod som egentligen gjorde två saker, och var bättre att dela upp.</p>
-
-<span style="background-color: #FFFF00">
-    Notera de nya mätvärdena.</br></br>
-    Gör det tydligt hur mätvärdena såg ut innan och efter dina förbättringar.</span>
-    
-    
-
+<p>Det gick att minska komplexiteten på metoden App\Game\Game::getMessage() genom att dela upp den i två metoder. Från ett värde på 6 fick den nu ett värde på 4.
+Bara genom att göra det minskade CRAP score från 42 till 20, även fast jag inte gjort ett ytterligare test än. Jag la till test på den nya metoden i stället.</p>
 
 <h2>Diskussion</h2>
 
 <p>Genom att arbeta igenom de förslag och svagheter som nämns som problem i koden kan man alltså förbättra kvaliteten på ett enkelt sätt. </p>
 
-<span style="background-color: #FFFF00">Diskutera kort kring det du nyss gjort. </br></span>
+</p>För t ex metoden App\Game\Game::getMessage() så var det väldigt tydligt att se vad komplexiteten var, och därmed enkelt att sätta igång och försöka förbättra mätvärdet och kvaliteten på koden. Jag noterade att första delen egentligen avser en poängräkning, och kan göras separat från att hämta meddelande. Här fick alltså kontrollen över kvaliteten mig att inse att jag hade en metod som egentligen gjorde två saker, och var bättre att dela upp. Även issues är enkla att ta tag i, bara jobba med en i taget, även så att göra fler tester.</p>
 
-</p>För t ex metoden App\Game\Game::getMessage() så var det väldigt tydligt att se vad komplexiteten var, och därmed enkelt att sätta igång och försöka förbättra mätvärdet och kvaliteten på koden. Verktygen ger en tydlig överblick över hur det ser ut, och är därför smidiga att använda som hjälp för att få högkvalitativ kod. När man pushar sin kod till GitHub och gör helhetspoängen, och att man lätt kan se vad den tidigare poängen var, att man lätt kan se om man är på väg åt rätt håll då man uppdaterar sin kod, och det blir även roligt att försöka tävla med sig själv i att få till en bra kod.</p>
+<p>Verktygen ger en tydlig överblick över hur det ser ut, och är därför smidiga att använda som hjälp för att få högkvalitativ kod. När man pushar sin kod till GitHub och gör helhetspoängen, och att man lätt kan se vad den tidigare poängen var, att man lätt kan se om man är på väg åt rätt håll då man uppdaterar sin kod, och det blir även roligt att försöka tävla med sig själv i att få till en bra kod.</p>
 
 {% endblock %}
