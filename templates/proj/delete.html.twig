@@ -4,38 +4,38 @@
 
 {% block content %} 
 
-<h1>Delete user</h1>
+<h1>Radera användare</h1>
 
 <form action:"{{ path('user_delete_by_id_process', {'id': user.getId()} ) }}" method="post">
     <fieldset>
-        <legend>User details</legend>
+        <legend>Användardetaljer</legend>
         <p>
             <label>Email:
                 <input type="email" name="email" value="{{ user.getEmail() }}">
             </label>
         </p>
         <p>
-            <label>Image:
+            <label>Bildlänk:
                 <input type="text" name="img" value="{{ user.getImg() }}">
             </label>
         </p>
         <p>
-            <label>Acronym:
+            <label>Akronym:
                 <input type="text" name="acronym" value="{{ user.getAcronym() }}" required>
             </label>
         </p>
         <p>
-            <label>Name:
+            <label>Namn:
                 <input type="text" name="name" value="{{ user.getName() }}">
             </label>
         </p>
         <p>
-            <label>Password:
+            <label>Lösenord:
                 <input type="password" name="pwd" value="{{ user.getPwd() }}">
             </label>
         </p>
         <p>
-            <label>Type (admin/doe):
+            <label>Typ (admin/doe):
                 <input type="type" name="type" value="{{ user.getType() }}">
             </label>
         </p>

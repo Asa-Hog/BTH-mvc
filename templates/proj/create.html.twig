@@ -31,14 +31,25 @@
     </p>
     <p>
         <label>Lösenord:
-            <input type="password" name="pwd" value="">
+            <input type="password" name="pwd" value="" required>
         </label>
     </p>
+
+
+    {% if (type == "admin") %}
     <p>
         <label>Typ (admin/doe):
             <input type="type" name="type" value="">
         </label>
     </p>
+    {% else %}
+    <p>
+        <label>Typ:
+            <input type="type" name="type" value="doe" readonly>
+        </label>
+    </p>
+    {% endif %}
+
     <p>
         <input class = "button" type="submit" value="Skapa">
     </p>

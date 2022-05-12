@@ -47,9 +47,17 @@ class ProjectController extends AbstractController
      * @Route("/proj/user/create", name="createUserProj",
      * methods={"GET"})
      */
-    public function create(): Response
+    public function create(
+        SessionInterface $session
+    ): Response
     {
-        return $this->render('proj/create.html.twig');
+        $type = $session->get("userType") ?? null ;
+
+        $data = [
+            'type' => $type
+            ];
+
+        return $this->render('proj/create.html.twig', $data);
     }
 
     /**
@@ -58,27 +66,9 @@ class ProjectController extends AbstractController
      */
     public function createUser(
         ManagerRegistry $doctrine,
-        Request $request
+        Request $request,
     ): Response {
         $entityManager = $doctrine->getManager();
-
-        // $user = new User();
-        // $user->setEmail('doe@doe.com');
-        // $user->setImg('smiley-pixabay.png');
-        // $user->setAcronym('doe');
-        // $user->setName('doe');
-        // $user->setPwd('doe');
-        // $user->setType('doe');
-        // $entityManager->persist($user);
-
-        // $user = new User();
-        // $user->setEmail('admin@admin.com');
-        // $user->setImg('smiley-pixabay.png');
-        // $user->setAcronym('admin');
-        // $user->setName('admin');
-        // $user->setPwd('admin');
-        // $user->setType('admin');
-        // $entityManager->persist($user);
 
         // GET FROM FORM
             // if ($_POST['password']) {
@@ -354,6 +344,7 @@ class ProjectController extends AbstractController
     public function updateUser(
         ManagerRegistry $doctrine,
         Request $request,
+        SessionInterface $session,
         int $id
     ): Response {
         $entityManager = $doctrine->getManager();
@@ -365,8 +356,11 @@ class ProjectController extends AbstractController
             );
         }
 
+        $type = $session->get("userType");
+
         $data = [
-            'user' => $user
+            'user' => $user,
+            'type' => $type
             ];
 
         return $this->render('proj/update.html.twig', $data);
@@ -408,6 +402,51 @@ class ProjectController extends AbstractController
         $entityManager->flush();
 
         return $this->redirectToRoute('showAllUsersProj');
+    }
+
+    /**
+     * @Route("/proj/reset", name="resetProj")
+     */
+    public function reset(
+        ManagerRegistry $doctrine,
+        SessionInterface $session,
+        UserRepository $userRepository
+    ): Response {
+        $session->clear();
+
+        $entityManager = $doctrine->getManager();
+
+        // Hämta alla användare
+        $users = $userRepository
+        ->findAll();
+
+        // Radera alla användare från databasen
+        for ($i = 0; $i < count($users); ++$i) {
+            $entityManager->remove($users[$i]);
+            $entityManager->flush();
+        }
+
+        $user = new User();
+        $user->setEmail('doe@doe.com');
+        $user->setImg('smiley-pixabay.png');
+        $user->setAcronym('doe');
+        $user->setName('doe');
+        $user->setPwd('doe');
+        $user->setType('doe');
+        $entityManager->persist($user);
+
+        $user = new User();
+        $user->setEmail('admin@admin.com');
+        $user->setImg('smiley-pixabay.png');
+        $user->setAcronym('admin');
+        $user->setName('admin');
+        $user->setPwd('admin');
+        $user->setType('admin');
+        $entityManager->persist($user);
+
+        $entityManager->flush();
+
+        return $this->redirectToRoute('proj');
     }
 
 }

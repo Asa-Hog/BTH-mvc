@@ -15,7 +15,7 @@ Din about-sida skall innehålla en sektion om dokumentation av ditt projekt där
 <ul class = "list">
     <li><a href=" "> Länk till dokumentationen som är genererad via phpdoc. </a></li>
     <li><a href=" "> Länk till rapporten från phpmetrics. </a></li>
-    <li><a href=" "> Länk till ditt GitHub repo. </a></li>
+    <li><a href="https://github.com/Asa-Hog/BTH-mvc"> Länk till ditt GitHub repo. </a></li>
     <li><a href=" "> Länk till Scrutinizer för ditt repo. </a></li>
 </ul>
 
@@ -28,6 +28,7 @@ Berätta vilka eventuella åtgärder du gjort för att kvalitetssäkra projektet
 Har du fokuserat på några speciella saker, verktyg eller metrics, så kan du berätta om dem.</br>
 
 <h2>Återställ</h2>
-Det skall finnas en route /proj/reset som återställer databasen till dess ursprungliga läge. 
-<p><a class = "button" href=" "> Återställ</a></p>
+Tryck på nedanstående knapp om du vill logga ut samt återställa databasen till sitt ursprungliga läge.
+
+<p><a class = "button" href="{{ path("resetProj") }}"> Återställ</a></p>
 {% endblock %}
