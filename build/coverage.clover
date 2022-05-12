@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652115315">
-  <project timestamp="1652115315">
+<coverage generated="1652378196">
+  <project timestamp="1652378196">
     <file name="C:\Users\asa_h\Desktop\bth\mvc\me\report\src\Card\Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
@@ -304,6 +304,171 @@
       <line num="18" type="method" name="showMetrics" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="20" type="stmt" count="0"/>
       <metrics loc="23" ncloc="20" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+    </file>
+    <file name="C:\Users\asa_h\Desktop\bth\mvc\me\report\src\Controller\ProjectController.php">
+      <class name="App\Controller\ProjectController" namespace="global">
+        <metrics complexity="31" methods="17" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="142" coveredstatements="0" elements="159" coveredelements="0"/>
+      </class>
+      <line num="23" type="method" name="proj" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="25" type="stmt" count="0"/>
+      <line num="31" type="method" name="about" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <line num="39" type="method" name="cleancode" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="41" type="stmt" count="0"/>
+      <line num="50" type="method" name="create" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="54" type="stmt" count="0"/>
+      <line num="56" type="stmt" count="0"/>
+      <line num="60" type="stmt" count="0"/>
+      <line num="67" type="method" name="createUser" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="71" type="stmt" count="0"/>
+      <line num="81" type="stmt" count="0"/>
+      <line num="82" type="stmt" count="0"/>
+      <line num="83" type="stmt" count="0"/>
+      <line num="84" type="stmt" count="0"/>
+      <line num="85" type="stmt" count="0"/>
+      <line num="89" type="stmt" count="0"/>
+      <line num="91" type="stmt" count="0"/>
+      <line num="92" type="stmt" count="0"/>
+      <line num="93" type="stmt" count="0"/>
+      <line num="94" type="stmt" count="0"/>
+      <line num="95" type="stmt" count="0"/>
+      <line num="96" type="stmt" count="0"/>
+      <line num="97" type="stmt" count="0"/>
+      <line num="99" type="stmt" count="0"/>
+      <line num="101" type="stmt" count="0"/>
+      <line num="102" type="stmt" count="0"/>
+      <line num="110" type="method" name="loginProj" visibility="public" complexity="3" crap="12" count="0"/>
+      <line num="113" type="stmt" count="0"/>
+      <line num="116" type="stmt" count="0"/>
+      <line num="118" type="stmt" count="0"/>
+      <line num="120" type="stmt" count="0"/>
+      <line num="124" type="stmt" count="0"/>
+      <line num="126" type="stmt" count="0"/>
+      <line num="127" type="stmt" count="0"/>
+      <line num="128" type="stmt" count="0"/>
+      <line num="131" type="stmt" count="0"/>
+      <line num="135" type="stmt" count="0"/>
+      <line num="142" type="method" name="userProj" visibility="public" complexity="6" crap="42" count="0"/>
+      <line num="151" type="stmt" count="0"/>
+      <line num="152" type="stmt" count="0"/>
+      <line num="159" type="stmt" count="0"/>
+      <line num="160" type="stmt" count="0"/>
+      <line num="163" type="stmt" count="0"/>
+      <line num="165" type="stmt" count="0"/>
+      <line num="166" type="stmt" count="0"/>
+      <line num="167" type="stmt" count="0"/>
+      <line num="170" type="stmt" count="0"/>
+      <line num="171" type="stmt" count="0"/>
+      <line num="174" type="stmt" count="0"/>
+      <line num="176" type="stmt" count="0"/>
+      <line num="178" type="stmt" count="0"/>
+      <line num="182" type="stmt" count="0"/>
+      <line num="184" type="stmt" count="0"/>
+      <line num="185" type="stmt" count="0"/>
+      <line num="186" type="stmt" count="0"/>
+      <line num="189" type="stmt" count="0"/>
+      <line num="196" type="stmt" count="0"/>
+      <line num="197" type="stmt" count="0"/>
+      <line num="206" type="method" name="logout" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="208" type="stmt" count="0"/>
+      <line num="215" type="method" name="logoutProcess" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="217" type="stmt" count="0"/>
+      <line num="218" type="stmt" count="0"/>
+      <line num="225" type="method" name="showUserById" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="230" type="stmt" count="0"/>
+      <line num="231" type="stmt" count="0"/>
+      <line num="232" type="stmt" count="0"/>
+      <line num="234" type="stmt" count="0"/>
+      <line num="239" type="stmt" count="0"/>
+      <line num="245" type="method" name="showUserByIdSession" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="249" type="stmt" count="0"/>
+      <line num="250" type="stmt" count="0"/>
+      <line num="252" type="stmt" count="0"/>
+      <line num="253" type="stmt" count="0"/>
+      <line num="255" type="stmt" count="0"/>
+      <line num="260" type="stmt" count="0"/>
+      <line num="267" type="method" name="showAllUsers" visibility="public" complexity="3" crap="12" count="0"/>
+      <line num="271" type="stmt" count="0"/>
+      <line num="274" type="stmt" count="0"/>
+      <line num="276" type="stmt" count="0"/>
+      <line num="280" type="stmt" count="0"/>
+      <line num="281" type="stmt" count="0"/>
+      <line num="282" type="stmt" count="0"/>
+      <line num="283" type="stmt" count="0"/>
+      <line num="287" type="stmt" count="0"/>
+      <line num="295" type="method" name="deleteUserById" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="299" type="stmt" count="0"/>
+      <line num="300" type="stmt" count="0"/>
+      <line num="302" type="stmt" count="0"/>
+      <line num="303" type="stmt" count="0"/>
+      <line num="304" type="stmt" count="0"/>
+      <line num="308" type="stmt" count="0"/>
+      <line num="312" type="stmt" count="0"/>
+      <line num="319" type="method" name="deleteUserByIdProcess" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="324" type="stmt" count="0"/>
+      <line num="325" type="stmt" count="0"/>
+      <line num="327" type="stmt" count="0"/>
+      <line num="328" type="stmt" count="0"/>
+      <line num="329" type="stmt" count="0"/>
+      <line num="333" type="stmt" count="0"/>
+      <line num="334" type="stmt" count="0"/>
+      <line num="336" type="stmt" count="0"/>
+      <line num="344" type="method" name="updateUser" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="350" type="stmt" count="0"/>
+      <line num="351" type="stmt" count="0"/>
+      <line num="353" type="stmt" count="0"/>
+      <line num="354" type="stmt" count="0"/>
+      <line num="355" type="stmt" count="0"/>
+      <line num="359" type="stmt" count="0"/>
+      <line num="361" type="stmt" count="0"/>
+      <line num="366" type="stmt" count="0"/>
+      <line num="373" type="method" name="updateUserProcess" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="378" type="stmt" count="0"/>
+      <line num="379" type="stmt" count="0"/>
+      <line num="381" type="stmt" count="0"/>
+      <line num="382" type="stmt" count="0"/>
+      <line num="383" type="stmt" count="0"/>
+      <line num="388" type="stmt" count="0"/>
+      <line num="389" type="stmt" count="0"/>
+      <line num="390" type="stmt" count="0"/>
+      <line num="391" type="stmt" count="0"/>
+      <line num="392" type="stmt" count="0"/>
+      <line num="393" type="stmt" count="0"/>
+      <line num="395" type="stmt" count="0"/>
+      <line num="396" type="stmt" count="0"/>
+      <line num="397" type="stmt" count="0"/>
+      <line num="398" type="stmt" count="0"/>
+      <line num="399" type="stmt" count="0"/>
+      <line num="400" type="stmt" count="0"/>
+      <line num="402" type="stmt" count="0"/>
+      <line num="404" type="stmt" count="0"/>
+      <line num="410" type="method" name="reset" visibility="public" complexity="2" crap="6" count="0"/>
+      <line num="415" type="stmt" count="0"/>
+      <line num="417" type="stmt" count="0"/>
+      <line num="420" type="stmt" count="0"/>
+      <line num="421" type="stmt" count="0"/>
+      <line num="424" type="stmt" count="0"/>
+      <line num="425" type="stmt" count="0"/>
+      <line num="426" type="stmt" count="0"/>
+      <line num="429" type="stmt" count="0"/>
+      <line num="430" type="stmt" count="0"/>
+      <line num="431" type="stmt" count="0"/>
+      <line num="432" type="stmt" count="0"/>
+      <line num="433" type="stmt" count="0"/>
+      <line num="434" type="stmt" count="0"/>
+      <line num="435" type="stmt" count="0"/>
+      <line num="436" type="stmt" count="0"/>
+      <line num="438" type="stmt" count="0"/>
+      <line num="439" type="stmt" count="0"/>
+      <line num="440" type="stmt" count="0"/>
+      <line num="441" type="stmt" count="0"/>
+      <line num="442" type="stmt" count="0"/>
+      <line num="443" type="stmt" count="0"/>
+      <line num="444" type="stmt" count="0"/>
+      <line num="445" type="stmt" count="0"/>
+      <line num="447" type="stmt" count="0"/>
+      <line num="449" type="stmt" count="0"/>
+      <metrics loc="453" ncloc="355" classes="1" methods="17" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="142" coveredstatements="0" elements="159" coveredelements="0"/>
     </file>
     <file name="C:\Users\asa_h\Desktop\bth\mvc\me\report\src\Controller\ReportController.php">
       <class name="App\Controller\ReportController" namespace="global">
@@ -629,6 +794,6 @@
       <line num="46" type="stmt" count="0"/>
       <metrics loc="79" ncloc="36" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
     </file>
-    <metrics files="24" loc="1896" ncloc="1403" classes="23" methods="110" coveredmethods="20" conditionals="0" coveredconditionals="0" statements="374" coveredstatements="44" elements="484" coveredelements="64"/>
+    <metrics files="25" loc="2349" ncloc="1758" classes="24" methods="127" coveredmethods="20" conditionals="0" coveredconditionals="0" statements="516" coveredstatements="44" elements="643" coveredelements="64"/>
   </project>
 </coverage>

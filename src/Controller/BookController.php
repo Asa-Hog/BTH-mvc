@@ -144,7 +144,6 @@ class BookController extends AbstractController
      */
     public function deleteBookByIdProcess(
         ManagerRegistry $doctrine,
-        Request $request,
         int $id
     ): Response {
         $entityManager = $doctrine->getManager();
@@ -169,7 +168,6 @@ class BookController extends AbstractController
      */
     public function updateBook(
         ManagerRegistry $doctrine,
-        Request $request,
         int $id
     ): Response {
         $entityManager = $doctrine->getManager();

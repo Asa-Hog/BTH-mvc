@@ -65,27 +65,10 @@ class Game
     }
 
 
-    // /**
-    //  * Checks if player or bank got over 21 points and sets it to 0 in that case
-    //  */
-    // public function checkPointsOver21(): string
-    // {
-    //     if ($this->getPlayer()->getPoints() > 21) {
-    //         $this->getPlayer()->resetPoints();
-    //     }
-
-    //     if ($this->getBank()->getPoints() > 21) {
-    //         $this->getBank()->resetPoints();
-    //     }
-
-    // }
-
-
     /**
-     * Returns a message of who won the game
-     * @return string Message containing who won the game
+     * Checks if player or bank got over 21 points and sets it to 0 in that case
      */
-    public function getMessage(): string
+    public function checkPointsOver21(): string
     {
         if ($this->getPlayer()->getPoints() > 21) {
             $this->getPlayer()->resetPoints();
@@ -95,6 +78,15 @@ class Game
             $this->getBank()->resetPoints();
         }
 
+    }
+
+
+    /**
+     * Returns a message of who won the game
+     * @return string Message containing who won the game
+     */
+    public function getMessage(): string
+    {
         if ($this->getBank()->getPoints() == $this->getPlayer()->getPoints()) {
             $this->message = "It's a draw!";
         }

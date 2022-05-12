@@ -137,7 +137,6 @@ class UserController extends AbstractController
      */
     public function deleteUserByIdProcess(
         ManagerRegistry $doctrine,
-        Request $request,
         int $id
     ): Response {
         $entityManager = $doctrine->getManager();
@@ -162,7 +161,6 @@ class UserController extends AbstractController
      */
     public function updateUser(
         ManagerRegistry $doctrine,
-        Request $request,
         int $id
     ): Response {
         $entityManager = $doctrine->getManager();

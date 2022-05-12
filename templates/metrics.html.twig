@@ -117,13 +117,6 @@ Ett sätt att analysera kvaliteten på sin kod är att installera och använda v
 
 <p>Jag försöker också minska CRAP score på metoden Game::getMessage() genom att införa något extra test.</p>
 
-<span style="background-color: #FFFF00">
-Implementera förbättringarna.</br></br>
-Notera de nya mätvärdena.</br></br>
-Gör det tydligt hur mätvärdena såg ut innan och efter dina förbättringar.</span>
-
-
-
 <p>Genom att se till att konfigurationsfilen blev pushad till GitHub-repot så kan man direkt se att det gav effekt på kodkvalieten. Värdet ökade från 9,93 till 10,0.</p>
 <figure>
     <a href = "{{ asset("img/quality_phpmetrics_start_new.JPG") }}" ><img class = "metrics-pic" src = "{{ asset("img/quality_phpmetrics_start_new.JPG") }}" alt = "Scrutinizer report"></a>
@@ -132,7 +125,13 @@ Gör det tydligt hur mätvärdena såg ut innan och efter dina förbättringar.<
 
 <p>När det gäller de issues som fanns gick den enkelt att endast ta bort $request, då det var kod som inte behövdes.</p>
 
-<p>Det gick att minska komplexiteten på metoden App\Game\Game::getMessage() genom att dela upp den i två metoder. Första delen avser egentligen en poängräkning, och kan göras separat från att hämta meddelande. </p>
+<p>Det gick att minska komplexiteten på metoden App\Game\Game::getMessage() genom att dela upp den i två metoder. Första delen avser egentligen en poängräkning, och kan göras separat från att hämta meddelande. Här fick alltså kontrollen över kvaliteten mig att inse att jag hade en metod som egentligen gjorde två saker, och var bättre att dela upp.</p>
+
+<span style="background-color: #FFFF00">
+    Notera de nya mätvärdena.</br></br>
+    Gör det tydligt hur mätvärdena såg ut innan och efter dina förbättringar.</span>
+    
+    
 
 
 <h2>Diskussion</h2>

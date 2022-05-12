@@ -49,6 +49,7 @@
         {% if ( game.getWinner() == "") %} 
             <h2>  </h2>
         {% else %}
+        {% checkPointsOver21() %}
         <h2> {{ game.getMessage() }} </h2>
         {% endif %} 
 </div>
