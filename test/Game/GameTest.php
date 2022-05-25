@@ -54,20 +54,6 @@ class GameTest extends TestCase
         $this->assertIsString($res);
     }
 
-    // /**
-    //  * Verifies that the getMessage method returns a string
-    //  */
-    // public function testGameGetMessage()
-    // {
-    //     $deck = new Deck();
-    //     $player = new Player();
-    //     $bank = new Player();
-    //     $game = new Game($deck, $player, $bank);
-
-    //     $res = $game->getMessage();
-    //     $this->assertIsString($res);
-    // }
-
     /**
      * Verifies that the setWinner method sets a string
      */
@@ -88,7 +74,7 @@ class GameTest extends TestCase
     }
 
     /**
-     * Verifies that the checkPointsOver21 resets points to 0
+     * Verifies that the checkPointsOver21 resets points to 0 for player
      */
     public function testCheckPointsOver21()
     {

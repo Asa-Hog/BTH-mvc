@@ -9,20 +9,46 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\User;
+use App\Entity\Weather;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Repository\UserRepository;
+use App\Repository\WeatherRepository;
 use Symfony\Component\HttpFoundation\Request;
 
+use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
+use Symfony\UX\Chartjs\Model\Chart;
 
+use App\Weather\Proj;
 
 class ProjectController extends AbstractController
 {
+    #[Route('/project', name: 'app_project')]
+    public function index(): Response
+    {
+        return $this->render('project/index.html.twig', [
+            'controller_name' => 'ProjectController',
+        ]);
+    }
+
     /**
      * @Route("/proj", name="proj")
      */
-    public function proj(): Response
+    public function proj(
+        WeatherRepository $weatherRepository,
+        ChartBuilderInterface $chartBuilder
+    ): Response
     {
-        return $this->render('proj.html.twig');
+        // LÄS IN DATA FRÅN DATABASEN
+        $weather = $weatherRepository
+        ->findAll();
+
+        $ProjChart = new Proj();
+        $charts = $ProjChart->createCharts($weather, $chartBuilder);
+
+        return $this->render('proj.html.twig', [
+            'chart' => $charts
+        ]);
+
     }
 
     /**
@@ -75,17 +101,12 @@ class ProjectController extends AbstractController
             // // $acronym = $request->request->get('acronym');
             // // $pwd = $request->request->get('pwd')
             // $pwd = $_POST["pwd"];
-            // $hash = password_hash($pwd, PASSWORD_DEFAULT); 
-            // $password_verify($pwd, $hash);
             //  }
         $email = $request->request->get('email');
         $img = $request->request->get('img');
         $acronym = $request->request->get('acronym');
         $name = $request->request->get('name');
         $pwd = $request->request->get('pwd');
-        // Spara det hashade lösenordet i databasen
-        // $pwdBeforeHashing = $request->request->get('pwd');
-        // $pwd = password_hash($pwdBeforeHashing, PASSWORD_DEFAULT); 
         $type = $request->request->get('type');
 
         $user = new User();
@@ -131,7 +152,6 @@ class ProjectController extends AbstractController
             return $this->redirectToRoute('showAllUsersProj', $data);
         }
 
-
         return $this->render('proj/login.html.twig');
     }
 
@@ -147,13 +167,8 @@ class ProjectController extends AbstractController
     {
 
          // GET FROM FORM
-        //  if ($_POST['pwd']) {
         $acronym = $request->request->get('acronym');
         $pwd = $request->request->get('pwd');
-            // $pwd = $_POST["pwd"];
-            // $hash = password_hash($pwd, PASSWORD_DEFAULT); 
-            // $password_verify($pwd, $hash);
-        //  }
 
         // GET USERS FROM DATABASE
         $users = $userRepository
@@ -194,9 +209,8 @@ class ProjectController extends AbstractController
         // $user = $session->get("user") ?? new User($acronym, $pwd);
     // Om matchning inte finns - stanna kvar på samma sida
     echo "No match";
+
     return $this->redirectToRoute('loginProj');
-
-
     }
 
     /**
@@ -217,7 +231,6 @@ class ProjectController extends AbstractController
         $session->clear();
         return $this->redirectToRoute('loginProj');
     }
-
 
     /**
      * @Route("/proj/show/{id}", name="showUserByIdProj")
@@ -259,7 +272,6 @@ class ProjectController extends AbstractController
 
         return $this->render('proj/show-one.html.twig', $data);
     }
-
 
     /**
     * @Route("/proj/user/show", name="showAllUsersProj")
@@ -336,7 +348,6 @@ class ProjectController extends AbstractController
         return $this->redirectToRoute('showAllUsersProj');
     }
 
-
     /**
      * @Route("/proj/update/{id}", name="updateUserByIdProj",
      * methods={"GET"})
@@ -410,7 +421,8 @@ class ProjectController extends AbstractController
     public function reset(
         ManagerRegistry $doctrine,
         SessionInterface $session,
-        UserRepository $userRepository
+        UserRepository $userRepository,
+        WeatherRepository $weatherRepository
     ): Response {
         $session->clear();
 
@@ -426,27 +438,25 @@ class ProjectController extends AbstractController
             $entityManager->flush();
         }
 
-        $user = new User();
-        $user->setEmail('doe@doe.com');
-        $user->setImg('smiley-pixabay.png');
-        $user->setAcronym('doe');
-        $user->setName('doe');
-        $user->setPwd('doe');
-        $user->setType('doe');
-        $entityManager->persist($user);
+        // ------------------------------------------
+        // Hämta all väderdata
+        $weather = $weatherRepository
+        ->findAll();
 
-        $user = new User();
-        $user->setEmail('admin@admin.com');
-        $user->setImg('smiley-pixabay.png');
-        $user->setAcronym('admin');
-        $user->setName('admin');
-        $user->setPwd('admin');
-        $user->setType('admin');
-        $entityManager->persist($user);
+        // Radera all väderdata från databasen
+        for ($i = 0; $i < count($weather); ++$i) {
+            $entityManager->remove($weather[$i]);
+            $entityManager->flush();
+        }
 
-        $entityManager->flush();
+        // ------------------------------------------
+        $Proj = new Proj();
+
+        // Skapa användare
+        $Proj->createUsers($entityManager);
+        // Lägg in mätvärden för vädret i databasen
+        $Proj->readToDatabase($entityManager);
 
         return $this->redirectToRoute('proj');
     }
-
 }

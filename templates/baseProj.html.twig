@@ -8,29 +8,37 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Kotta+One&family=Quando&family=Courgette&display=swap" rel="stylesheet">
+        {{ encore_entry_script_tags('app') }}
     </head>
 
     <body>
-
         <div class="container">
             <div class="page-content">
                 <div class = "header">
                     <div class="siteheader">
-                        <h1 class = "sitetitle">Projekt</h1>
+                        <h1 class = "sitetitle">P R O J E K T</h1>
                     </div>
 
                     <div class="navbar">
                         <nav>
                             <ul>
-                                <li><a href = "{{ path("proj") }}">Hem</a></li>
-                                <li><a href = "{{ path("aboutProj") }}">Om</a></li>
-                                <li><a href = "{{ path("cleancodeProj") }}">Snygg kod</a></li>
-                                <li><a href = "{{ path("loginProj") }}">Användare</a></li>
-                                <li><a href = "{{ path("home") }}">ÅTER KURSSIDA</a></li>
+                                <li><a href = "{{ path("proj") }}">HEM</a></li>
+                                <li><a href = "{{ path("aboutProj") }}">OM</a></li>
+                                <li><a href = "{{ path("loginProj") }}">ANVÄNDARE</a></li>
+                                <li><a href = "{{ path("home") }}">KURSSIDA</a></li>
                             </ul>
                         </nav>
                     </div>
+
+                    <div class = "title-div">
+                        <h2 class = "proj-title">
+                            Vädret i tre svenska städer under de senaste 20 åren</h2>
+                    </div>
+
+
                 </div>
+
+
 
                 {% block content %}
                 Default content
@@ -43,6 +51,9 @@
             <div class="sitefooter">
                 <p class = "footer-text">&copy; Åsa Höglund 2022</p>
             </div>
+
+
+
 
         </div> 
         {# slut container #}

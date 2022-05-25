@@ -6,36 +6,17 @@
 
 <h1>Snygg kod</h1>
 
-<p>
-    För att visa dina goda förmågor i att relatera till konceptet “Snygg och god kod” så presenterar du din egen syn på detta i en artikel.
+<p>Finns det verkligen ett begrepp som är ‘Snygg och god kod’? Kan en programmerare uppfatta kod som ‘snygg’ och vad innebär det och hur producerar man ‘snygg kod’?</p>
 
-    Använd och relatera till de begrepp, verktyg och mätvärden som kursen hanterat.
+<p>Vanligtvis när man pratar om något som är snyggt så kan det variera från människa till människa vad de tycker. Olika människor har olika preferenser och gillar olika saker, och kanske att bygga upp och strukturera kod på olika sätt. Men det finns också vissa saker som de flesta människor håller med om, vissa saker som gör kod tydligare, enklare att testa, läsa mm. Dessa gemensamma värderingar finns sparade i vissa kodverktyg som kan användas för att se om man skriver sin kod på ett sätt som flest människor skulle uppfatta som snygg.</p>
 
-    Visa gärna något exempel.
+<p>Flera av dessa kodverktyg har vi använt under kursen, och de har hjälpt till att ge en bild av vad man ska tänka på för att producera snygg, ren kod med hög kvalitet. Vi har bland annat använt
+phpcs för kodstil, phpmd och phpstan som linters, DocBlock-kommentarer för att dokumentera koden, enhetstestning och kodtäckning för att se till att koden är korrekt och beter sig som väntat, phpMetrics och Scrutinizer som lokalt och via ett GitHub- repo ger mätvärden på olika begrepp som mäter kodkvaliteten.</p>
 
-    Du behöver inte ha ett komplett svar på frågan, det räcker om du diskuterar kring frågan och kopplar det till saker vi gjort i kursen.
+<p>Det finns många mätvärden som visas i t ex phpMetrics och Scrutinizer. Några är t ex de fyra C:en; Coupling, Cohesion, Coverage och Complexity. Om man fokuserar på att se till dessa delar kommer man en bit på vägen när det gäller att säkerställa kvaliteten på sin kod. Coupling innebär antal kopplingar en klass har till andra, både utgående och ingående. Här vill man sträva efter att kopplingarna är så få som möjligt, då detta både gör koden enklare att testa, men även att ändra i. Cohesion är ett mått på hur väl delar i koden är kopplade till varandra. Här vill man att delar som hör ihop ska tillhöra samma klass/ modul för att den ska ha en bra struktur. Med coverage menas hur väl koden är täckt av enhetstester. Ju fler rader av koden som är täckt av tester, desto säkrare kan man vara på att den ger det resultat man vill ha och att man kan lita på koden, vilket man ju vill göra på en kod som har hög kvalitet. Complexity är ett mått på hur komplex koden i en klass/ metod är. Ju fler punkter där koden kan ta olika vägar, t ex vid en if- else- sats, desto mer komplex är den. Den blir svårare att förstå och svårare att testa, och därför strävar man efter att göra den så lite komplex som möjligt.</p>
 
-    Avsluta med din egen personliga syn.
+<p>Genom att tänka på dessa delar när man programmerar så får man automatiskt en snyggare och renare kod, men det finns även andra saker att tänka på. Till exempel vill man använda tydliga variabelnamn som beskriver vad variabeln gör, och inte duplicera kod. Dels ska det vara tydligt att läsa koden, och dels ska den vara enkel att hantera. Om man t ex har en variabel som man kallar "x" så är det svårt att inse vad den beskriver, och koden blir mer svårläst. Då är det bättre med ett mer beskrivande namn, som t ex "points", så man förstår vad variabeln innehåller. När det gäller duplicering av kod så leder det dels till fler kodrader, men också att koden blir svårare att hantera. Om man ska göra en ändring måste man göra det på flera ställen, vilket är mer jobb, och om man glömmer att ändra på något ställe så inför man fel i koden. Sedan är det bra för en själv, och även andra, att ha en bra struktur på sin kod, så den är lätt att sätta sig in i om man inte jobbat med den på länge eller inte sett den förut.</p>
 
-    Du skriver din artikel på routen proj/cleancode och länkar till den från din about-sida.
-    
-    Din artikel bör vara omfångsmässigt som en extra stor redovisningstext. Vi pratar alltså om cirka 30-60 meningar text, cirka 3.500-5000 ord, 1-2 A4-sidor.</p>
-
-
-Finns det verkligen ett begrepp som är ‘Snygg och god kod’? Kan en programmerare uppfatta kod som ‘snygg’ och vad innebär det och hur producerar man ‘snygg kod’?
-
-Vanligtvis när man pratar om något som är snyggt så kan det variera från människa till människa vad de tycker. Olika människor har olika preferenser och gillar olika saker, och kanske att bygga upp och strukturera kod på olika sätt. Men det finns också vissa saker som de flesta människor håller med om, vissa saker som gör kod tydligare, enklare att testa, läsa mm. Dessa gemensamma värderingar finns sparade i vissa kodverktyg som kan användas för att se om man skriver sin kod på ett sätt som flest människor skulle uppfatta som snygg.
-
-Flera av dessa kodverktyg har vi använt under kursen, och de har hjälpt till att ge en bild av vad man ska tänka på för att producera snygg, ren kod med hög kvalitet. Vi har bland annat använt
-phpcs för kodstil, phpmd och phpstan som linters, DocBlock-kommentarer för att dokumentera koden, enhetstestning och kodtäckning för att se till att koden är korrekt och beter sig som väntat, phpMetrics och Scrutinizer som lokalt och via ett GitHub- repo ger mätvärden på olika begrepp som mäter kodkvaliteten.
-
-Det finns många mätvärden som visas i t ex phpMetrics och Scrutinizer. Några är t ex de fyra C:en; Coupling, Cohesion, Coverage och Complexity. Om man fokuserar på att se till dessa delar kommer man en bit på vägen när det gäller att säkerställa kvaliteten på sin kod. Coupling innebär antal kopplingar en klass har till andra, både utgående och ingående. Här vill man sträva efter att kopplingarna är så få som möjligt, då detta både gör koden enklare att testa, men även att ändra i. Cohesion är ett mått på hur väl delar i koden är kopplade till varandra. Här vill man att delar som hör ihop ska tillhöra samma klass/ modul för att den ska ha en bra struktur. Med coverage menas hur väl koden är täckt av enhetstester. Ju fler rader av koden som är täckt av tester, desto säkrare kan man vara på att den ger det resultat man vill ha och att man kan lita på koden, vilket man ju vill göra på en kod som har hög kvalitet. Complexity är ett mått på hur komplex koden i en klass/ metod är. Ju fler punkter där koden kan ta olika vägar, t ex vid en if- else- sats, desto mer komplex är den. Den blir svårare att förstå och svårare att testa, och därför strävar man efter att göra den så lite komplex som möjligt.
-
-Genom att tänka på dessa delar när man programmerar så får man automatiskt en snyggare och renare kod.
-
-
-
-
-Själv tycker jag att det roligaste med programmering är att man kan lösa problem på många olika sätt. Man får fundera, vara kreativ och försöka komma på en lösning som löser ens problem, på det sätt man själv tycker är bra. Samtidigt är det viktigt att man kan läsa andras kod, och vi behöver uttrycka oss på någorlunda samma sätt för att det ska gå enkelt att göra. På samma sätt som grammtik i svenska språket gör att vi har lättare att förstå varandra i vanlig skriven text känns det naturligt att även ha liknande regler för olika programmeringsspråk, i alla fall ha vissa grunder som alla följer. Jag tycker det ger en extra dimension till ens kodande att inte bara lösa ens uppgift, utan även fundera på hur den presenteras. Det är lättare både för mig själv om jag återkommer till min kod, men även för andra, om jag ser till att det är snygg och god kod.
+<p>Själv tycker jag att det roligaste med programmering är att man kan lösa problem på många olika sätt. Man får fundera, vara kreativ och försöka komma på en lösning som löser ens problem, på det sätt man själv tycker är bra. Samtidigt är det viktigt att man kan läsa andras kod, och vi behöver uttrycka oss på någorlunda samma sätt för att det ska gå enkelt att göra. På samma sätt som grammtik i svenska språket gör att vi har lättare att förstå varandra i vanlig skriven text känns det naturligt att även ha liknande regler för olika programmeringsspråk, i alla fall ha vissa grunder som alla följer. Jag tycker det ger en extra dimension till ens kodande att inte bara lösa ens uppgift, utan även fundera på hur den presenteras. Det är lättare både för mig själv om jag återkommer till min kod, men även för andra, om jag ser till att det är snygg och god kod.</p>
 
 {% endblock %}
