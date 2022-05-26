@@ -77,7 +77,6 @@ class Game
         if ($this->getBank()->getPoints() > 21) {
             $this->getBank()->resetPoints();
         }
-
     }
 
 

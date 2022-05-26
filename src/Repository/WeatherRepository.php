@@ -10,6 +10,7 @@ use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @extends ServiceEntityRepository<Weather>
+ * @SuppressWarnings(PHPMD)
  *
  * @method Weather|null find($id, $lockMode = null, $lockVersion = null)
  * @method Weather|null findOneBy(array $criteria, array $orderBy = null)

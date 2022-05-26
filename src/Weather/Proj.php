@@ -10,16 +10,6 @@ use Doctrine\Persistence\ManagerRegistry;
 
 class Proj
 {
-    // private ManagerRegistry $entityManager;
-
-    // /**
-    // * Constructor for the class
-    // * @param Entitymanager corresponding to the weather class
-    // */
-    // public function __construct($entityManager)
-    // {
-    //     $this->$entityManager = $entityManager;
-    // }
 
     /**
      * Method that creates users
@@ -51,22 +41,22 @@ class Proj
     /**
      * Method that reads the measurements and adds to the database
      */
-    public function readToDatabase($entityManager
-    ): void
-    {
+    public function readToDatabase(
+        $entityManager
+    ): void {
         // Vid större datamängder bättre att läsa in mätvärdena från fil
-        $years = [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021];
+        $years = [2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021];
 
         $temp1 = [2.6, 3.1, 2.4, 3.5, 3.4, 3.3, 3.3, 2.8, 0.9, 3.8, 2.3, 3.3, 4.1, 4.5, 3.1, 2.7, 2.9, 2.5, 5.0, 2.7];
-        $prec1 = [379, 482,	525, 617, 578, 619, 565, 462, 529, 752, 818, 518, 514, 824, 606, 703, 523, 632, 732, 757];
+        $prec1 = [379, 482, 525, 617, 578, 619, 565, 462, 529, 752, 818, 518, 514, 824, 606, 703, 523, 632, 732, 757];
         $precDays1 = [137,129,160,167,147,166,136,118,140,173,183,132,135,184,161,161,151,153,173,170];
         $frost1 = [196,186,191,180,185,179,195,187,197,164,182,179,174,166,180,195,184,191,168,187];
         $summer1 = [7,15,2,8,7,3,5,5,1,6,0,2,14,1,0,0,16,4,5,9];
         $cityId1 = 1;
 
         $temp2 = [8.1, 7.7, 7.6, 7.9, 8.4, 8.1, 8.5, 7.7, 6.0, 8.4, 7.2, 7.8, 8.8, 8.7, 8.2, 8.0, 8.8, 8.6, 9.7, 8.1];
-        $prec2 = [481, 489,	533, 558, 549, 502, 634, 530, 553, 479, 779, 459, 614, 656, 472, 557, 345, 564, 504, 555];
-        $precDays2 = [146, 148, 181, 161, 165, 179, 188, 175, 177, 158, 199, 144, 165, 166, 157, 166, 140, 168, 155, 146];
+        $prec2 = [481, 489, 533, 558, 549, 502, 634, 530, 553, 479, 779, 459, 614, 656, 472, 557, 345, 564, 504, 555];
+        $precDays2 = [146,148,181,161,165,179,188,175,177,158,199,144,165,166,157,166,140,168,155,146];
         $frost2 = [104,99,103,99,95,81,62,89,136,92,107,101,53,61,88,85,109,82,37,89];
         $summer2 = [49,30,10,16,44,18,24,19,28,28,3,21,33,9,22,8,56,29,29,39];
         $cityId2 = 2;
@@ -88,12 +78,12 @@ class Proj
         $weather1->setSummer($summer1);
         $weather1->setCityId($cityId1);
         $entityManager->persist($weather1);
-    
+
         $weather2 = new Weather();
         $weather2->setYears($years);
         $weather2->setTemperature($temp2);
         $weather2->setPrecipitation($prec2);
-        $weather2->setPrecDays($precDays2);;
+        $weather2->setPrecDays($precDays2);
         $weather2->setFrost($frost2);
         $weather2->setSummer($summer2);
         $weather2->setCityId($cityId2);
@@ -103,7 +93,7 @@ class Proj
         $weather3->setYears($years);
         $weather3->setTemperature($temp3);
         $weather3->setPrecipitation($prec3);
-        $weather3->setPrecDays($precDays3);;
+        $weather3->setPrecDays($precDays3);
         $weather3->setFrost($frost3);
         $weather3->setSummer($summer3);
         $weather3->setCityId($cityId3);
@@ -113,202 +103,427 @@ class Proj
     }
 
     /**
-     * Method that creates charts from the weather data in the database
-     * @return array with the charts
+     * Method that creates a temperature chart from the weather data in the database
+     * @return the chart
      */
-    public function createCharts($weather, $chartBuilder): array 
+    public function createChartTemperature($weather, $chartBuilder): array
     {
-        $y1 = $weather[0]->getYears();
-        $t1 = $weather[0]->getTemperature();
-        $p1 = $weather[0]->getPrecipitation();
-        $pd1 = $weather[0]->getPrecDays();
-        $f1 = $weather[0]->getFrost();
-        $s1 = $weather[0]->getSummer();
-        $c1 = $weather[0]->getCityId();
+        $years1 = $weather[0]->getYears();
+        $temp1 = $weather[0]->getTemperature();
+        $city1 = $weather[0]->getCityId();
 
-        $y2 = $weather[1]->getYears();
-        $t2 = $weather[1]->getTemperature();
-        $p2 = $weather[1]->getPrecipitation();
-        $pd2 = $weather[1]->getPrecDays();
-        $f2 = $weather[1]->getFrost();
-        $s2 = $weather[1]->getSummer();
-        $c2 = $weather[1]->getCityId();
+        // $years2 = $weather[1]->getYears();
+        $temp2 = $weather[1]->getTemperature();
+        $city2 = $weather[1]->getCityId();
 
-        $y3 = $weather[2]->getYears();
-        $t3 = $weather[2]->getTemperature();
-        $p3 = $weather[2]->getPrecipitation();
-        $pd3 = $weather[2]->getPrecDays();
-        $f3 = $weather[2]->getFrost();
-        $s3 = $weather[2]->getSummer();
-        $c3 = $weather[2]->getCityId();
-
-        // Genomsnitt antal nederbördsdagar
-        $t1Average = array_sum($t1)/count($t1);
-        $t2Average = array_sum($t2)/count($t2);
-        $t3Average = array_sum($t3)/count($t3);
+        // $years3 = $weather[2]->getYears();
+        $temp3 = $weather[2]->getTemperature();
+        $city3 = $weather[2]->getCityId();
 
         $chart1 = $chartBuilder->createChart(Chart::TYPE_LINE);
 
         $chart1->setData([
-            'labels' => $y1,
+            'labels' => $years1,
             'datasets' => [
                 [
-                    'label' => $c1,
+                    'label' => $city1,
                     'backgroundColor' => 'rgb(165, 73, 19)',
                     'borderColor' => 'rgb(165, 73, 19)',
-                    'data' => $t1,
+                    'data' => $temp1,
                 ],
                 [
-                    'label' => $c2,
+                    'label' => $city2,
                     'backgroundColor' => 'rgb(73, 19, 165)',
                     'borderColor' => 'rgb(73, 19, 165)',
-                    'data' => $t2,
+                    'data' => $temp2,
                 ],
                 [
-                    'label' => $c3,
+                    'label' => $city3,
                     'backgroundColor' => 'rgb(19, 165, 73)',
                     'borderColor' => 'rgb(19, 165, 73)',
-                    'data' => $t3,
+                    'data' => $temp3,
                 ],
             ],
         ]);
 
+
         $chart1->setOptions([
+            // 'responsive' => true,
+            'plugins' => [
+            'title' => [
+                'display' => true,
+                'text' => 'Årsmedeltemperatur',
+                'fontSize' => 16
+            ]
+            ],
             'scales' => [
                 'y' => [
                     'suggestedMin' => 0,
                     'suggestedMax' => 10,
-                ]
+                    // 'ticks'=> [
+                        // 'display'=>'value+°C',
+                        // 'callback'=> function(value, index, ticks) {
+                            // return value + '°C';
+                        // }
+                        // 'color'=>'red'
+
+                    // ],
+                    'title' => [
+                        'display'  => true,
+                        'text'     => '°C',
+                    ]
+                    ],
+                    'x' => [
+                        'title' => [
+                            'display'  => true,
+                            'text'     => 'år',
+                        ]
+                    ]
             ],
         ]);
+        return [$chart1];
+    }
+
+    /**
+     * Method that creates a precipitation chart from the weather data in the database
+     * @return the chart
+     */
+    public function createChartsPrecipitation($weather, $chartBuilder): array
+    {
+        $years1 = $weather[0]->getYears();
+        $prec1 = $weather[0]->getPrecipitation();
+        $city1 = $weather[0]->getCityId();
+
+        // $years2 = $weather[1]->getYears();
+        $prec2 = $weather[1]->getPrecipitation();
+        $city2 = $weather[1]->getCityId();
+
+        // $years3 = $weather[2]->getYears();
+        $prec3 = $weather[2]->getPrecipitation();
+        $city3 = $weather[2]->getCityId();
 
         $chart2 = $chartBuilder->createChart(Chart::TYPE_LINE);
 
         $chart2->setData([
-            'labels' => $y1,
+            'labels' => $years1,
             'datasets' => [
                 [
-                    'label' => $c1,
+                    'label' => $city1,
                     'backgroundColor' => 'rgb(165, 73, 19)',
                     'borderColor' => 'rgb(165, 73, 19)',
-                    'data' => $p1,
+                    'data' => $prec1,
                 ],
                 [
-                    'label' => $c2,
+                    'label' => $city2,
                     'backgroundColor' => 'rgb(73, 19, 165)',
                     'borderColor' => 'rgb(73, 19, 165)',
-                    'data' => $p2,
+                    'data' => $prec2,
                 ],
                 [
-                    'label' => $c3,
+                    'label' => $city3,
                     'backgroundColor' => 'rgb(19, 165, 73)',
                     'borderColor' => 'rgb(19, 165, 73)',
-                    'data' => $p3,
+                    'data' => $prec3,
                 ],
             ],
         ]);
 
         $chart2->setOptions([
+            'plugins' => [
+                'title' => [
+                    'display' => true,
+                    'text' => 'Nederbörd',
+                    'fontSize' => 16,
+                    'color' => '#d3d3d3',
+                    'font' => [
+                        'weight' => 'bolder'
+                    ]
+                ]
+                ],
+                'yAxes' => [
+                    'gridLines' => [
+                        'zeroLineColor' => '#232323'
+                    ]
+                ],
             'scales' => [
                 'y' => [
                     'suggestedMin' => 0,
                     'suggestedMax' => 900,
+                    'ticks' => [
+                        'color' => '#d3d3d3'
+                    ],
+                    'title' => [
+                        'display'  => true,
+                        'text'     => 'mm',
+                        'color' => '#d3d3d3'
+                    ]],
+                'x' => [
+                    'title' => [
+                        'display'  => true,
+                        'text'     => 'år',
+                        'color' => '#d3d3d3'
+                    ],
+                    'ticks' => [
+                        'color' => '#d3d3d3'
+                    ],
                 ]
-            ],
+            ]
         ]);
 
+    return [$chart2];
+    }
+
+    /**
+     * Method that creates a precipitation chart over number of precipitation days from the weather data in the database
+     * @return the chart
+     */
+    public function createChartsPrecipitationDays($weather, $chartBuilder): array
+    {
+        $pd1 = $weather[0]->getPrecDays();
+        $city1 = $weather[0]->getCityId();
+
+        // $years2 = $weather[1]->getYears();
+        $pd2 = $weather[1]->getPrecDays();
+        $city2 = $weather[1]->getCityId();
+
+        // $years3 = $weather[2]->getYears();
+        $pd3 = $weather[2]->getPrecDays();
+        $city3 = $weather[2]->getCityId();
+
         // Genomsnitt antal nederbördsdagar
-        $pd1Average = array_sum($pd1)/count($pd1);
-        $pd2Average = array_sum($pd2)/count($pd2);
-        $pd3Average = array_sum($pd3)/count($pd3);
+        $pd1Average = array_sum($pd1) / count($pd1);
+        $pd2Average = array_sum($pd2) / count($pd2);
+        $pd3Average = array_sum($pd3) / count($pd3);
 
         $chart3 = $chartBuilder->createChart(Chart::TYPE_BAR);
 
         $chart3->setData([
-            'labels' => [$c1, $c2, $c3],
+            'labels' => [''],
             'datasets' => [
                 [
-                    // 'label' => [$c1, $c2, $c3],
-                    'backgroundColor' => ['rgb(165, 73, 19)', 'rgb(73, 19, 165)', 'rgb(19, 165, 73)'],
-                    'data' => [$pd1Average, $pd2Average, $pd3Average]
+                    'label' => $city1,
+                    'backgroundColor' => ['rgb(165, 73, 19)'],
+                    'data' => [$pd1Average]
+                ],
+                [
+                    'label' => $city2,
+                    'backgroundColor' => ['rgb(73, 19, 165)'],
+                    'data' => [ $pd2Average ]
+                ],
+                [
+                    'label' => $city3,
+                    'backgroundColor' => ['rgb(19, 165, 73)'],
+                    'data' => [ $pd3Average ]
                 ]]
         ]);
 
         $chart3->setOptions([
+            'plugins' => [
+                'title' => [
+                    'display' => true,
+                    'text' => 'Antal nederbördsdagar',
+                    'color' => '#d3d3d3',
+                    'fontSize' => 16,
+                    'font' => [
+                        'weight' => 'bolder'
+                    ]
+                ]
+                ],
             'scales' => [
                 'y' => [
                     'suggestedMin' => 0,
                     'suggestedMax' => 160,
+                    'title' => [
+                        'display'  => true,
+                        'text'     => 'antal dagar',
+                        'color' => '#d3d3d3'
+                    ],
+                    'ticks' => [
+                        'color' => '#d3d3d3',
+                    ]],
+                'x' => [
+                    'title' => [
+                        'display'  => true,
+                        'text'     => 'stad',
+                        'color' => '#d3d3d3'
+                    ],
+                    'ticks' => [
+                        'color' => '#d3d3d3'
+                    ],
                 ]
             ],
         ]);
+    return [$chart3];
+    }
 
+        /**
+     * Method that creates precipitation charts from the weather data in the database
+     * @return array with the charts
+     */
+    public function createChartsDays1($weather, $chartBuilder): array
+    {
+        $frost1 = $weather[0]->getFrost();
+        $summer1 = $weather[0]->getSummer();
 
         // Genomsnitt antal frostdagar
-        $f1Average = array_sum($f1)/count($f1);
-        $f2Average = array_sum($f2)/count($f2);
-        $f3Average = array_sum($f3)/count($f3);
-        // Genomsnitt antal frostdagar
-        $s1Average = array_sum($s1)/count($s1);
-        $s2Average = array_sum($s2)/count($s2);
-        $s3Average = array_sum($s3)/count($s3);
+        $frost1Average = array_sum($frost1) / count($frost1);
+        // Genomsnitt antal högsommardagar
+        $summer1Average = array_sum($summer1) / count($summer1);
 
         $chart4 = $chartBuilder->createChart(Chart::TYPE_PIE);
 
         $chart4->setData([
-            'labels' => ["frostdagar","sommardagar", "resterande"],
+            'labels' => ["frostdagar","högsommardagar", "resterande"],
             'datasets' => [
                 [
-                'data'=> [$f1Average, $s1Average, 365-$f1Average-$s1Average ],
-                'backgroundColor'=> [
+                'data' => [$frost1Average, $summer1Average, 365 - $frost1Average - $summer1Average ],
+                'backgroundColor' => [
                     'rgb(73, 19, 165)',
                     'rgb(19, 165, 73)',
-
-                  'rgb(224, 224, 224)'
+                    'rgb(224, 224, 224)'
                 ],
-            ],
-           ]
+                ],
+            ]
 
         ]);
+
+        $chart4->setOptions([
+            'plugins' => [
+                'title' => [
+                    'display' => true,
+                    'position' => 'top',
+                    'text' => 'Andel frost- och högsommardagar',
+                    'fontSize' => 16
+                ],
+                'subtitle' => [
+                    'display' => true,
+                    'position' => 'bottom',
+                    'text' => 'Luleå'
+                ]],
+        ]);
+
+        return [$chart4];
+    }
+        /**
+     * Method that creates precipitation charts from the weather data in the database
+     * @return array with the charts
+     */
+    public function createChartsDays2($weather, $chartBuilder): array
+    {
+        $frost2 = $weather[1]->getFrost();
+        $summer2 = $weather[1]->getSummer();
+
+
+        // Genomsnitt antal frostdagar
+        $frost2Average = array_sum($frost2) / count($frost2);
+        // Genomsnitt antal högsommardagar
+        $summer2Average = array_sum($summer2) / count($summer2);
 
         $chart5 = $chartBuilder->createChart(Chart::TYPE_PIE);
 
         $chart5->setData([
-            'labels' => ["frostdagar","sommardagar", "resterande"],
+            'labels' => ["frostdagar","högsommardagar", "resterande"],
             'datasets' => [
                 [
-                'data'=> [$f2[0], $s2[0], 365-$f2[0]-$s2[0] ],
-                'backgroundColor'=> [
+                'data' => [$frost2Average, $summer2Average, 365 - $frost2Average - $summer2Average ],
+                'backgroundColor' => [
                     'rgb(73, 19, 165)',
                     'rgb(19, 165, 73)',
-                  'rgb(224, 224, 224)'
+                    'rgb(224, 224, 224)'
                 ],
-            ],
-           ]
+                ],
+            ]
 
         ]);
+        $chart5->setOptions([
+            'plugins' => [
+                'title' => [
+                    'display' => true,
+                    'position' => 'top',
+                    'text' => 'Andel frost- och högsommardagar',
+                    'fontSize' => 16
+                ],
+                'subtitle' => [
+                    'display' => true,
+                    'position' => 'bottom',
+                    'text' => 'Stockholm'
+                ]],
+        ]);
+
+
+        return [$chart5];
+    }
+
+    /**
+     * Method that creates precipitation charts from the weather data in the database
+     * @return array with the charts
+     */
+    public function createChartsDays3($weather, $chartBuilder): array
+    {
+
+        $frost3 = $weather[2]->getFrost();
+        $summer3 = $weather[2]->getSummer();
+
+        // Genomsnitt antal frostdagar
+        $frost3Average = array_sum($frost3) / count($frost3);
+        // Genomsnitt antal högsommardagar
+        $summer3Average = array_sum($summer3) / count($summer3);
+
 
         $chart6 = $chartBuilder->createChart(Chart::TYPE_PIE);
 
         $chart6->setData([
-            'labels' => ["frostdagar","sommardagar", "resterande"],
+            'labels' => ["frostdagar","högsommardagar", "resterande"],
             'datasets' => [
                 [
-                'data'=> [$f3[0], $s3[0], 365-$f3[0]-$s3[0] ],
-                'backgroundColor'=> [
+                'data' => [$frost3Average, $summer3Average, 365 - $frost3Average - $summer3Average ],
+                'backgroundColor' => [
                     'rgb(73, 19, 165)',
                     'rgb(19, 165, 73)',
-
-                  'rgb(224, 224, 224)'
+                    'rgb(224, 224, 224)'
                 ],
-            ],
-           ]
+                ],
+            ]
 
         ]);
+        $chart6->setOptions([
+            'plugins' => [
+                'title' => [
+                    'display' => true,
+                    'position' => 'top',
+                    'text' => 'Andel frost- och högsommardagar',
+                    'fontSize' => 16
+                ],
+                'subtitle' => [
+                    'display' => true,
+                    'position' => 'bottom',
+                    'text' => 'Kalmar'
+                ]],
+        ]);
 
-
-        return [$chart1, $chart2, $chart3, $chart4, $chart5, $chart6, round($t1Average, 2), round($t2Average,2), round($t3Average,2)];
+        return [$chart6];
     }
 
+    /**
+     * Method that returns average temperature from the weather data in the database
+     * @return array with temperatures
+     */
+    public function createAverageTemperature($weather): array
+    {
+        $temp1 = $weather[0]->getTemperature();
+        $temp2 = $weather[1]->getTemperature();
+        $temp3 = $weather[2]->getTemperature();
 
+        // Genomsnitt årsmedeltemperatur
+        $temp1Average = array_sum($temp1) / count($temp1);
+        $temp2Average = array_sum($temp2) / count($temp2);
+        $temp3Average = array_sum($temp3) / count($temp3);
+
+        // Genomsnitt årsmedeltemperatur avrundat
+        $temp1AverageRound = round($temp1Average, 2);
+        $temp2AverageRound = round($temp2Average, 2);
+        $temp3AverageRound = round($temp3Average, 2);
+
+        return [$temp1AverageRound, $temp2AverageRound, $temp3AverageRound];
+    }
 }

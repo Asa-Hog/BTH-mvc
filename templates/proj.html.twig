@@ -3,9 +3,6 @@
 {% block title %} Project {% endblock %}
 
 {% block content %}
-{# <hr class="hr"> #}
-
-{# <div class="intro"> #}
 
     <p> Som slutprojekt i denna kurs har jag valt att göra en visualisering av vädret under de senaste 20 åren i tre svenska städer. De aspekter som undersöks är årsmedeltemperaturen, total nederbörd, antal nederbördsdagar samt antal frost- och högsommardagar.</p>
 
@@ -15,11 +12,11 @@
         <img class = "weather" src = "../img/proj/clouds-pix.jpg">
     </div>
 
-    <p>I nedanstående diagram visas årsmedeltemperaturen för de olika städerna. Medelvärdet på årsmedeltemperaturen för de tre städerna under de senaste 20 åren är; Luleå: {{chart[6]}}, Stockholm: {{chart[7]}} och Kalmar: {{chart[8]}} grader.</p>
+    <p>I nedanstående diagram visas årsmedeltemperaturen för de olika städerna. Medelvärdet på årsmedeltemperaturen för de tre städerna under de senaste 20 åren är; Luleå: {{chart[6][0]}}, Stockholm: {{chart[6][1]}} och Kalmar: {{chart[6][2]}} grader.</p>
 
     <div class="chart">
         <div class="my-chart-50">
-            {{ render_chart(chart[0], {'class': 'my-chart'}) }}
+            {{ render_chart(chart[0][0], {'class': 'my-chart'}) }}
         </div>
     </div>
 
@@ -37,11 +34,11 @@
 
         <div class="chart">
             <div class="my-chart-40">
-                {{ render_chart(chart[1], {'class': 'my-chart'}) }}
+                {{ render_chart(chart[1][0], {'class': 'my-chart'}) }}
             </div>
 
             <div class="my-chart-40">
-                {{ render_chart(chart[2], {'class': 'my-chart'}) }}
+                {{ render_chart(chart[2][0], {'class': 'my-chart'}) }}
             </div>
         </div>
 
@@ -51,17 +48,17 @@
         <p>Om man tittar på medelvärdet av antal nederbördsdagar de senaste 20 åren så kan man se ett lite högre värde för Stockholm jämfört med de andra städerna. Eftersom man inte ser någon egentlig skillnad i antal millimeter nederbörd för Stockholm kan det tyda på att Stockholm har en aning fler dagar med nederbörd, men att nederbörden under dessa dagar är mindre.</p>
     </div>
 
-    <p>Ett genomsnitt av senaste 20 årens antal frost- och högsommardagar visas i följande diagram. En frostdag räknas som ett dygn då minimitemperaturen är under 0,0°C. En högsommardag är ett dygn då maximitemperaturen är minst 25,0°C.</p>
+    <p>Ett genomsnitt av senaste 20 årens antal frost- och högsommardagar för respektive stad visas i följande diagram. En frostdag räknas som ett dygn då minimitemperaturen är under 0,0°C. En högsommardag är ett dygn då maximitemperaturen är minst 25,0°C.</p>
 
     <div class="chart">
         <div class="my-chart">
-            {{ render_chart(chart[3], {'class': 'my-chart'}) }}
+            {{ render_chart(chart[3][0], {'class': 'my-chart'}) }}
         </div>
         <div class="my-chart">
-            {{ render_chart(chart[4], {'class': 'my-chart'}) }}
+            {{ render_chart(chart[4][0], {'class': 'my-chart'}) }}
         </div>
         <div class="my-chart">
-            {{ render_chart(chart[5], {'class': 'my-chart'}) }}
+            {{ render_chart(chart[5][0], {'class': 'my-chart'}) }}
         </div>
     </div>
 
@@ -73,30 +70,5 @@
     </div>
 
     <p>Som man kunde misstänka är årsmedeltemperaturen i Luleå lägre än i Stockholm och Kalmar. Det märks också tydligt i antal frostdagar som är betydligt fler, och högsommardagar färre, än i de andra städerna. Jag hade dock förväntat mig lite större skillnad mellan Stockholm och Kalmar, även om Luleå ligger mycket längre norrut jämfört med Stockholm än vad Stockholm gör jämfört med Kalmar. Intressant är att vädret följs åt i de olika städerna (och antagligen landet som helhet) de olika åren, och att nederbörden inte skiljer sig åt mer än naturlig variation. </p>
-
-
-
-{# </div> #}
-
-
-
-{# <div class="intro"></div> #}
-{# <div class="intro"></div>
-<div class = "end"></div>
-<div class="data"></div> #}
-
-
-
-
-
-
-
-{# <img class = "full" src = "{{ asset("img/proj/blossoms-pix.jpg") }}"  alt = "">
-{# <img class = "full" src = "{{ asset("img/proj/desert-pix.jpg") }}"  alt = "">
-<img class = "full" src = "{{ asset("img/proj/snow-pix.jpg") }}"  alt = "">
-<img class = "full" src = "{{ asset("img/proj/woolly-pix.jpg") }}"  alt = ""> #}
-
-
-
 
 {% endblock %}

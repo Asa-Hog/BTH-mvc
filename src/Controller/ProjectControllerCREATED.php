@@ -16,6 +16,3 @@ class ProjectControllerCREATED extends AbstractController
         ]);
     }
 }
-
-
-

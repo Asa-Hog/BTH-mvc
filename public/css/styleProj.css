@@ -7,6 +7,7 @@ body {
     font-size: 22px;
     padding: 20px;
     color: black;
+    /* font-stretch: expanded; */
 }
 
 h1, h2 {
@@ -39,19 +40,15 @@ h1, h2 {
 }
 
 .rain {
-  background-image: url("../img/proj/rain-pix.jpg");
   min-height: 300px;
   margin-bottom: 20px;
   margin-top: 20px;
-  background-repeat: no-repeat;
 }
 
 .snow {
-  background-image: url("../img/proj/snow2-pix.jpg");
   min-height: 300px;
   margin-bottom: 20px;
   margin-top: 20px;
-  background-repeat: no-repeat;
 }
 
 .chart {
@@ -75,7 +72,7 @@ h1, h2 {
 .my-chart-50 {
   align-items: center;
   display: inline-block;
-  width: 50%;
+  width: 60%;
 }
 
 .container {
@@ -115,17 +112,37 @@ h1, h2 {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 3rem;            /* Footer height */
-    padding: 10px;
-    text-align: right;
+    height: 4rem;            /* Footer height */
+    /* padding: 10px; */
+    /* text-align: right; */
     color: #f2f2f2;
     text-align: center;
-    background-image: url("../img/proj/woolly-pix.jpg");
-    background-repeat: no-repeat;
   }
 
+.sitefooter>img {
+      width: 100%;
+      margin: 0 auto;
+      /* justify-self: center; */
+      max-height: 110px;
+      object-fit: cover;
+      z-index: -1;
+      top: 0;
+      left: -10px;
+      filter: blur(1px);
+}
+
 .footer-text {
-    padding-right: 30px;
+  padding-top: 50px;
+  font-weight: 600;
+  font-size: 22px;
+
+    text-align: center;
+    z-index: 1;
+    color: #f2f2f2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .siteheader {
@@ -142,6 +159,8 @@ h1, h2 {
   min-height: 250px;
   background-color: #012D01;
   background-image: url("../img/proj/leaves-pix.jpg");
+  /* background-repeat: no-repeat; */
+  
 }
 
 nav {
@@ -228,10 +247,6 @@ ul {
   background-color:#012D01;
 }
 
-/* .green {
-  background-color: #012D01;
-} */
-
 label {
   width: 400px;
   display: flex;
@@ -261,8 +276,6 @@ input {
 }
 
 .list_left {
-  /* display: flex;
-  flex-direction: column; */
   justify-content: left; 
   text-align: left;
   text-decoration: none;
@@ -270,37 +283,11 @@ input {
 }
 
 a {
-  /* border: 1px solid red; */
   text-decoration: none;
   justify-content: center;
   font-weight: 400;
   font-size: 20px;
 }
-
-/* figure {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-figcaption {
-  text-align: center;
-}
-
-img {
-  height: 100%;
-  vertical-align: bottom;
-}
-
-.pics {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.wide-pic {
-  width: 400px;
-} */
-
 
 table {
   border-collapse: collapse;
