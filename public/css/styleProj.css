@@ -1,36 +1,57 @@
 body {
     font-family: sans-serif;
-    line-height: 1.5rem;
+    line-height: 1.8rem;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: justify;
     position: relative;
+    font-size: 22px;
+    padding: 20px;
+    color: black;
 }
 
 h1, h2 {
     font-family: 'Kotta One', serif;
 }
 
-.intro {
-  font-size: 22px;
-  /* text-align: center; */
-  padding: 20px;
-  /* background-color: #012D01; */
-  /* color: white; */
-  color: black;
-}
-
 .data {
-  /* background-image: url("../img/proj/snow-pix.jpg"); */
-  /* background-image: url("../img/proj/blossoms-pix.jpg"); */
-  /* background-image: url("../img/proj/rain-pix.jpg"); */
   background-color: #012D01;
   min-height: 200px;
+  color: #d3d3d3;
+  font-weight: 100;
+  margin: 0;
+  padding: 10px;
 }
 
-.end {
+/* #01012D */
+/* #2D012D */
+.weather {
+    width: 100%;
+    margin: 0 auto;
+      justify-self: center;
+      max-height: 300px;
+      object-fit: cover;
+}
+.clouds {
+  max-height: 300px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.rain {
   background-image: url("../img/proj/rain-pix.jpg");
-  /* background-image: url("../img/proj/snow-pix.jpg"); */
-  height: 200px;
+  min-height: 300px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-repeat: no-repeat;
+}
+
+.snow {
+  background-image: url("../img/proj/snow2-pix.jpg");
+  min-height: 300px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-repeat: no-repeat;
 }
 
 .chart {
@@ -38,6 +59,7 @@ h1, h2 {
   width: 100%;
   justify-content: space-around;
 }
+
 .my-chart {
   align-items: center;
   display: inline-block;
@@ -56,8 +78,6 @@ h1, h2 {
   width: 50%;
 }
 
-
-
 .container {
     position: relative;
     min-height: 100vh;
@@ -69,8 +89,7 @@ h1, h2 {
 
 .sitetitle {
     text-align: center; 
-    color: white;
-    /* color: #012D01; */
+  color: #f2f2f2;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 44px;
 }
@@ -81,15 +100,11 @@ h1, h2 {
     font-size: 60px;
     font-weight: 100;
     text-align: center; 
-    border: 4px dotted white;
+    border: 4px dotted #f2f2f2;;
     margin: 30px;
-    /* color: #CF4ABD; */
     padding: 5px;
     min-height: 150px;
-    color: white;
-    /* color: #012D01; */
-    /* color: #012D01; */
-    /* max-width: 70%; */
+    color: #f2f2f2;
 }
 
 .title-div {
@@ -101,12 +116,12 @@ h1, h2 {
     bottom: 0;
     width: 100%;
     height: 3rem;            /* Footer height */
-    /* background-color: #012D01; */
     padding: 10px;
     text-align: right;
-    color: white;
+    color: #f2f2f2;
     text-align: center;
     background-image: url("../img/proj/woolly-pix.jpg");
+    background-repeat: no-repeat;
   }
 
 .footer-text {
@@ -116,7 +131,6 @@ h1, h2 {
 .siteheader {
     padding: 10px;
     line-height: 1.4rem;
-    /* background-color: #012D01; */
     color: #012D01;
 }
 
@@ -128,18 +142,11 @@ h1, h2 {
   min-height: 250px;
   background-color: #012D01;
   background-image: url("../img/proj/leaves-pix.jpg");
-  /* background-image: url("../img/proj/blossoms-pix.jpg"); */
-  /* filter: brightness(0.5); */
-  /* font-display:  2px dotted white; */
-
 }
-
-
 
 nav {
   align-self: center; 
   align-items: center;
-
 }
 
 nav li {
@@ -153,9 +160,7 @@ nav a {
   text-decoration: none;
   justify-content: center;
   font-weight: 400;
-  color: #011669;
-  color: white;
-  /* color: #012D01; */
+  color: #d3d3d3;
   text-align: right;
   text-align: center;
   justify-content: center;
@@ -196,12 +201,10 @@ ul {
 }
 
 .button {
-  background-color: #011669; 
-  /* background-color: #475933;  */
-
+  background-color:#012D01;
   border: none;
-  color: white;
-  padding: 10px 16px;
+  color: #f2f2f2;
+  padding: 14px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -210,16 +213,24 @@ ul {
   margin-bottom: 10px;
   margin-top: 10px;
   margin-left: 40px;
+  font-size: 20px;
 }
 
 .button:hover {
-  background-color:#CF4ABD;
-  color: #1B324D;
+  background-color: #2D012D; 
 }
 
-.green {
-  background-color: #475933;
+.loginbutton {
+  background-color: #2D012D; 
 }
+
+.loginbutton:hover {
+  background-color:#012D01;
+}
+
+/* .green {
+  background-color: #012D01;
+} */
 
 label {
   width: 400px;
@@ -234,15 +245,11 @@ input {
   min-width: 250px;
 }
 
-
-
-
 .center {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
-
 }
 
 .list {
@@ -256,16 +263,18 @@ input {
 .list_left {
   /* display: flex;
   flex-direction: column; */
-  /* border: 1px solid red; */
   justify-content: left; 
   text-align: left;
   text-decoration: none;
+  font-size: 20px;
 }
 
-.list_left > a {
+a {
+  /* border: 1px solid red; */
   text-decoration: none;
   justify-content: center;
   font-weight: 400;
+  font-size: 20px;
 }
 
 /* figure {
@@ -307,5 +316,5 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 th {
   background-color: #011669; 
-  color: white;
+  color: #f2f2f2;
 }

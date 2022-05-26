@@ -261,8 +261,8 @@ class Proj
                 [
                 'data'=> [$f1Average, $s1Average, 365-$f1Average-$s1Average ],
                 'backgroundColor'=> [
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)',
+                    'rgb(73, 19, 165)',
+                    'rgb(19, 165, 73)',
 
                   'rgb(224, 224, 224)'
                 ],
@@ -279,10 +279,8 @@ class Proj
                 [
                 'data'=> [$f2[0], $s2[0], 365-$f2[0]-$s2[0] ],
                 'backgroundColor'=> [
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)',
-                    #025F02
-
+                    'rgb(73, 19, 165)',
+                    'rgb(19, 165, 73)',
                   'rgb(224, 224, 224)'
                 ],
             ],
@@ -298,8 +296,8 @@ class Proj
                 [
                 'data'=> [$f3[0], $s3[0], 365-$f3[0]-$s3[0] ],
                 'backgroundColor'=> [
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)',
+                    'rgb(73, 19, 165)',
+                    'rgb(19, 165, 73)',
 
                   'rgb(224, 224, 224)'
                 ],
@@ -309,9 +307,7 @@ class Proj
         ]);
 
 
-
-
-        return [$chart1, $chart2, $chart3, $chart4, $chart5, $chart6, round($t1Average, ), round($t2Average,2), round($t3Average,2)];
+        return [$chart1, $chart2, $chart3, $chart4, $chart5, $chart6, round($t1Average, 2), round($t2Average,2), round($t3Average,2)];
     }
 
 

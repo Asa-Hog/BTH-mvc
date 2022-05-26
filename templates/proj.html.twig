@@ -5,11 +5,15 @@
 {% block content %}
 {# <hr class="hr"> #}
 
-<div class="intro">
+{# <div class="intro"> #}
 
     <p> Som slutprojekt i denna kurs har jag valt att göra en visualisering av vädret under de senaste 20 åren i tre svenska städer. De aspekter som undersöks är årsmedeltemperaturen, total nederbörd, antal nederbördsdagar samt antal frost- och högsommardagar.</p>
 
     <p> De städer som valts är Luleå, Stockholm och Kalmar. Alla tre städerna ligger på Sveriges östkust, men olika långt norrut. Avståndet fågelvägen mellan Stockholm och Luleå är mer än dubbelt så långt (727 km) som det mellan Stockholm och Kalmar (314 km). Väderdatan kommer från SMHI:s hemsida (smhi.se). </p>
+
+    <div class="clouds">
+        <img class = "weather" src = "../img/proj/clouds-pix.jpg">
+    </div>
 
     <p>I nedanstående diagram visas årsmedeltemperaturen för de olika städerna. Medelvärdet på årsmedeltemperaturen för de tre städerna under de senaste 20 åren är; Luleå: {{chart[6]}}, Stockholm: {{chart[7]}} och Kalmar: {{chart[8]}} grader.</p>
 
@@ -21,23 +25,33 @@
 
     <p>Man ser att årsmedeltemperaturen för Stockholm och Kalmar är väldigt lika varandra, medan det är klart kallare i Luleå. Det skiljer i snitt fem grader i årsmedeltemperatur mellan Stockholm och Luleå medan det endast skiljer 0,01 grad mellan Stockholm och Kalmar. I det stora hela följs temperaturen i landet åt- när det är ett kallare år i en stad ser man någorlunda samma resultat i en annan, vilket tyder på att det finns varmare och kallare år, mer än att det är en ren slump hur vädret i olika delar av landet är. Man ser inte någon tydlig klimatförändring, där temperaturen tydligt ökar, men tittar bara på de senaste 20 åren vilket är en kort tidsperiod.</p>
 
-    <p>Nedanstående diagram visar årsnederbörden i millimeter samt antal nederbördsdagar för de respektive städerna. Årsnederbörd avser uppmätta mängder från 1 januari ett år till den 1 januari följande år. SMHI förklarar att den verkliga nederbörden nästan alltid är större beroende på främst vindförluster. Med nederbördsdagar räknas antal dygn (från kl 07 till kl 07) med en nederbörd om minst 0,1 mm.</p>
 
-    <div class="chart">
-        <div class="my-chart-40">
-            {{ render_chart(chart[1], {'class': 'my-chart'}) }}
-        </div>
 
-        <div class="my-chart-40">
-            {{ render_chart(chart[2], {'class': 'my-chart'}) }}
-        </div>
+    <div class="clouds">
+        <img class = "weather" src = "../img/proj/rain-pix.jpg">
     </div>
 
-    <p>Det syns inte någon egentlig skillnad mellan städerna som beror på hur långt norrut städerna befinner sig, när man tittar på årsnederbörden, utan det ser ut som en naturlig variation i nederbörd. En större del av nederbörden i Luleå faller antagligen som snö, då temperaturen oftare ligger under noll grader där än i Stockholm och Kalmar.</p>
 
-    <p>Om man tittar på medelvärdet av antal nederbördsdagar de senaste 20 åren så kan man se ett lite högre värde för Stockholm jämfört med de andra städerna. Eftersom man inte ser någon egentlig skillnad i antal millimeter nederbörd för Stockholm kan det tyda på att Stockholm har en aning fler dagar med nederbörd, men att nederbörden under dessa dagar är mindre.</p>
+    <div class="data">
+        <p>Nedanstående diagram visar årsnederbörden i millimeter samt antal nederbördsdagar för de respektive städerna. Årsnederbörd avser uppmätta mängder från 1 januari ett år till den 1 januari följande år. SMHI förklarar att den verkliga nederbörden nästan alltid är större beroende på främst vindförluster. Med nederbördsdagar räknas antal dygn (från kl 07 till kl 07) med en nederbörd om minst 0,1 mm.</p>
 
-    <p>Ett genomsnitt av senaste 20 årens antal frost- och högsommardagar visas i följande diagram. en frostdag räknas som ett dygn då minimitemperaturen är under 0,0°C. En högsommardag är ett dygn då maximitemperaturen är minst 25,0°C.</p>
+        <div class="chart">
+            <div class="my-chart-40">
+                {{ render_chart(chart[1], {'class': 'my-chart'}) }}
+            </div>
+
+            <div class="my-chart-40">
+                {{ render_chart(chart[2], {'class': 'my-chart'}) }}
+            </div>
+        </div>
+
+        <p>Det syns inte någon egentlig skillnad mellan städerna som beror på hur långt norrut de befinner sig, när man tittar på årsnederbörden, utan det ser ut som en naturlig variation. En större del av nederbörden i Luleå faller antagligen som snö, då temperaturen oftare ligger under noll grader där än i Stockholm och Kalmar.</p>
+
+
+        <p>Om man tittar på medelvärdet av antal nederbördsdagar de senaste 20 åren så kan man se ett lite högre värde för Stockholm jämfört med de andra städerna. Eftersom man inte ser någon egentlig skillnad i antal millimeter nederbörd för Stockholm kan det tyda på att Stockholm har en aning fler dagar med nederbörd, men att nederbörden under dessa dagar är mindre.</p>
+    </div>
+
+    <p>Ett genomsnitt av senaste 20 årens antal frost- och högsommardagar visas i följande diagram. En frostdag räknas som ett dygn då minimitemperaturen är under 0,0°C. En högsommardag är ett dygn då maximitemperaturen är minst 25,0°C.</p>
 
     <div class="chart">
         <div class="my-chart">
@@ -51,11 +65,18 @@
         </div>
     </div>
 
-    <p>Från dessa diagram kan man tydligt se att det är fler frostdagar och färre högsommardagar i Luleå än i de andra städerna, beroende på att Luleå ligger så pass långt norrut. Värdena för Stockholm och Luleå är mer lika, och även om man kan förvänta sig färre frostdagar i Kalmar som ligger mer söderut kunde man också förvänta sig fler högsommardagar, men det har varit fler i Stockholm, i alla fall de senaste tjugo åren. Det är också bara de högsommardagar som räknas, det säger inget om antal varma dagar med temperaturer under 25 grader.</p>
+    <p>Från dessa diagram kan man tydligt se att det är fler frostdagar och färre högsommardagar i Luleå än i de andra städerna, beroende på att Luleå ligger så pass långt norrut. Värdena för Stockholm och Kalmar är mer lika, och även om man kan förvänta sig färre frostdagar i Kalmar som ligger mer söderut kunde man också förvänta sig fler högsommardagar, men det har varit fler i Stockholm, i alla fall de senaste tjugo åren. Det är också bara högsommardagar som räknas, det säger inget om antal varma dagar med temperaturer under 25 grader.</p>
 
-    <p>Som man kunde misstänka är årsmedeltemperaturen i Luleå lägre än i Stockholm och Kalmar. Det märks också tydligt i antal frostdagar som är betydligt fler, och högsommardagar färre, än i de andra städerna. Jag hade dock förväntat mig lite större skillnad mellan Stockholm och Kalmar, även om Luleå ligger mycket längre norrut gentemot Stockholm än vad Stockholm gör gentemot Kalmar. Intressant är att vädret följs åt i de olika städerna (och antagligen landet som helhet) de olika åren, och att nederbörden inte skiljer sig åt mer än naturlig variation. </p>
 
-</div>
+    <div class="clouds">
+        <img class = "weather" src = "../img/proj/snow2-pix.jpg">
+    </div>
+
+    <p>Som man kunde misstänka är årsmedeltemperaturen i Luleå lägre än i Stockholm och Kalmar. Det märks också tydligt i antal frostdagar som är betydligt fler, och högsommardagar färre, än i de andra städerna. Jag hade dock förväntat mig lite större skillnad mellan Stockholm och Kalmar, även om Luleå ligger mycket längre norrut jämfört med Stockholm än vad Stockholm gör jämfört med Kalmar. Intressant är att vädret följs åt i de olika städerna (och antagligen landet som helhet) de olika åren, och att nederbörden inte skiljer sig åt mer än naturlig variation. </p>
+
+
+
+{# </div> #}
 
 
 
