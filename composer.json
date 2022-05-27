@@ -102,7 +102,7 @@
         ],
         "csfix": "tools/php-cs-fixer/vendor/bin/php-cs-fixer --config=.php-cs-fixer.dist.php fix src test",
         "phpmd": "tools/phpmd/vendor/bin/phpmd src text phpmd.xml || true",
-        "phpstan": "tools/phpstan/vendor/bin/phpstan analyse -l 5 src || true",
+        "phpstan": "tools/phpstan/vendor/bin/phpstan analyse -l 3 src || true",
         "phpcpd": "tools/phpcpd/vendor/bin/phpcpd src || true",
         "lint": [
             "@phpcpd",

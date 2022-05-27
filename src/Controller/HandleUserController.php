@@ -27,10 +27,6 @@ class HandleUserController extends AbstractController
         ]);
     }
 
-
-
-
-
     //*///////////////////////////////////////////////////////
 
     /**
@@ -152,6 +148,8 @@ class HandleUserController extends AbstractController
 
             return $this->render('proj/show.html.twig', $data);
         }
+        // Nedanstående behövs för return måste finnas
+        return $this->redirectToRoute('proj');
     }
 
     /**

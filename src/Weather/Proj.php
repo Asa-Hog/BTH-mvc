@@ -104,7 +104,7 @@ class Proj
 
     /**
      * Method that creates a temperature chart from the weather data in the database
-     * @return the chart
+     * @return array - The chart
      */
     public function createChartTemperature($weather, $chartBuilder): array
     {
@@ -186,7 +186,7 @@ class Proj
 
     /**
      * Method that creates a precipitation chart from the weather data in the database
-     * @return the chart
+     * @return array - The chart
      */
     public function createChartsPrecipitation($weather, $chartBuilder): array
     {
@@ -240,11 +240,6 @@ class Proj
                     ]
                 ]
                 ],
-                'yAxes' => [
-                    'gridLines' => [
-                        'zeroLineColor' => '#232323'
-                    ]
-                ],
             'scales' => [
                 'y' => [
                     'suggestedMin' => 0,
@@ -255,7 +250,7 @@ class Proj
                     'title' => [
                         'display'  => true,
                         'text'     => 'mm',
-                        'color' => '#d3d3d3'
+                        'color' => '#d3d3d3',
                     ]],
                 'x' => [
                     'title' => [
@@ -275,7 +270,7 @@ class Proj
 
     /**
      * Method that creates a precipitation chart over number of precipitation days from the weather data in the database
-     * @return the chart
+     * @return array - The chart
      */
     public function createChartsPrecipitationDays($weather, $chartBuilder): array
     {
@@ -358,7 +353,7 @@ class Proj
 
         /**
      * Method that creates precipitation charts from the weather data in the database
-     * @return array with the charts
+     * @return array with the chart
      */
     public function createChartsDays1($weather, $chartBuilder): array
     {
@@ -406,7 +401,7 @@ class Proj
     }
         /**
      * Method that creates precipitation charts from the weather data in the database
-     * @return array with the charts
+     * @return array with the chart
      */
     public function createChartsDays2($weather, $chartBuilder): array
     {
@@ -456,7 +451,7 @@ class Proj
 
     /**
      * Method that creates precipitation charts from the weather data in the database
-     * @return array with the charts
+     * @return array with the chart
      */
     public function createChartsDays3($weather, $chartBuilder): array
     {
@@ -506,7 +501,7 @@ class Proj
 
     /**
      * Method that returns average temperature from the weather data in the database
-     * @return array with temperatures
+     * @return array with the rounded average temperatures
      */
     public function createAverageTemperature($weather): array
     {
