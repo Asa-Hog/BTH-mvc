@@ -79,6 +79,8 @@ h1, h2 {
     color: #f2f2f2;
     text-align: center;
     /* border: 3px solid green; */
+    background-color: #012D01;
+    /* background-image: url("../img/proj/woolly-pix.jpg"); */
   }
 
 .sitefooter>img {

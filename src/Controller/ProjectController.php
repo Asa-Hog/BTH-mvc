@@ -21,13 +21,6 @@ use App\Weather\Proj;
 
 class ProjectController extends AbstractController
 {
-    // #[Route('/project', name: 'app_project')]
-    // public function index(): Response
-    // {
-    //     return $this->render('project/index.html.twig', [
-    //         'controller_name' => 'ProjectController',
-    //     ]);
-    // }
     #[Route('/', name: 'app_project')]
     public function index(): Response
     {
@@ -57,10 +50,8 @@ class ProjectController extends AbstractController
         $chartsDays3 = $projChart->createChartsDays3($weather, $chartBuilder);
         $chartsAverageTemp = $projChart->createAverageTemperature($weather);
 
-        // $chartsDays = [$chartsDays1, $chartsDays2, $chartsDays3];
-
         $charts = [$chartsTemp, $chartsPrec, $chartsPrecDays, $chartsDays1, $chartsDays2, $chartsDays3, $chartsAverageTemp];
-        // $charts = [$chartsTemp];
+
         return $this->render('proj.html.twig', [
             'chart' => $charts
         ]);
