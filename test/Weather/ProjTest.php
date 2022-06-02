@@ -155,3 +155,6 @@ class ProjTest extends TestCase
 
     
 }
+
+// must be of type
+// Symfony\UX\Chartjs\Model\Chart

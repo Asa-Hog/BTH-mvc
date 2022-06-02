@@ -217,24 +217,24 @@ class ProjectController extends AbstractController
         $weather = $weatherRepository
         ->findAll();
 
-        // // // Radera all väderdata från databasen
-        // $noOfWeatherTables = count($weather);
-        // for ($i = 0; $i < $noOfWeatherTables; ++$i) {
-        //     $entityManager->remove($weather[$i]);
-        //     $entityManager->flush();
-        // }
+        // // Radera all väderdata från databasen
+        $noOfWeatherTables = count($weather);
+        for ($i = 0; $i < $noOfWeatherTables; ++$i) {
+            $entityManager->remove($weather[$i]);
+            $entityManager->flush();
+        }
 
         // ------------------------------------------
         // Hämta all stadsdata
         $city = $cityRepository
         ->findAll();
 
-        // // Radera all väderdata från databasen
-        // $noOfCityTables = count($city);
-        // for ($i = 0; $i < $noOfCityTables; ++$i) {
-        //     $entityManager->remove($city[$i]);
-        //     $entityManager->flush();
-        // }
+        // Radera all väderdata från databasen
+        $noOfCityTables = count($city);
+        for ($i = 0; $i < $noOfCityTables; ++$i) {
+            $entityManager->remove($city[$i]);
+            $entityManager->flush();
+        }
 
         // ------------------------------------------
         $proj = new Proj();
