@@ -6,8 +6,6 @@ use App\Entity\User;
 use App\Entity\Weather;
 use App\Entity\City;
 use Symfony\UX\Chartjs\Model\Chart;
-// use App\Repository\WeatherRepository;
-// use App\Repository\CityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 class Proj
@@ -156,7 +154,6 @@ class Proj
         // $city1 = $weather[0]->getCityId(); // Ger id:t
         $city1 = $weather[0]->getCity()->getName();
         // var_dump($weather[0]->getCity());
-        // var_dump($weather[0]->getCity()->getName());
         // var_dump($weather[0]->getCity()->getWeather()->getCity()->getName());
 
 
@@ -369,7 +366,7 @@ class Proj
                     'fontSize' => 16,
                     'font' => [
                         'weight' => 'bolder'
-                    ]
+                    ],
                 ]
                 ],
             'scales' => [
