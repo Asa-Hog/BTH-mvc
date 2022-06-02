@@ -4,13 +4,14 @@ namespace App\Weather;
 
 use App\Entity\User;
 use App\Entity\Weather;
+use App\Entity\City;
 use Symfony\UX\Chartjs\Model\Chart;
-use App\Repository\WeatherRepository;
+// use App\Repository\WeatherRepository;
+// use App\Repository\CityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 class Proj
 {
-
     /**
      * Method that creates users
      */
@@ -47,6 +48,8 @@ class Proj
         // Vid större datamängder bättre att läsa in mätvärdena från fil
         $years = [2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021];
 
+//------------------------------------------------------------
+
         $temp1 = [2.6, 3.1, 2.4, 3.5, 3.4, 3.3, 3.3, 2.8, 0.9, 3.8, 2.3, 3.3, 4.1, 4.5, 3.1, 2.7, 2.9, 2.5, 5.0, 2.7];
         $prec1 = [379, 482, 525, 617, 578, 619, 565, 462, 529, 752, 818, 518, 514, 824, 606, 703, 523, 632, 732, 757];
         $precDays1 = [137,129,160,167,147,166,136,118,140,173,183,132,135,184,161,161,151,153,173,170];
@@ -68,7 +71,19 @@ class Proj
         $summer3 = [32,13,7,14,27,9,9,6,22,4,10,5,20,7,6,6,44,24,19,28];
         $cityId3 = 3;
 
+//------------------------------------------------------------
+
+        $cityInfo1 = ['Luleå', '1', '1'];
+        $cityInfo2 = ['Stockholm', '2', '2'];
+        $cityInfo3 = ['Kalmar', '3', '3'];
+
+//------------------------------------------------------------
         // Lägg till mätvärden till databasen
+        $city1 = new City();
+        $city1->setName($cityInfo1[0]);
+        $city1->setLongitude($cityInfo1[1]);
+        $city1->setLatitude($cityInfo1[2]);
+
         $weather1 = new Weather();
         $weather1->setYears($years);
         $weather1->setTemperature($temp1);
@@ -76,8 +91,20 @@ class Proj
         $weather1->setPrecDays($precDays1);
         $weather1->setFrost($frost1);
         $weather1->setSummer($summer1);
+        // $weather1->setCityId($cityId1);
         $weather1->setCityId($cityId1);
+
+        $weather1->setCity($city1);
+
+        $entityManager->persist($city1);
         $entityManager->persist($weather1);
+
+//------------------------------------------------------------
+
+        $city2 = new City();
+        $city2->setName($cityInfo2[0]);
+        $city2->setLongitude($cityInfo2[1]);
+        $city2->setLatitude($cityInfo2[2]);
 
         $weather2 = new Weather();
         $weather2->setYears($years);
@@ -86,8 +113,19 @@ class Proj
         $weather2->setPrecDays($precDays2);
         $weather2->setFrost($frost2);
         $weather2->setSummer($summer2);
-        $weather2->setCityId($cityId2);
+        // $weather2->setCityId($cityId2);
+
+        $weather2->setCity($city2);
+
+        $entityManager->persist($city2);
         $entityManager->persist($weather2);
+
+//-----------------------------------------------------------------
+
+        $city3 = new City();
+        $city3->setName($cityInfo3[0]);
+        $city3->setLongitude($cityInfo3[1]);
+        $city3->setLatitude($cityInfo3[2]);
 
         $weather3 = new Weather();
         $weather3->setYears($years);
@@ -96,8 +134,14 @@ class Proj
         $weather3->setPrecDays($precDays3);
         $weather3->setFrost($frost3);
         $weather3->setSummer($summer3);
-        $weather3->setCityId($cityId3);
+        // $weather3->setCityId($cityId3);
+
+        $weather3->setCity($city3);
+
+        $entityManager->persist($city3);
         $entityManager->persist($weather3);
+
+//------------------------------------------------------------
 
         $entityManager->flush();
     }
@@ -110,15 +154,22 @@ class Proj
     {
         $years1 = $weather[0]->getYears();
         $temp1 = $weather[0]->getTemperature();
-        $city1 = $weather[0]->getCityId();
+        // $city1 = $weather[0]->getCityId(); // Ger id:t
+        $city1 = $weather[0]->getCity()->getName();
+        // var_dump($weather[0]->getCity());
+        // var_dump($weather[0]->getCity()->getName());
+        // var_dump($weather[0]->getCity()->getWeather()->getCity()->getName());
+
 
         // $years2 = $weather[1]->getYears();
         $temp2 = $weather[1]->getTemperature();
-        $city2 = $weather[1]->getCityId();
+        // $city2 = $weather[1]->getCityId();
+        $city2 = $weather[1]->getCity()->getName();
 
         // $years3 = $weather[2]->getYears();
         $temp3 = $weather[2]->getTemperature();
-        $city3 = $weather[2]->getCityId();
+        // $city3 = $weather[2]->getCityId();
+        $city3 = $weather[2]->getCity()->getName();
 
         $chart1 = $chartBuilder->createChart(Chart::TYPE_LINE);
 
@@ -192,15 +243,18 @@ class Proj
     {
         $years1 = $weather[0]->getYears();
         $prec1 = $weather[0]->getPrecipitation();
-        $city1 = $weather[0]->getCityId();
+        // $city1 = $weather[0]->getCityId();
+        $city1 = $weather[0]->getCity()->getName();
 
         // $years2 = $weather[1]->getYears();
         $prec2 = $weather[1]->getPrecipitation();
-        $city2 = $weather[1]->getCityId();
+        // $city2 = $weather[1]->getCityId();
+        $city2 = $weather[1]->getCity()->getName();
 
         // $years3 = $weather[2]->getYears();
         $prec3 = $weather[2]->getPrecipitation();
-        $city3 = $weather[2]->getCityId();
+        // $city3 = $weather[2]->getCityId();
+        $city3 = $weather[2]->getCity()->getName();
 
         $chart2 = $chartBuilder->createChart(Chart::TYPE_LINE);
 
@@ -265,7 +319,7 @@ class Proj
             ]
         ]);
 
-    return [$chart2];
+        return [$chart2];
     }
 
     /**
@@ -275,15 +329,18 @@ class Proj
     public function createChartsPrecipitationDays($weather, $chartBuilder): array
     {
         $pd1 = $weather[0]->getPrecDays();
-        $city1 = $weather[0]->getCityId();
+        // $city1 = $weather[0]->getCityId();
+        $city1 = $weather[0]->getCity()->getName();
 
         // $years2 = $weather[1]->getYears();
         $pd2 = $weather[1]->getPrecDays();
-        $city2 = $weather[1]->getCityId();
+        // $city2 = $weather[1]->getCityId();
+        $city2 = $weather[1]->getCity()->getName();
 
         // $years3 = $weather[2]->getYears();
         $pd3 = $weather[2]->getPrecDays();
-        $city3 = $weather[2]->getCityId();
+        // $city3 = $weather[2]->getCityId();
+        $city3 = $weather[2]->getCity()->getName();
 
         // Genomsnitt antal nederbördsdagar
         $pd1Average = array_sum($pd1) / count($pd1);
@@ -348,10 +405,10 @@ class Proj
                 ]
             ],
         ]);
-    return [$chart3];
+        return [$chart3];
     }
 
-        /**
+    /**
      * Method that creates precipitation charts from the weather data in the database
      * @return array with the chart
      */
@@ -393,13 +450,14 @@ class Proj
                 'subtitle' => [
                     'display' => true,
                     'position' => 'bottom',
-                    'text' => 'Luleå'
+                    // 'text' =>'1'
+                    'text' => $weather[0]->getCity()->getName()
                 ]],
         ]);
 
         return [$chart4];
     }
-        /**
+    /**
      * Method that creates precipitation charts from the weather data in the database
      * @return array with the chart
      */
@@ -441,7 +499,8 @@ class Proj
                 'subtitle' => [
                     'display' => true,
                     'position' => 'bottom',
-                    'text' => 'Stockholm'
+                    // 'text' => '2'
+                    'text' => $weather[1]->getCity()->getName()
                 ]],
         ]);
 
@@ -455,7 +514,6 @@ class Proj
      */
     public function createChartsDays3($weather, $chartBuilder): array
     {
-
         $frost3 = $weather[2]->getFrost();
         $summer3 = $weather[2]->getSummer();
 
@@ -463,7 +521,6 @@ class Proj
         $frost3Average = array_sum($frost3) / count($frost3);
         // Genomsnitt antal högsommardagar
         $summer3Average = array_sum($summer3) / count($summer3);
-
 
         $chart6 = $chartBuilder->createChart(Chart::TYPE_PIE);
 
@@ -492,7 +549,8 @@ class Proj
                 'subtitle' => [
                     'display' => true,
                     'position' => 'bottom',
-                    'text' => 'Kalmar'
+                    // 'text' => '3'
+                    'text' => $weather[2]->getCity()->getName()
                 ]],
         ]);
 
@@ -522,3 +580,7 @@ class Proj
         return [$temp1AverageRound, $temp2AverageRound, $temp3AverageRound];
     }
 }
+
+
+// must be of type
+// Symfony\UX\Chartjs\Model\Chart

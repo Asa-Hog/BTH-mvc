@@ -266,6 +266,4 @@ class HandleUserController extends AbstractController
 
         return $this->redirectToRoute('showAllUsersProj');
     }
-
-
 }

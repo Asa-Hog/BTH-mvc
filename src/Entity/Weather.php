@@ -34,6 +34,10 @@ class Weather
     #[ORM\Column(type: 'array')]
     private $precDays = [];
 
+    #[ORM\OneToOne(inversedBy: 'weather', targetEntity: City::class, cascade: ['persist', 'remove'])]
+    #[ORM\JoinColumn(nullable: false)]
+    private $city;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -119,6 +123,18 @@ class Weather
     public function setPrecDays(array $precDays): self
     {
         $this->precDays = $precDays;
+
+        return $this;
+    }
+
+    public function getCity(): ?City
+    {
+        return $this->city;
+    }
+
+    public function setCity(City $city): self
+    {
+        $this->city = $city;
 
         return $this;
     }
