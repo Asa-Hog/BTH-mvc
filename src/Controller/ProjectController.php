@@ -34,7 +34,6 @@ class ProjectController extends AbstractController
      */
     public function proj(
         WeatherRepository $weatherRepository,
-        CityRepository $cityRepository,
         ChartBuilderInterface $chartBuilder
     ): Response {
         // LÄS IN DATA FRÅN DATABASEN
