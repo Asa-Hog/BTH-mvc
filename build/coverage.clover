@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1654205805">
-  <project timestamp="1654205805">
+<coverage generated="1654288527">
+  <project timestamp="1654288527">
     <file name="C:\Users\asa_h\Desktop\bth\mvc\me\report\src\Card\Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>
@@ -175,7 +175,7 @@
     </file>
     <file name="C:\Users\asa_h\Desktop\bth\mvc\me\report\src\Weather\Proj.php">
       <class name="App\Weather\Proj" namespace="global">
-        <metrics complexity="9" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="167" coveredstatements="0" elements="176" coveredelements="0"/>
+        <metrics complexity="9" methods="9" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="167" coveredstatements="88" elements="176" coveredelements="95"/>
       </class>
       <line num="16" type="method" name="createUsers" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="18" type="stmt" count="0"/>
@@ -258,103 +258,103 @@
       <line num="138" type="stmt" count="0"/>
       <line num="139" type="stmt" count="0"/>
       <line num="143" type="stmt" count="0"/>
-      <line num="150" type="method" name="createChartTemperature" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="152" type="stmt" count="0"/>
-      <line num="153" type="stmt" count="0"/>
-      <line num="155" type="stmt" count="0"/>
-      <line num="161" type="stmt" count="0"/>
-      <line num="163" type="stmt" count="0"/>
-      <line num="166" type="stmt" count="0"/>
-      <line num="168" type="stmt" count="0"/>
-      <line num="170" type="stmt" count="0"/>
-      <line num="172" type="stmt" count="0"/>
-      <line num="182" type="stmt" count="0"/>
-      <line num="188" type="stmt" count="0"/>
-      <line num="197" type="stmt" count="0"/>
-      <line num="223" type="stmt" count="0"/>
-      <line num="230" type="method" name="createChartsPrecipitation" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="232" type="stmt" count="0"/>
-      <line num="233" type="stmt" count="0"/>
-      <line num="235" type="stmt" count="0"/>
-      <line num="238" type="stmt" count="0"/>
-      <line num="240" type="stmt" count="0"/>
-      <line num="243" type="stmt" count="0"/>
-      <line num="245" type="stmt" count="0"/>
-      <line num="247" type="stmt" count="0"/>
-      <line num="249" type="stmt" count="0"/>
-      <line num="259" type="stmt" count="0"/>
-      <line num="265" type="stmt" count="0"/>
-      <line num="273" type="stmt" count="0"/>
-      <line num="310" type="stmt" count="0"/>
-      <line num="317" type="method" name="createChartsPrecipitationDays" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="319" type="stmt" count="0"/>
-      <line num="321" type="stmt" count="0"/>
-      <line num="324" type="stmt" count="0"/>
-      <line num="326" type="stmt" count="0"/>
-      <line num="329" type="stmt" count="0"/>
-      <line num="331" type="stmt" count="0"/>
-      <line num="334" type="stmt" count="0"/>
-      <line num="335" type="stmt" count="0"/>
-      <line num="336" type="stmt" count="0"/>
-      <line num="338" type="stmt" count="0"/>
-      <line num="340" type="stmt" count="0"/>
-      <line num="341" type="stmt" count="0"/>
-      <line num="346" type="stmt" count="0"/>
-      <line num="349" type="stmt" count="0"/>
-      <line num="351" type="stmt" count="0"/>
-      <line num="354" type="stmt" count="0"/>
-      <line num="356" type="stmt" count="0"/>
-      <line num="360" type="stmt" count="0"/>
-      <line num="396" type="stmt" count="0"/>
-      <line num="403" type="method" name="createChartsDays1" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="405" type="stmt" count="0"/>
-      <line num="406" type="stmt" count="0"/>
-      <line num="409" type="stmt" count="0"/>
-      <line num="411" type="stmt" count="0"/>
-      <line num="413" type="stmt" count="0"/>
-      <line num="415" type="stmt" count="0"/>
-      <line num="416" type="stmt" count="0"/>
-      <line num="419" type="stmt" count="0"/>
-      <line num="430" type="stmt" count="0"/>
-      <line num="441" type="stmt" count="0"/>
-      <line num="445" type="stmt" count="0"/>
-      <line num="451" type="method" name="createChartsDays2" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="453" type="stmt" count="0"/>
-      <line num="454" type="stmt" count="0"/>
-      <line num="458" type="stmt" count="0"/>
-      <line num="460" type="stmt" count="0"/>
-      <line num="462" type="stmt" count="0"/>
-      <line num="464" type="stmt" count="0"/>
-      <line num="465" type="stmt" count="0"/>
-      <line num="468" type="stmt" count="0"/>
-      <line num="478" type="stmt" count="0"/>
-      <line num="489" type="stmt" count="0"/>
-      <line num="493" type="stmt" count="0"/>
-      <line num="500" type="method" name="createChartsDays3" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="502" type="stmt" count="0"/>
-      <line num="503" type="stmt" count="0"/>
-      <line num="506" type="stmt" count="0"/>
-      <line num="508" type="stmt" count="0"/>
-      <line num="510" type="stmt" count="0"/>
-      <line num="512" type="stmt" count="0"/>
-      <line num="513" type="stmt" count="0"/>
-      <line num="516" type="stmt" count="0"/>
-      <line num="526" type="stmt" count="0"/>
-      <line num="537" type="stmt" count="0"/>
-      <line num="541" type="stmt" count="0"/>
-      <line num="548" type="method" name="createAverageTemperature" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="550" type="stmt" count="0"/>
-      <line num="551" type="stmt" count="0"/>
-      <line num="552" type="stmt" count="0"/>
-      <line num="555" type="stmt" count="0"/>
-      <line num="556" type="stmt" count="0"/>
-      <line num="557" type="stmt" count="0"/>
-      <line num="560" type="stmt" count="0"/>
-      <line num="561" type="stmt" count="0"/>
-      <line num="562" type="stmt" count="0"/>
-      <line num="564" type="stmt" count="0"/>
-      <metrics loc="567" ncloc="492" classes="1" methods="9" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="167" coveredstatements="0" elements="176" coveredelements="0"/>
+      <line num="150" type="method" name="createChartTemperature" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="152" type="stmt" count="1"/>
+      <line num="153" type="stmt" count="1"/>
+      <line num="155" type="stmt" count="1"/>
+      <line num="161" type="stmt" count="1"/>
+      <line num="163" type="stmt" count="1"/>
+      <line num="166" type="stmt" count="1"/>
+      <line num="168" type="stmt" count="1"/>
+      <line num="170" type="stmt" count="1"/>
+      <line num="172" type="stmt" count="1"/>
+      <line num="182" type="stmt" count="1"/>
+      <line num="188" type="stmt" count="1"/>
+      <line num="197" type="stmt" count="1"/>
+      <line num="223" type="stmt" count="1"/>
+      <line num="230" type="method" name="createChartsPrecipitation" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="232" type="stmt" count="1"/>
+      <line num="233" type="stmt" count="1"/>
+      <line num="235" type="stmt" count="1"/>
+      <line num="238" type="stmt" count="1"/>
+      <line num="240" type="stmt" count="1"/>
+      <line num="243" type="stmt" count="1"/>
+      <line num="245" type="stmt" count="1"/>
+      <line num="247" type="stmt" count="1"/>
+      <line num="249" type="stmt" count="1"/>
+      <line num="259" type="stmt" count="1"/>
+      <line num="265" type="stmt" count="1"/>
+      <line num="273" type="stmt" count="1"/>
+      <line num="310" type="stmt" count="1"/>
+      <line num="317" type="method" name="createChartsPrecipitationDays" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="319" type="stmt" count="1"/>
+      <line num="321" type="stmt" count="1"/>
+      <line num="324" type="stmt" count="1"/>
+      <line num="326" type="stmt" count="1"/>
+      <line num="329" type="stmt" count="1"/>
+      <line num="331" type="stmt" count="1"/>
+      <line num="334" type="stmt" count="1"/>
+      <line num="335" type="stmt" count="1"/>
+      <line num="336" type="stmt" count="1"/>
+      <line num="338" type="stmt" count="1"/>
+      <line num="340" type="stmt" count="1"/>
+      <line num="341" type="stmt" count="1"/>
+      <line num="346" type="stmt" count="1"/>
+      <line num="349" type="stmt" count="1"/>
+      <line num="351" type="stmt" count="1"/>
+      <line num="354" type="stmt" count="1"/>
+      <line num="356" type="stmt" count="1"/>
+      <line num="360" type="stmt" count="1"/>
+      <line num="396" type="stmt" count="1"/>
+      <line num="403" type="method" name="createChartsDays1" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="405" type="stmt" count="1"/>
+      <line num="406" type="stmt" count="1"/>
+      <line num="409" type="stmt" count="1"/>
+      <line num="411" type="stmt" count="1"/>
+      <line num="413" type="stmt" count="1"/>
+      <line num="415" type="stmt" count="1"/>
+      <line num="416" type="stmt" count="1"/>
+      <line num="419" type="stmt" count="1"/>
+      <line num="430" type="stmt" count="1"/>
+      <line num="441" type="stmt" count="1"/>
+      <line num="445" type="stmt" count="1"/>
+      <line num="451" type="method" name="createChartsDays2" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="453" type="stmt" count="1"/>
+      <line num="454" type="stmt" count="1"/>
+      <line num="458" type="stmt" count="1"/>
+      <line num="460" type="stmt" count="1"/>
+      <line num="462" type="stmt" count="1"/>
+      <line num="464" type="stmt" count="1"/>
+      <line num="465" type="stmt" count="1"/>
+      <line num="468" type="stmt" count="1"/>
+      <line num="478" type="stmt" count="1"/>
+      <line num="489" type="stmt" count="1"/>
+      <line num="493" type="stmt" count="1"/>
+      <line num="500" type="method" name="createChartsDays3" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="502" type="stmt" count="1"/>
+      <line num="503" type="stmt" count="1"/>
+      <line num="506" type="stmt" count="1"/>
+      <line num="508" type="stmt" count="1"/>
+      <line num="510" type="stmt" count="1"/>
+      <line num="512" type="stmt" count="1"/>
+      <line num="513" type="stmt" count="1"/>
+      <line num="516" type="stmt" count="1"/>
+      <line num="526" type="stmt" count="1"/>
+      <line num="537" type="stmt" count="1"/>
+      <line num="541" type="stmt" count="1"/>
+      <line num="548" type="method" name="createAverageTemperature" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="550" type="stmt" count="1"/>
+      <line num="551" type="stmt" count="1"/>
+      <line num="552" type="stmt" count="1"/>
+      <line num="555" type="stmt" count="1"/>
+      <line num="556" type="stmt" count="1"/>
+      <line num="557" type="stmt" count="1"/>
+      <line num="560" type="stmt" count="1"/>
+      <line num="561" type="stmt" count="1"/>
+      <line num="562" type="stmt" count="1"/>
+      <line num="564" type="stmt" count="1"/>
+      <metrics loc="567" ncloc="492" classes="1" methods="9" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="167" coveredstatements="88" elements="176" coveredelements="95"/>
     </file>
-    <metrics files="11" loc="1078" ncloc="860" classes="11" methods="48" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="240" coveredstatements="57" elements="288" coveredelements="84"/>
+    <metrics files="11" loc="1078" ncloc="860" classes="11" methods="48" coveredmethods="34" conditionals="0" coveredconditionals="0" statements="240" coveredstatements="145" elements="288" coveredelements="179"/>
   </project>
 </coverage>
