@@ -18,6 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Model\Chart;
 use App\Weather\Proj;
+use App\Weather\Users;
 
 class ProjectController extends AbstractController
 {
@@ -227,11 +228,12 @@ class ProjectController extends AbstractController
         }
 
         // ------------------------------------------
-        $proj = new Proj();
-
         // Skapa användare
-        $proj->createUsers($entityManager);
+        $createUsers = new Users();
+        $createUsers->createUsers($entityManager);
+
         // Lägg in mätvärden för vädret i databasen
+        $proj = new Proj();
         $proj->readToDatabase($entityManager);
 
         return $this->redirectToRoute('proj');

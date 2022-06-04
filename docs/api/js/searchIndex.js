@@ -1121,11 +1121,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Weather-Proj.html"
         },                {
-            "fqsen": "\\App\\Weather\\Proj\u003A\u003AcreateUsers\u0028\u0029",
-            "name": "createUsers",
-            "summary": "Method\u0020that\u0020creates\u0020users",
-            "url": "classes/App-Weather-Proj.html#method_createUsers"
-        },                {
             "fqsen": "\\App\\Weather\\Proj\u003A\u003AreadToDatabase\u0028\u0029",
             "name": "readToDatabase",
             "summary": "Method\u0020that\u0020reads\u0020the\u0020measurements\u0020and\u0020adds\u0020to\u0020the\u0020database",
@@ -1138,27 +1133,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Weather\\Proj\u003A\u003AcreateChartsPrecipitation\u0028\u0029",
             "name": "createChartsPrecipitation",
-            "summary": "Method\u0020that\u0020creates\u0020a\u0020precipitation\u0020chart\u0020from\u0020the\u0020weather\u0020data\u0020in\u0020the\u0020database\u0020for\u0020all\u0020cities",
+            "summary": "Method\u0020that\u0020creates\u0020a\u0020precipitation\u0020chart\u0020from\u0020the\u0020weather\u0020data\u0020in\u0020the\u0020database\u0020for\u0020all\ncities",
             "url": "classes/App-Weather-Proj.html#method_createChartsPrecipitation"
         },                {
             "fqsen": "\\App\\Weather\\Proj\u003A\u003AcreateChartsPrecipitationDays\u0028\u0029",
             "name": "createChartsPrecipitationDays",
-            "summary": "Method\u0020that\u0020creates\u0020a\u0020precipitation\u0020chart\u0020over\u0020number\u0020of\u0020precipitation\u0020days\u0020from\u0020the\u0020weather\u0020data\u0020in\u0020the\u0020database\u0020for\u0020all\u0020cities",
+            "summary": "Method\u0020that\u0020creates\u0020a\u0020precipitation\u0020chart\u0020over\u0020number\u0020of\u0020precipitation\u0020days\u0020from\u0020the\u0020weather\ndata\u0020in\u0020the\u0020database\u0020for\u0020all\u0020cities",
             "url": "classes/App-Weather-Proj.html#method_createChartsPrecipitationDays"
         },                {
             "fqsen": "\\App\\Weather\\Proj\u003A\u003AcreateChartsDays1\u0028\u0029",
             "name": "createChartsDays1",
-            "summary": "Method\u0020that\u0020creates\u0020a\u0020chart\u0020over\u0020average\u0020frost\u002D\u0020and\u0020summer\u0020days\u0020percentage\u0020of\u0020a\u0020year\u0020from\u0020the\u0020weather\u0020data\u0020in\u0020the\u0020database\u0020for\u0020city\u00201",
+            "summary": "Method\u0020that\u0020creates\u0020a\u0020chart\u0020over\u0020average\u0020frost\u002D\u0020and\u0020summer\u0020days\u0020percentage\u0020of\u0020a\u0020year\u0020from\nthe\u0020weather\u0020data\u0020in\u0020the\u0020database\u0020for\u0020city\u00201",
             "url": "classes/App-Weather-Proj.html#method_createChartsDays1"
         },                {
             "fqsen": "\\App\\Weather\\Proj\u003A\u003AcreateChartsDays2\u0028\u0029",
             "name": "createChartsDays2",
-            "summary": "Method\u0020that\u0020creates\u0020a\u0020chart\u0020over\u0020average\u0020frost\u002D\u0020and\u0020summer\u0020days\u0020percentage\u0020of\u0020a\u0020year\u0020from\u0020the\u0020weather\u0020data\u0020in\u0020the\u0020database\u0020for\u0020city\u00202",
+            "summary": "Method\u0020that\u0020creates\u0020a\u0020chart\u0020over\u0020average\u0020frost\u002D\u0020and\u0020summer\u0020days\u0020percentage\u0020of\u0020a\u0020year\u0020from\nthe\u0020weather\u0020data\u0020in\u0020the\u0020database\u0020for\u0020city\u00202",
             "url": "classes/App-Weather-Proj.html#method_createChartsDays2"
         },                {
             "fqsen": "\\App\\Weather\\Proj\u003A\u003AcreateChartsDays3\u0028\u0029",
             "name": "createChartsDays3",
-            "summary": "Method\u0020that\u0020creates\u0020a\u0020chart\u0020over\u0020average\u0020frost\u002D\u0020and\u0020summer\u0020days\u0020percentage\u0020of\u0020a\u0020year\u0020from\u0020the\u0020weather\u0020data\u0020in\u0020the\u0020database\u0020for\u0020city\u00203",
+            "summary": "Method\u0020that\u0020creates\u0020a\u0020chart\u0020over\u0020average\u0020frost\u002D\u0020and\u0020summer\u0020days\u0020percentage\u0020of\u0020a\u0020year\u0020from\u0020the\nweather\u0020data\u0020in\u0020the\u0020database\u0020for\u0020city\u00203",
             "url": "classes/App-Weather-Proj.html#method_createChartsDays3"
         },                {
             "fqsen": "\\App\\Weather\\Proj\u003A\u003AcreateAverageTemperature\u0028\u0029",
@@ -1226,20 +1221,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-City.html#property_id"
         },                {
-            "fqsen": "\\App\\Entity\\City\u003A\u003A\u0024Name",
-            "name": "Name",
+            "fqsen": "\\App\\Entity\\City\u003A\u003A\u0024name",
+            "name": "name",
             "summary": "",
-            "url": "classes/App-Entity-City.html#property_Name"
+            "url": "classes/App-Entity-City.html#property_name"
         },                {
-            "fqsen": "\\App\\Entity\\City\u003A\u003A\u0024Latitude",
-            "name": "Latitude",
+            "fqsen": "\\App\\Entity\\City\u003A\u003A\u0024latitude",
+            "name": "latitude",
             "summary": "",
-            "url": "classes/App-Entity-City.html#property_Latitude"
+            "url": "classes/App-Entity-City.html#property_latitude"
         },                {
-            "fqsen": "\\App\\Entity\\City\u003A\u003A\u0024Longitude",
-            "name": "Longitude",
+            "fqsen": "\\App\\Entity\\City\u003A\u003A\u0024longitude",
+            "name": "longitude",
             "summary": "",
-            "url": "classes/App-Entity-City.html#property_Longitude"
+            "url": "classes/App-Entity-City.html#property_longitude"
         },                {
             "fqsen": "\\App\\Entity\\City\u003A\u003A\u0024weather",
             "name": "weather",
@@ -1265,6 +1260,16 @@ Search.appendIndex(
             "name": "remove",
             "summary": "",
             "url": "classes/App-Repository-CityRepository.html#method_remove"
+        },                {
+            "fqsen": "\\App\\Weather\\Users",
+            "name": "Users",
+            "summary": "",
+            "url": "classes/App-Weather-Users.html"
+        },                {
+            "fqsen": "\\App\\Weather\\Users\u003A\u003AcreateUsers\u0028\u0029",
+            "name": "createUsers",
+            "summary": "Method\u0020that\u0020creates\u0020users",
+            "url": "classes/App-Weather-Users.html#method_createUsers"
         },                {
             "fqsen": "\\",
             "name": "\\",

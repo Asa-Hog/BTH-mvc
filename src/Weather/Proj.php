@@ -11,34 +11,6 @@ use Doctrine\Persistence\ManagerRegistry;
 class Proj
 {
     /**
-     * Method that creates users
-     * @param \Doctrine\ORM\EntityManager $entityManager Doctrine manager that handles the database
-     */
-    public function createUsers($entityManager): void
-    {
-        $user = new User();
-        $user->setEmail('doe@doe.com');
-        $user->setImg('smiley-pixabay.png');
-        $user->setAcronym('doe');
-        $user->setName('doe');
-        $user->setPwd('doe');
-        $user->setType('doe');
-        $entityManager->persist($user);
-
-        $user = new User();
-        $user->setEmail('admin@admin.com');
-        $user->setImg('smiley-pixabay.png');
-        $user->setAcronym('admin');
-        $user->setName('admin');
-        $user->setPwd('admin');
-        $user->setType('admin');
-        $entityManager->persist($user);
-
-        $entityManager->flush();
-    }
-
-
-    /**
      * Method that reads the measurements and adds to the database
      * @param  \Doctrine\ORM\EntityManager $entityManager Doctrine manager that handles the database
      */
@@ -56,14 +28,14 @@ class Proj
         // $cityId1 = 1;
 
         $temp2 = [8.1,7.7,7.6,7.9,8.4,8.1,8.5,7.7,6.0,8.4,7.2,7.8,8.8,8.7,8.2,8.0,8.8,8.6,9.7,8.1];
-        $prec2 = [481, 489, 533, 558, 549, 502, 634, 530, 553, 479, 779, 459, 614, 656, 472, 557, 345, 564, 504, 555];
+        $prec2 = [481,489,533,558,549,502,634,530,553,479,779,459,614,656,472,557,345,564,504,555];
         $precDays2 = [146,148,181,161,165,179,188,175,177,158,199,144,165,166,157,166,140,168,155,146];
         $frost2 = [104,99,103,99,95,81,62,89,136,92,107,101,53,61,88,85,109,82,37,89];
         $summer2 = [49,30,10,16,44,18,24,19,28,28,3,21,33,9,22,8,56,29,29,39];
         // $cityId2 = 2;
 
-        $temp3 = [8.2, 7.5, 7.5, 7.7, 8.5, 8.4, 8.4, 7.5, 6.0, 8.1, 7.3, 7.4, 8.9, 8.8, 8.2, 8.2, 8.9, 9.0, 9.6, 8.1];
-        $prec3 = [540, 522, 551, 503, 556, 605, 474, 456, 699, 451, 541, 548, 550, 447, 557, 551, 480, 474, 470, 612];
+        $temp3 = [8.2,7.5,7.5,7.7,8.5,8.4,8.4,7.5,6.0,8.1,7.3,7.4,8.9,8.8,8.2,8.2,8.9,9.0,9.6,8.1];
+        $prec3 = [540,522,551,503,556,605,474,456,699,451,541,548,550,447,557,551,480,474,470,612];
         $precDays3 = [145,135,155,128,137,115,173,155,162,143,172,148,163,145,136,171,143,173,152,154];
         $frost3 = [96,116,126,131,97,93,86,112,151,113,114,128,81,71,100,99,107,97,71,113];
         $summer3 = [32,13,7,14,27,9,9,6,22,4,10,5,20,7,6,6,44,24,19,28];
