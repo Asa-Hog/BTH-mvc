@@ -25,13 +25,11 @@ Nedan finns en del dokumentation angående projektet.
 
 <img class="my-chart-50" src = "../img/ER-diagram.png">
 
-<h2>Summering av kodkvalitet</h2>
+<h2>Kodkvalitet</h2>
 
-<p>När det gäller kodkvalitet så har jag använt verktygen phpMetrics lokalt samt Scrutinizer som är kopplat till GitHub-repot för att se hur projektet ligger till kvalitetsmässigt. Jag har även använt phpunit för att enhetstesta koden och försökt få god testtäckning.</p>
+<p>När det gäller kodkvalitet så har jag använt verktygen phpMetrics lokalt samt Scrutinizer som är kopplat till GitHub-repot för att se hur projektet ligger till kvalitetsmässigt. Jag har även använt phpunit för att enhetstesta koden och försökt få god kodtäckning, och phpcs, phpmd och phpstan för kodstil och linters.</p>
 
-<p>Från Scrutinizer fick jag information från några issues om kod som inte användes, så rättade jag till. Jag har även flyttat ut mycket av koden från kontrollern till en modellklass i stället, för att hålla kontrollern "tunn". phpMetrics gav information om att min modellklass var stor, och samlade metoder som inte hängde ihop (lack of cohesion), vilket jag inte tänkt på. Det gjorde att jag skapade en till modellklass och flyttade en del kod dit.</p>
-
-<p>Överlag så är kvaliteten god på projektet. Testtäckningen är över 60%. Värdet på Scrutinizer är 9,97.</p>
+<p>Från Scrutinizer fick jag information från några issues om kod som inte användes, så det rättade jag till. Jag har även flyttat ut mycket av koden från kontrollern till en modellklass i stället, för att hålla kontrollern "tunn". phpMetrics gav information om att min modellklass var stor, och samlade metoder som inte hängde ihop (lack of cohesion), vilket jag inte tänkt på. Det gjorde att jag skapade en till modellklass och flyttade en del kod dit. Överlag så är kvaliteten god på projektet. Kodtäckningen är över 60% och totala kvalitetsvärdet på Scrutinizer är 9,97.</p>
 
 <h2>Återställ</h2>
 Tryck på nedanstående knapp om du vill logga ut samt återställa databasen till sitt ursprungliga läge.
