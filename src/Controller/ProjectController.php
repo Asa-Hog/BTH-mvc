@@ -49,7 +49,7 @@ class ProjectController extends AbstractController
         $chartsDays3 = $projChart->createChartsDays3($weather, $chartBuilder);
         $chartsAverageTemp = $projChart->createAverageTemperature($weather);
 
-        $charts = [$chartsTemp, $chartsPrec, $chartsPrecDays, $chartsDays1, $chartsDays2, $chartsDays3, $chartsAverageTemp];
+        $charts = [$chartsTemp,$chartsPrec,$chartsPrecDays,$chartsDays1,$chartsDays2,$chartsDays3,$chartsAverageTemp];
 
         return $this->render('proj.html.twig', [
             'chart' => $charts

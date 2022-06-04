@@ -12,6 +12,7 @@ class Proj
 {
     /**
      * Method that creates users
+     * @param \Doctrine\ORM\EntityManager $entityManager Doctrine manager that handles the database
      */
     public function createUsers($entityManager): void
     {
@@ -39,6 +40,7 @@ class Proj
 
     /**
      * Method that reads the measurements and adds to the database
+     * @param  \Doctrine\ORM\EntityManager $entityManager Doctrine manager that handles the database
      */
     public function readToDatabase(
         $entityManager
@@ -46,16 +48,14 @@ class Proj
         // Vid större datamängder bättre att läsa in mätvärdena från fil
         $years = [2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021];
 
-//------------------------------------------------------------
-
-        $temp1 = [2.6, 3.1, 2.4, 3.5, 3.4, 3.3, 3.3, 2.8, 0.9, 3.8, 2.3, 3.3, 4.1, 4.5, 3.1, 2.7, 2.9, 2.5, 5.0, 2.7];
-        $prec1 = [379, 482, 525, 617, 578, 619, 565, 462, 529, 752, 818, 518, 514, 824, 606, 703, 523, 632, 732, 757];
+        $temp1 = [2.6,3.1,2.4,3.5,3.4,3.3,3.3,2.8,0.9,3.8,2.3,3.3,4.1,4.5,3.1,2.7,2.9,2.5,5.0,2.7];
+        $prec1 = [379,482,525,617,578,619,565,462,529,752,818,518,514,824,606,703,523,632,732,757];
         $precDays1 = [137,129,160,167,147,166,136,118,140,173,183,132,135,184,161,161,151,153,173,170];
         $frost1 = [196,186,191,180,185,179,195,187,197,164,182,179,174,166,180,195,184,191,168,187];
         $summer1 = [7,15,2,8,7,3,5,5,1,6,0,2,14,1,0,0,16,4,5,9];
         // $cityId1 = 1;
 
-        $temp2 = [8.1, 7.7, 7.6, 7.9, 8.4, 8.1, 8.5, 7.7, 6.0, 8.4, 7.2, 7.8, 8.8, 8.7, 8.2, 8.0, 8.8, 8.6, 9.7, 8.1];
+        $temp2 = [8.1,7.7,7.6,7.9,8.4,8.1,8.5,7.7,6.0,8.4,7.2,7.8,8.8,8.7,8.2,8.0,8.8,8.6,9.7,8.1];
         $prec2 = [481, 489, 533, 558, 549, 502, 634, 530, 553, 479, 779, 459, 614, 656, 472, 557, 345, 564, 504, 555];
         $precDays2 = [146,148,181,161,165,179,188,175,177,158,199,144,165,166,157,166,140,168,155,146];
         $frost2 = [104,99,103,99,95,81,62,89,136,92,107,101,53,61,88,85,109,82,37,89];
@@ -69,13 +69,13 @@ class Proj
         $summer3 = [32,13,7,14,27,9,9,6,22,4,10,5,20,7,6,6,44,24,19,28];
         // $cityId3 = 3;
 
-//------------------------------------------------------------
+        //------------------------------------------------------------
 
         $cityInfo1 = ['Luleå', '65.584819', '22.1567026'];
         $cityInfo2 = ['Stockholm', '59.3194903', '18.0750600'];
         $cityInfo3 = ['Kalmar', '56.6634447', '16.3629'];
 
-//------------------------------------------------------------
+        //------------------------------------------------------------
         // Lägg till mätvärden till databasen
         $city1 = new City();
         $city1->setName($cityInfo1[0]);
@@ -90,13 +90,12 @@ class Proj
         $weather1->setFrost($frost1);
         $weather1->setSummer($summer1);
         // $weather1->setCityId($cityId1);
-  
+
         $weather1->setCity($city1);
 
         $entityManager->persist($city1);
         $entityManager->persist($weather1);
 
-//------------------------------------------------------------
 
         $city2 = new City();
         $city2->setName($cityInfo2[0]);
@@ -117,7 +116,6 @@ class Proj
         $entityManager->persist($city2);
         $entityManager->persist($weather2);
 
-//-----------------------------------------------------------------
 
         $city3 = new City();
         $city3->setName($cityInfo3[0]);
@@ -138,14 +136,16 @@ class Proj
         $entityManager->persist($city3);
         $entityManager->persist($weather3);
 
-//------------------------------------------------------------
+        //------------------------------------------------------------
 
         $entityManager->flush();
     }
 
     /**
-     * Method that creates a temperature chart from the weather data in the database
-     * @return array - The chart
+     * Method that creates a temperature chart from the weather data in the database for all cities
+     * @param Weather $weather Data from the weather repository
+     * @param \Symfony\UX\Chartjs\Builder\ChartBuilderInterface $chartBuilder Tool that creates the chart
+     * @return array The chart as element
      */
     public function createChartTemperature($weather, $chartBuilder): array
     {
@@ -224,8 +224,11 @@ class Proj
     }
 
     /**
-     * Method that creates a precipitation chart from the weather data in the database
-     * @return array - The chart
+     * Method that creates a precipitation chart from the weather data in the database for all
+     * cities
+     * @param Weather $weather Data from the weather repository
+     * @param \Symfony\UX\Chartjs\Builder\ChartBuilderInterface $chartBuilder Tool that creates the chart
+     * @return array The chart as element
      */
     public function createChartsPrecipitation($weather, $chartBuilder): array
     {
@@ -311,8 +314,11 @@ class Proj
     }
 
     /**
-     * Method that creates a precipitation chart over number of precipitation days from the weather data in the database
-     * @return array - The chart
+     * Method that creates a precipitation chart over number of precipitation days from the weather
+     * data in the database for all cities
+     * @param Weather $weather Data from the weather repository
+     * @param \Symfony\UX\Chartjs\Builder\ChartBuilderInterface $chartBuilder Tool that creates the chart
+     * @return array The chart as element
      */
     public function createChartsPrecipitationDays($weather, $chartBuilder): array
     {
@@ -397,8 +403,11 @@ class Proj
     }
 
     /**
-     * Method that creates precipitation charts from the weather data in the database
-     * @return array with the chart
+     * Method that creates a chart over average frost- and summer days percentage of a year from
+     * the weather data in the database for city 1
+     * @param Weather $weather Data from the weather repository
+     * @param \Symfony\UX\Chartjs\Builder\ChartBuilderInterface $chartBuilder Tool that creates the chart
+     * @return array The chart as element
      */
     public function createChartsDays1($weather, $chartBuilder): array
     {
@@ -445,8 +454,11 @@ class Proj
         return [$chart4];
     }
     /**
-     * Method that creates precipitation charts from the weather data in the database
-     * @return array with the chart
+     * Method that creates a chart over average frost- and summer days percentage of a year from
+     * the weather data in the database for city 2
+     * @param Weather $weather Data from the weather repository
+     * @param \Symfony\UX\Chartjs\Builder\ChartBuilderInterface $chartBuilder Tool that creates the chart
+     * @return array The chart as element
      */
     public function createChartsDays2($weather, $chartBuilder): array
     {
@@ -494,9 +506,12 @@ class Proj
     }
 
     /**
-     * Method that creates precipitation charts from the weather data in the database
-     * @return array with the chart
-     */
+    * Method that creates a chart over average frost- and summer days percentage of a year from the
+    * weather data in the database for city 3
+    * @param Weather $weather Data from the weather repository
+    * @param \Symfony\UX\Chartjs\Builder\ChartBuilderInterface $chartBuilder Tool that creates the chart
+    * @return array The chart as element
+    */
     public function createChartsDays3($weather, $chartBuilder): array
     {
         $frost3 = $weather[2]->getFrost();
@@ -543,7 +558,8 @@ class Proj
 
     /**
      * Method that returns average temperature from the weather data in the database
-     * @return array with the rounded average temperatures
+     * @param Weather $weather Data from the weather repository
+     * @return array Array with the rounded average temperatures for each city as the elements
      */
     public function createAverageTemperature($weather): array
     {

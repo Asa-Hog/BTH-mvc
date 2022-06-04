@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1654288527">
-  <project timestamp="1654288527">
+<coverage generated="1654364154">
+  <project timestamp="1654364154">
     <file name="C:\Users\asa_h\Desktop\bth\mvc\me\report\src\Card\Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="8" coveredelements="8"/>

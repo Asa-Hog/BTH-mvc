@@ -26,13 +26,12 @@ use PHPUnit\Framework\TestCase;
  */
 class ProjTest extends TestCase
 {
-
     // private ChartBuilder $chart;
 
     // public function __construct()
     // {
-        // $this->chartBuilder = $chartBuilder;
-        // $this->chart = new \App\ChartBuilder();
+    // $this->chartBuilder = $chartBuilder;
+    // $this->chart = new \App\ChartBuilder();
     // }
 
     /**
@@ -61,7 +60,7 @@ class ProjTest extends TestCase
         // // $weather2->setCityId(2);
         $weather2->setFrost([100]);
         $weather2->setSummer([7]);
-        
+
         $city2 = new City();
         // $city1[getName()] = 'Stad1';
 
@@ -74,7 +73,7 @@ class ProjTest extends TestCase
         // // $weather3->setCityId(3);
         $weather3->setFrost([150]);
         $weather3->setSummer([5]);
-        
+
         $city3 = new City();
         // $city3[getName()] = 'Stad1';
 
@@ -94,7 +93,7 @@ class ProjTest extends TestCase
         $this->assertNotEmpty($proj); // $res måste vara en array
     }
 
-        /**
+    /**
      * Tests that the method returns a chart
      */
     public function testCreateChartsPrecipitation()
@@ -120,7 +119,7 @@ class ProjTest extends TestCase
         // // $weather2->setCityId(2);
         $weather2->setFrost([100]);
         $weather2->setSummer([7]);
-        
+
         $city2 = new City();
         // $city1[getName()] = 'Stad1';
 
@@ -133,7 +132,7 @@ class ProjTest extends TestCase
         // // $weather3->setCityId(3);
         $weather3->setFrost([150]);
         $weather3->setSummer([5]);
-        
+
         $city3 = new City();
         // $city3[getName()] = 'Stad1';
 
@@ -182,7 +181,7 @@ class ProjTest extends TestCase
         // // $weather2->setCityId(2);
         $weather2->setFrost([100]);
         $weather2->setSummer([7]);
-        
+
         $city2 = new City();
         // $city1[getName()] = 'Stad1';
 
@@ -195,7 +194,7 @@ class ProjTest extends TestCase
         // // $weather3->setCityId(3);
         $weather3->setFrost([150]);
         $weather3->setSummer([5]);
-        
+
         $city3 = new City();
         // $city3[getName()] = 'Stad1';
 
@@ -281,7 +280,7 @@ class ProjTest extends TestCase
         // // $weather2->setCityId(2);
         $weather2->setFrost([100]);
         $weather2->setSummer([7]);
-        
+
         $city2 = new City();
         // $city1[getName()] = 'Stad1';
 
@@ -294,7 +293,7 @@ class ProjTest extends TestCase
         // // $weather3->setCityId(3);
         $weather3->setFrost([150]);
         $weather3->setSummer([5]);
-        
+
         $city3 = new City();
         // $city3[getName()] = 'Stad1';
 
@@ -314,7 +313,7 @@ class ProjTest extends TestCase
         $this->assertNotEmpty($proj); // $res måste vara en array
     }
 
-        /**
+    /**
      * Tests that the method returns a chart
      */
     public function testCreateChartsDays2()
@@ -339,7 +338,7 @@ class ProjTest extends TestCase
         // // $weather2->setCityId(2);
         $weather2->setFrost([100]);
         $weather2->setSummer([7]);
-        
+
         $city2 = new City();
         // $city1[getName()] = 'Stad1';
 
@@ -352,7 +351,7 @@ class ProjTest extends TestCase
         // // $weather3->setCityId(3);
         $weather3->setFrost([150]);
         $weather3->setSummer([5]);
-        
+
         $city3 = new City();
         // $city3[getName()] = 'Stad1';
 
@@ -397,7 +396,7 @@ class ProjTest extends TestCase
         // // $weather2->setCityId(2);
         $weather2->setFrost([100]);
         $weather2->setSummer([7]);
-        
+
         $city2 = new City();
         // $city1[getName()] = 'Stad1';
 
@@ -410,7 +409,7 @@ class ProjTest extends TestCase
         // // $weather3->setCityId(3);
         $weather3->setFrost([150]);
         $weather3->setSummer([5]);
-        
+
         $city3 = new City();
         // $city3[getName()] = 'Stad1';
 
@@ -456,12 +455,6 @@ class ProjTest extends TestCase
 //         // $this->assertIsArray($res);
 //         // $this->assertCount($res, 3);
 //     }
-
-
-
-
-
-    
 }
 
 // must be of type

@@ -14,13 +14,13 @@ class City
     private $id;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $Name;
+    private $name;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $Latitude;
+    private $latitude;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $Longitude;
+    private $longitude;
 
     #[ORM\OneToOne(mappedBy: 'city', targetEntity: Weather::class, cascade: ['persist', 'remove'])]
     private $weather;
@@ -32,36 +32,36 @@ class City
 
     public function getName(): ?string
     {
-        return $this->Name;
+        return $this->name;
     }
 
-    public function setName(?string $Name): self
+    public function setName(?string $name): self
     {
-        $this->Name = $Name;
+        $this->name = $name;
 
         return $this;
     }
 
     public function getLatitude(): ?string
     {
-        return $this->Latitude;
+        return $this->latitude;
     }
 
-    public function setLatitude(?string $Latitude): self
+    public function setLatitude(?string $latitude): self
     {
-        $this->Latitude = $Latitude;
+        $this->latitude = $latitude;
 
         return $this;
     }
 
     public function getLongitude(): ?string
     {
-        return $this->Longitude;
+        return $this->longitude;
     }
 
-    public function setLongitude(?string $Longitude): self
+    public function setLongitude(?string $longitude): self
     {
-        $this->Longitude = $Longitude;
+        $this->longitude = $longitude;
 
         return $this;
     }
@@ -85,7 +85,6 @@ class City
 
     public function toString(): string
     {
-
         return "stad";
     }
 }
