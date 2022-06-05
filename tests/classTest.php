@@ -6,8 +6,8 @@ use PHPUnit\Framework\TestCase;
 
 class ATest extends TestCase
 {
-    public function testMethod()
-    {
-        $deck = new Deck();
-    }
+    // public function testMethod()
+    // {
+    //     $deck = new Deck();
+    // }
 }
