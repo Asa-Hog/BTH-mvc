@@ -12,7 +12,7 @@ class Proj
 {
     /**
      * Method that reads the measurements and adds to the database
-
+     * @param  \Doctrine\ORM\EntityManager $entityManager Doctrine manager that handles the database
      */
     public function readToDatabase(
         $entityManager
@@ -115,7 +115,8 @@ class Proj
 
     /**
      * Method that creates a temperature chart from the weather data in the database for all cities
-
+    * @param Array $weather Data from the weather repository
+    * @param \Symfony\UX\Chartjs\Builder\ChartBuilderInterface $chartBuilder Tool that creates the
      */
     public function createChartTemperature($weather, $chartBuilder): array
     {
@@ -196,7 +197,8 @@ class Proj
     /**
      * Method that creates a precipitation chart from the weather data in the database for all
      * cities
-
+    * @param Array $weather Data from the weather repository
+    * @param \Symfony\UX\Chartjs\Builder\ChartBuilderInterface $chartBuilder Tool that creates the
      */
     public function createChartsPrecipitation($weather, $chartBuilder): array
     {
@@ -284,7 +286,8 @@ class Proj
     /**
      * Method that creates a precipitation chart over number of precipitation days from the weather
      * data in the database for all cities
-
+    * @param Array $weather Data from the weather repository
+    * @param \Symfony\UX\Chartjs\Builder\ChartBuilderInterface $chartBuilder Tool that creates the
      */
     public function createChartsPrecipitationDays($weather, $chartBuilder): array
     {
@@ -371,7 +374,8 @@ class Proj
     /**
      * Method that creates a chart over average frost- and summer days percentage of a year from
      * the weather data in the database for city 1
-
+    * @param Array $weather Data from the weather repository
+    * @param \Symfony\UX\Chartjs\Builder\ChartBuilderInterface $chartBuilder Tool that creates the
      */
     public function createChartsDays1($weather, $chartBuilder): array
     {
@@ -420,7 +424,8 @@ class Proj
     /**
      * Method that creates a chart over average frost- and summer days percentage of a year from
      * the weather data in the database for city 2
-
+    * @param Array $weather Data from the weather repository
+    * @param \Symfony\UX\Chartjs\Builder\ChartBuilderInterface $chartBuilder Tool that creates the
      */
     public function createChartsDays2($weather, $chartBuilder): array
     {
@@ -470,7 +475,8 @@ class Proj
     /**
     * Method that creates a chart over average frost- and summer days percentage of a year from the
     * weather data in the database for city 3
-
+    * @param Array $weather Data from the weather repository
+    * @param \Symfony\UX\Chartjs\Builder\ChartBuilderInterface $chartBuilder Tool that creates the
     */
     public function createChartsDays3($weather, $chartBuilder): array
     {
@@ -518,7 +524,8 @@ class Proj
 
     /**
      * Method that returns average temperature from the weather data in the database
-
+     * @param Array $weather Data from the weather repository
+     * @return array Array with the rounded average temperatures for each city as the elements
      */
     public function createAverageTemperature($weather): array
     {
