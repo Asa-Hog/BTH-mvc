@@ -2,9 +2,9 @@
   "entrypoints": {
     "app": {
       "js": [
-        "/builds/runtime.61b1725c.js",
-        "/builds/904.5e622138.js",
-        "/builds/app.fe9ded36.js"
+        "https://www.student.bth.se/~asho20/dbwebb-kurser/mvc/me/report/public/builds/runtime.61b1725c.js",
+        "https://www.student.bth.se/~asho20/dbwebb-kurser/mvc/me/report/public/builds/904.5e622138.js",
+        "https://www.student.bth.se/~asho20/dbwebb-kurser/mvc/me/report/public/builds/app.fe9ded36.js"
       ],
       "css": [
         "/builds/app.b75294ae.css"
