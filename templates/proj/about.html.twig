@@ -12,8 +12,9 @@
 Nedan finns en del dokumentation angående projektet.
 
 <ul class = "list list_left">
-    <li><a href="http://www.student.bth.se/~asho20/dbwebb-kurser/mvc/me/report/docs/api/"> Länk till dokumentationen som är genererad via phpdoc. </a></li>
-    <li><a href=" http://www.student.bth.se/~asho20/dbwebb-kurser/mvc/me/report/docs/metrics/"> Länk till rapporten från phpmetrics. </a></li>
+    <li><a href="http://www.student.bth.se/~asho20/dbwebb-kurser/mvc/me/report/docs/api/"> Länk till dokumentationen som är genererad via phpDoc. </a></li>
+    <li><a href=" http://www.student.bth.se/~asho20/dbwebb-kurser/mvc/me/report/docs/metrics/"> Länk till rapporten från phpMetrics. </a></li>
+    <li><a href="http://www.student.bth.se/~asho20/dbwebb-kurser/mvc/me/report/builds/coverage/index.html"> Länk till testresultaten från phpUnit. </a></li>
     <li><a href="https://github.com/Asa-Hog/BTH-mvc"> Länk till mitt GitHub repo. </a></li>
     <li><a href="https://scrutinizer-ci.com/g/Asa-Hog/BTH-mvc/"> Länk till Scrutinizer för mitt repo. </a></li>
     <li><a href=" {{ path("cleancodeProj") }}" > Artikel om snygg kod. </a></li>
@@ -24,21 +25,11 @@ Nedan finns en del dokumentation angående projektet.
 
 <img class="my-chart-50" src = "../img/ER-diagram.png">
 
-<h2>Summering</h2>
-Din about-sida skall innehålla en summering där du berättar om projektets kodkvalitet. </br>
+<h2>Kodkvalitet</h2>
 
-Berätta vilka eventuella åtgärder du gjort för att kvalitetssäkra projektet och hur du jobbat med kodkvaliteten och vilka verktyg du använt.</br>
+<p>När det gäller kodkvalitet så har jag använt verktygen phpMetrics lokalt samt Scrutinizer som är kopplat till GitHub-repot för att se hur projektet ligger till kvalitetsmässigt. Jag har även använt phpunit för att enhetstesta koden och försökt få god kodtäckning, och phpcs, phpmd och phpstan för kodstil och linters.</p>
 
-Har du fokuserat på några speciella saker, verktyg eller metrics, så kan du berätta om dem.</br>
-
-När det gäller kodkvaliet så har jag 
-
-
-
-
-
-
-
+<p>Från Scrutinizer fick jag information från några issues om kod som inte användes, så det rättade jag till. Jag har även flyttat ut mycket av koden från kontrollern till en modellklass i stället, för att hålla kontrollern "tunn". phpMetrics gav information om att min modellklass var stor, och samlade metoder som inte hängde ihop (lack of cohesion), vilket jag inte tänkt på. Det gjorde att jag skapade en till modellklass och flyttade en del kod dit. Överlag så är kvaliteten god på projektet. Kodtäckningen är över 60% och totala kvalitetsvärdet på Scrutinizer är 9,97.</p>
 
 <h2>Återställ</h2>
 Tryck på nedanstående knapp om du vill logga ut samt återställa databasen till sitt ursprungliga läge.

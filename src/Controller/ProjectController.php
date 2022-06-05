@@ -18,6 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
 use Symfony\UX\Chartjs\Model\Chart;
 use App\Weather\Proj;
+use App\Weather\Users;
 
 class ProjectController extends AbstractController
 {
@@ -34,7 +35,6 @@ class ProjectController extends AbstractController
      */
     public function proj(
         WeatherRepository $weatherRepository,
-        CityRepository $cityRepository,
         ChartBuilderInterface $chartBuilder
     ): Response {
         // LÄS IN DATA FRÅN DATABASEN
@@ -50,7 +50,7 @@ class ProjectController extends AbstractController
         $chartsDays3 = $projChart->createChartsDays3($weather, $chartBuilder);
         $chartsAverageTemp = $projChart->createAverageTemperature($weather);
 
-        $charts = [$chartsTemp, $chartsPrec, $chartsPrecDays, $chartsDays1, $chartsDays2, $chartsDays3, $chartsAverageTemp];
+        $charts = [$chartsTemp,$chartsPrec,$chartsPrecDays,$chartsDays1,$chartsDays2,$chartsDays3,$chartsAverageTemp];
 
         return $this->render('proj.html.twig', [
             'chart' => $charts
@@ -228,11 +228,12 @@ class ProjectController extends AbstractController
         }
 
         // ------------------------------------------
-        $proj = new Proj();
-
         // Skapa användare
-        $proj->createUsers($entityManager);
+        $createUsers = new Users();
+        $createUsers->createUsers($entityManager);
+
         // Lägg in mätvärden för vädret i databasen
+        $proj = new Proj();
         $proj->readToDatabase($entityManager);
 
         return $this->redirectToRoute('proj');
